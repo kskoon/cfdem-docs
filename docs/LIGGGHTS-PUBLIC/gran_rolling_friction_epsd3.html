@@ -26,7 +26,7 @@
 
   
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
   
 
   
@@ -35,7 +35,7 @@
     <link rel="top" title="LIGGGHTS v3.X documentation" href="index.html"/> 
 
   
-  <script src="_static/js/modernizr.min.js"></script>
+  <script src="static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -188,9 +188,9 @@ rolling_friction epsd3 [other model_type/model_name pairs as described <a class=
 <a class="reference internal" href="fix_wall_gran.html"><em>fix wall/gran</em></a></p>
 <p>The elastic-plastic spring-dashpot (EPSD) model (see Ai et al.) adds an additional
 torque contribution, equal to</p>
-<img alt="_images/pair_gran_hooke_eqEpsd1.gif" class="align-center" src="_images/pair_gran_hooke_eqEpsd1.gif" />
+<img alt="images/pair_gran_hooke_eqEpsd1.gif" class="align-center" src="images/pair_gran_hooke_eqEpsd1.gif" />
 <p>where the torque due to the spring M_rk is calculated as</p>
-<img alt="_images/pair_gran_hooke_eqEpsd2.gif" class="align-center" src="_images/pair_gran_hooke_eqEpsd2.gif" />
+<img alt="images/pair_gran_hooke_eqEpsd2.gif" class="align-center" src="images/pair_gran_hooke_eqEpsd2.gif" />
 <p>Here k_r denotes the rolling stiffness and dtheta_r is the incremental relative
 rotation between the particles. The spring torque is limited by the full mobilisation
 torque M_rm that is determined by the normal force F_n and the coefficient of rolling
@@ -199,10 +199,10 @@ friction (rmu) (compare the <a class="reference internal" href="gran_rolling_fri
 that needs to be defined by the user (see below). k_r is computed from
 k_r = coeffRollingStiffness*k_n*rmu*rmu*reff*reff.</p>
 <p>The viscous damping torque M_rd is implemented as</p>
-<img alt="_images/pair_gran_hooke_eqEpsd3.gif" class="align-center" src="_images/pair_gran_hooke_eqEpsd3.gif" />
+<img alt="images/pair_gran_hooke_eqEpsd3.gif" class="align-center" src="images/pair_gran_hooke_eqEpsd3.gif" />
 <p>where in the current implementation the damping is disabled in case of full mobilisation
 (f = 0). The damping coefficient C_r may be expressed as:</p>
-<img alt="_images/pair_gran_hooke_eqEpsd4.gif" class="align-center" src="_images/pair_gran_hooke_eqEpsd4.gif" />
+<img alt="images/pair_gran_hooke_eqEpsd4.gif" class="align-center" src="images/pair_gran_hooke_eqEpsd4.gif" />
 <p>Here I_i/j is the moment of inertia and m_i/j is the mass of the particles i and j,
 respectively.</p>
 <p>The coefficient of rolling friction (rmu) must be defined as</p>
@@ -288,15 +288,15 @@ may not be available in LIGGGHTS(R)-PUBLIC.</p>
             SOURCELINK_SUFFIX: ''
         };
     </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="static/jquery.js"></script>
+      <script type="text/javascript" src="static/underscore.js"></script>
+      <script type="text/javascript" src="static/doctools.js"></script>
 
   
 
   
   
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <script type="text/javascript" src="static/js/theme.js"></script>
   
 
   

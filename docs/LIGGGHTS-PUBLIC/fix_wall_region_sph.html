@@ -26,7 +26,7 @@
 
   
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
   
 
   
@@ -35,7 +35,7 @@
     <link rel="top" title="LIGGGHTS v3.X documentation" href="index.html"/> 
 
   
-  <script src="_static/js/modernizr.min.js"></script>
+  <script src="static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -200,7 +200,7 @@
 <p class="last">For primitive regions with sharp corners and/or edges (e.g. a block or cylinder), wall/particle forces are computed accurately for both interior and exterior regions. For <em>union</em> and <em>intersect</em> regions, additional sharp corners and edges may be present due to the intersection of the surfaces of 2 or more primitive volumes. These corners and edges can be of two types: concave or convex. Concave points/edges are like the corners of a cube as seen by particles in the interior of a cube. Wall/particle forces around these features are computed correctly. Convex points/edges are like the corners of a cube as seen by particles exterior to the cube, i.e. the points jut into the volume where particles are present. LIGGGHTS(R)-PUBLIC does NOT compute the location of these convex points directly, and hence wall/particle forces in the cutoff volume around these points suffer from inaccuracies. The basic problem is that the outward normal of the surface is not continuous at these points. This can cause particles to feel no force (they don&#8217;t &#8220;see&#8221; the wall) when in one location, then move a distance epsilon, and suddenly feel a large force because they now &#8220;see&#8221; the wall. In the worst-case scenario, this can blow particles out of the simulation box. Thus, as a general rule you should not use the fix wall/region command with <em>union</em> or <em>interesect</em> regions that have convex points or edges.</p>
 </div>
 <p>The wall-particle interaction consists of two parts. The main one is a repulsive force which is calculated similar to the Lennard-Jones potential:</p>
-<img alt="_images/fix_wall_region_sph.jpg" class="align-center" src="_images/fix_wall_region_sph.jpg" />
+<img alt="images/fix_wall_region_sph.jpg" class="align-center" src="images/fix_wall_region_sph.jpg" />
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">For all of the styles, you must insure that r is always &gt; 0 for all particles in the group, or LIGGGHTS(R)-PUBLIC will generate an error. This means you cannot start your simulation with particles on the region surface (r = 0) or with particles on the wrong side of the region surface (r &lt; 0). The force on the partice blows up as r -&gt; 0. This means the initial particle distance from the region surface must be larger than r0.</p>
@@ -274,15 +274,15 @@
             SOURCELINK_SUFFIX: ''
         };
     </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="static/jquery.js"></script>
+      <script type="text/javascript" src="static/underscore.js"></script>
+      <script type="text/javascript" src="static/doctools.js"></script>
 
   
 
   
   
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <script type="text/javascript" src="static/js/theme.js"></script>
   
 
   

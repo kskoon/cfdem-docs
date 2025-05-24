@@ -24,7 +24,7 @@
 
   
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
   
 
   
@@ -33,7 +33,7 @@
     <link rel="top" title="CFDEMcoupling v3.X documentation" href="index.html"/> 
 
   
-  <script src="_static/js/modernizr.min.js"></script>
+  <script src="static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -142,7 +142,7 @@
   <div class="section" id="cfdemcoupling-documentation">
 <h1>CFDEM®coupling Documentation<a class="headerlink" href="#cfdemcoupling-documentation" title="Permalink to this headline">¶</a></h1>
 <hr class="docutils" />
-<img alt="_images/Portfolio_CFDEMcoupling.png" class="align-center" src="_images/Portfolio_CFDEMcoupling.png" />
+<img alt="images/Portfolio_CFDEMcoupling.png" class="align-center" src="images/Portfolio_CFDEMcoupling.png" />
 <hr class="docutils" />
 <div class="section" id="contents">
 <h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
@@ -184,7 +184,7 @@
 <p>How CFDEM®coupling works, a short description:</p>
 <p>The launched applications are CFDEM®coupling solvers, e.g. cfdemSolverPiso. Its job is to solve the Navier-Stokes equations with a solid phase present.
 A general formulation with a solid phase:</p>
-<img alt="_images/NavierStokesLiquSoli.png" class="align-center" src="_images/NavierStokesLiquSoli.png" />
+<img alt="images/NavierStokesLiquSoli.png" class="align-center" src="images/NavierStokesLiquSoli.png" />
 <p>In general &#8220;l&#8221; denotes liquid and &#8220;s&#8221; solid properties. AlphaL is the fluid (liquid) content of a calculation-cell, the voidfraction. &#8220;rhoL&#8221; is the fluid (liquid) density, uL the fluid (liquid) velocity, p the pressure, Ksl the implicit momentum exchange term between solid and liquid phase, us the solid velocity, tau the liquid-stress-tensor, g the gravity vector and t the time. &#8220;f&#8221; is a general explicit term which can be used to explicitely exchange momentum from the solid to the liquid phase.</p>
 <p>All cfdemSolvers use a &#8220;cfdemCloud&#8221; object, which takes care of many things. The most important are:</p>
 <ul class="simple">
@@ -196,7 +196,7 @@ A general formulation with a solid phase:</p>
 <li>Calculate the &#8220;Us&#8221; field from particle data, map the particle data to the CFD field. (averagingModel)</li>
 </ul>
 <p>In the standard setting the momentum coupling model takes the calculated forces of forceModels and produces the implicit momentum source term Ksl with</p>
-<img alt="_images/Ksl.png" class="align-center" src="_images/Ksl.png" />
+<img alt="images/Ksl.png" class="align-center" src="images/Ksl.png" />
 <p>More advanced solvers have also an explicit source term field f which is assembled from those forces which have the treatForceExplicit=true flag (see forceSubModels).</p>
 <hr class="docutils" />
 <p>(*) This offering is not approved or endorsed by OpenCFD Limited, the producer of the OpenFOAM software and owner of the OPENFOAM®  and OpenCFD®  trade marks.</p>
@@ -819,15 +819,15 @@ listing below of styles within certain commands.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="static/jquery.js"></script>
+      <script type="text/javascript" src="static/underscore.js"></script>
+      <script type="text/javascript" src="static/doctools.js"></script>
 
   
 
   
   
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <script type="text/javascript" src="static/js/theme.js"></script>
   
 
   

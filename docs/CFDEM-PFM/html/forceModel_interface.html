@@ -1,0 +1,280 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>forceModel interface command &mdash; CFDEMcoupling Academic 24.01
+ documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="CFDEMcoupling Academic 24.01
+ documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="CFDEMcoupling_Manual.html" class="icon icon-home"> CFDEMcoupling Academic
+        
+
+        
+        </a>
+
+        
+          
+          
+            <div class="version">
+              24.01
+
+            </div>
+          
+        
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_about.html">1. About CFDEMcoupling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_tutorials.html">3. Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_dicts.html">4. Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_solvers.html">5. Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_models.html">6. Models</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="CFDEMcoupling_Manual.html">CFDEMcoupling Academic</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="CFDEMcoupling_Manual.html">Docs</a> &raquo;</li>
+      
+    <li>forceModel interface command</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://www.cfdem.com">Website</a>
+        
+      </li>
+  </ul>
+  <hr/>
+  
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="forcemodel-interface-command">
+<span id="index-0"></span><h1>forceModel interface command<a class="headerlink" href="#forcemodel-interface-command" title="Permalink to this heading">¶</a></h1>
+<section id="syntax">
+<h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this heading">¶</a></h2>
+<p>Defined in <a class="reference internal" href="CFDEMcoupling_dicts.html#couplingproperties"><span class="std std-ref">couplingProperties</span></a>
+dictionary.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">forceModels</span>
+<span class="p">(</span>
+    <span class="n">interface</span>
+<span class="p">);</span>
+<span class="n">interfaceProps</span>
+<span class="p">{</span>
+    <span class="n">VOFvoidfractionFieldName</span> <span class="s2">&quot;alpha&quot;</span><span class="p">;</span>
+    <span class="n">gradAlphaName</span>            <span class="s2">&quot;gradAlpha&quot;</span><span class="p">;</span>
+    <span class="n">alphaThreshold</span>           <span class="n">scalar1</span><span class="p">;</span>
+    <span class="n">sigma</span>                    <span class="n">scalar2</span><span class="p">;</span>
+    <span class="n">theta</span>                    <span class="n">scalar3</span><span class="p">;</span>
+    <span class="n">deltaAlphaIn</span>             <span class="n">scalar4</span><span class="p">;</span>
+    <span class="n">deltaAlphaOut</span>            <span class="n">scalar5</span><span class="p">;</span>
+    <span class="n">C</span>                        <span class="n">scalar6</span><span class="p">;</span>
+    <span class="n">treatForceExplicit</span>       <span class="n">switch1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><em>alpha</em> = name of the finite volume fluid volume fraction field in a VOF simulation</p></li>
+<li><p><em>gradAlpha</em> = name of gradient fluid volume fraction field</p></li>
+<li><p><em>scalar1</em> = parameter used to define the distance of influence of the model</p></li>
+<li><p><em>scalar2</em> = fluid gas surface tension</p></li>
+<li><p><em>scalar3</em> = Three-phase contact angle for interface force</p></li>
+<li><p><em>scalar4</em> = delta value subtracted from alphaThreshold</p></li>
+<li><p><em>scalar5</em> = delta value added to alphaThreshold</p></li>
+<li><p><em>scalar6</em> = (optional, default 1.0) factor to scale interfacial force</p></li>
+<li><p><em>switch1</em> = (optional, default false) sub model switch, see <a class="reference internal" href="forceSubModel.html"><span class="doc">forceSubModel</span></a> for details</p></li>
+</ul>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">forceModels</span>
+<span class="p">(</span>
+    <span class="n">interface</span>
+<span class="p">);</span>
+<span class="n">interfaceProps</span>
+<span class="p">{</span>
+    <span class="n">VOFvoidfractionFieldName</span> <span class="s2">&quot;alpha&quot;</span><span class="p">;</span>
+    <span class="n">gradAlphaName</span>            <span class="s2">&quot;gradAlpha&quot;</span><span class="p">;</span>
+    <span class="n">alphaThreshold</span>           <span class="mf">0.55</span><span class="p">;</span>
+    <span class="n">sigma</span>                    <span class="mf">0.07</span><span class="p">;</span>
+    <span class="n">theta</span>                    <span class="mf">1.12</span><span class="p">;</span>
+    <span class="n">deltaAlphaIn</span>             <span class="mf">0.05</span><span class="p">;</span>
+    <span class="n">deltaAlphaOut</span>            <span class="mf">0.05</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+<p>The force model performs the calculation of forces (e.g. fluid-particle
+interaction forces) acting on each DEM particle. The <em>interface</em> model is a
+model that calculates the particle-fluid-gas interfacial force.
+(see <a class="reference internal" href="#wierink2011"><span class="std std-ref">Wierink et al. (2011)</span></a>)</p>
+</section>
+<section id="restrictions">
+<h2>Restrictions<a class="headerlink" href="#restrictions" title="Permalink to this heading">¶</a></h2>
+<p>Only for VOF simulations.</p>
+</section>
+<section id="related-commands">
+<h2>Related commands<a class="headerlink" href="#related-commands" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference internal" href="forceModel.html"><span class="doc">forceModel</span></a></p>
+<hr class="docutils" />
+<p id="wierink2011"><strong>(Wierink 2011)</strong>
+“Mechanistic modelling of particle interface interaction in three phase flows”,
+Wierink G., Goniva C., Niceno B., Heiskanen K.,
+Proc. of the 8th Int. Conf. on CFD in Oil and Gas, Metallurgical and Process Industries,
+Trondheim, Norway.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018 JKU Linz and DCS Computing GmbH.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'24.01',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

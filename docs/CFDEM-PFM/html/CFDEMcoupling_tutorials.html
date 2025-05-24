@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3. Tutorials &mdash; CFDEMcoupling Academic 24.01
+ documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="CFDEMcoupling Academic 24.01
+ documentation" href="index.html"/>
+        <link rel="next" title="4. Dictionaries" href="CFDEMcoupling_dicts.html"/>
+        <link rel="prev" title="2. Installation" href="CFDEMcoupling_install.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="CFDEMcoupling_Manual.html" class="icon icon-home"> CFDEMcoupling Academic
+        
+
+        
+        </a>
+
+        
+          
+          
+            <div class="version">
+              24.01
+
+            </div>
+          
+        
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_about.html">1. About CFDEMcoupling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_dicts.html">4. Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_solvers.html">5. Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_models.html">6. Models</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="CFDEMcoupling_Manual.html">CFDEMcoupling Academic</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="CFDEMcoupling_Manual.html">Docs</a> &raquo;</li>
+      
+    <li><span class="section-number">3. </span>Tutorials</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://www.cfdem.com">Website</a>
+        
+      </li>
+  </ul>
+  <hr/>
+  
+    <div class="rst-footer-buttons" style="margin-bottom: 1em" role="navigation" aria-label="footer navigation">
+      
+        <a href="CFDEMcoupling_dicts.html" class="btn btn-neutral float-right" title="4. Dictionaries" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="CFDEMcoupling_install.html" class="btn btn-neutral" title="2. Installation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="tutorials">
+<span id="id1"></span><h1><span class="section-number">3. </span>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this heading">¶</a></h1>
+<p><strong>General:</strong></p>
+<p>Each solver of CFDEMcoupling comes with at least one tutorial example, showing
+its functionality and correct usage. Provided that the installation is correct,
+the tutorials can be run via “Allrun.sh” shell scripts. These scripts perform
+all necessary steps (pre-processing, run, post-processing, visualization).</p>
+<p><strong>Location:</strong></p>
+<p>The tutorials can be found in the directory $CFDEM_PROJECT_DIR/tutorials,
+which can be reached by typing <em>cfdemTut</em> in a CLI terminal.</p>
+<p><strong>Structure:</strong></p>
+<p>Each case is structured in a directory called “CFD” covering the CFD relevant
+settings and data, and a directory called “DEM” covering the DEM relevant
+settings and data. This allows to easily expand a pure CFD or DEM simulation
+case to a coupled case.</p>
+<p><strong>Usage:</strong></p>
+<p>Provided that the installation is correct, the tutorials can be run via
+“Allrun.sh” shell script, executed by typing “./Allrun.sh”. The successful run
+of the script might need some third party software (e.g. octave, evince, etc.).</p>
+<p><strong>Settings:</strong></p>
+<p>The main settings of a simulation are done via dictionaries:</p>
+<p>The DEM setup of each case is defined by a <a class="reference external" href="http://www.cfdem.com">LIGGGHTS</a> input file located in
+$caseDir/DEM (e.g. in.liggghts_init). For details on the LIGGGHTS setup,
+please have a look at the LIGGGHTS manual.</p>
+<p>Standard CFD settings are defined in $caseDir/CFD/constant (e.g.
+transportProperties, RASproperties, etc.) and $caseDir/CFD/system (e.g.
+fvSchemes, controlDict). You can find more information on that in
+OpenFOAM®(*) documentations.</p>
+<p>Settings of the coupling routines are defined in
+$caseDir/CFD/constant/<a class="reference internal" href="CFDEMcoupling_dicts.html#couplingproperties"><span class="std std-ref">couplingProperties</span></a>
+(e.g. force models, data exchange model, etc.) and
+$caseDir/CFD/constant/<a class="reference internal" href="CFDEMcoupling_dicts.html#liggghtscommands"><span class="std std-ref">liggghtsCommands</span></a>
+(allows to execute a LIGGGHTS command during a coupled simulation).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>(*) This offering is not approved or endorsed by OpenCFD Limited, producer
+and distributor of the OpenFOAM software via www.openfoam.com, and owner of
+the OPENFOAM® and OpenCFD® trade marks.
+OPENFOAM® is a registered trade mark of OpenCFD Limited, producer and
+distributor of the OpenFOAM software via www.openfoam.com.</p>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="CFDEMcoupling_dicts.html" class="btn btn-neutral float-right" title="4. Dictionaries" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="CFDEMcoupling_install.html" class="btn btn-neutral" title="2. Installation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018 JKU Linz and DCS Computing GmbH.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'24.01',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

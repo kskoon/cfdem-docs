@@ -1,0 +1,444 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. Installation &mdash; CFDEMcoupling Academic 24.01
+ documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="CFDEMcoupling Academic 24.01
+ documentation" href="index.html"/>
+        <link rel="next" title="3. Tutorials" href="CFDEMcoupling_tutorials.html"/>
+        <link rel="prev" title="1. About CFDEMcoupling" href="CFDEMcoupling_about.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="CFDEMcoupling_Manual.html" class="icon icon-home"> CFDEMcoupling Academic
+        
+
+        
+        </a>
+
+        
+          
+          
+            <div class="version">
+              24.01
+
+            </div>
+          
+        
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_about.html">1. About CFDEMcoupling</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installing-openfoam">2.1. Installing OpenFOAM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#obtain-a-copy-of-the-source-code">2.1.1. Obtain a copy of the source code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-the-environment">2.1.2. Setup the environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compile-thirdparty-packages">2.1.3. Compile ThirdParty packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compile-openfoam">2.1.4. Compile OpenFOAM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-cfdemcoupling">2.2. Installing CFDEMcoupling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_tutorials.html">3. Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_dicts.html">4. Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_solvers.html">5. Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_models.html">6. Models</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="CFDEMcoupling_Manual.html">CFDEMcoupling Academic</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="CFDEMcoupling_Manual.html">Docs</a> &raquo;</li>
+      
+    <li><span class="section-number">2. </span>Installation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://www.cfdem.com">Website</a>
+        
+      </li>
+  </ul>
+  <hr/>
+  
+    <div class="rst-footer-buttons" style="margin-bottom: 1em" role="navigation" aria-label="footer navigation">
+      
+        <a href="CFDEMcoupling_tutorials.html" class="btn btn-neutral float-right" title="3. Tutorials" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="CFDEMcoupling_about.html" class="btn btn-neutral" title="1. About CFDEMcoupling" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="installation">
+<span id="id1"></span><h1><span class="section-number">2. </span>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h1>
+<p>In order to get the latest code version, please use the git repository at
+<a class="reference external" href="https://github.com/ParticulateFlow">http://github.com</a>.</p>
+<section id="installing-openfoam">
+<h2><span class="section-number">2.1. </span>Installing OpenFOAM<a class="headerlink" href="#installing-openfoam" title="Permalink to this heading">¶</a></h2>
+<section id="obtain-a-copy-of-the-source-code">
+<h3><span class="section-number">2.1.1. </span>Obtain a copy of the source code<a class="headerlink" href="#obtain-a-copy-of-the-source-code" title="Permalink to this heading">¶</a></h3>
+<p>In the CFDEMcoupling repository take a look at the file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">src</span><span class="o">/</span><span class="n">lagrangian</span><span class="o">/</span><span class="n">cfdemParticle</span><span class="o">/</span><span class="n">cfdTools</span><span class="o">/</span><span class="n">versionInfo</span><span class="o">.</span><span class="n">H</span>
+</pre></div>
+</div>
+<p>to find out the latest tested version of LIGGGHTS and OpenFOAM that work with
+CFDEMcoupling. As of this writing the version of OpenFOAM to be used is 6.</p>
+<p>You can then basically follow the instructions at
+<a class="reference external" href="https://openfoam.org/download/source/">openfoam.org</a>, cloning OpenFOAM from the
+git repository.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $HOME
+mkdir OpenFOAM
+cd OpenFOAM
+git clone https://github.com/OpenFOAM/OpenFOAM-6.git
+</pre></div>
+</div>
+<p>Clone the corresponding third party packages to the OpenFOAM folder.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">OpenFOAM</span><span class="o">/</span><span class="n">ThirdParty</span><span class="o">-</span><span class="mf">6.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>Switch to root user with sudo</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">su</span> <span class="o">-</span>
+</pre></div>
+</div>
+<p>Install dependent packages required for OpenFOAM on Ubuntu by executing the
+following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">build</span><span class="o">-</span><span class="n">essential</span> <span class="n">flex</span> <span class="n">bison</span> <span class="n">git</span><span class="o">-</span><span class="n">core</span> <span class="n">cmake</span> <span class="n">zlib1g</span><span class="o">-</span><span class="n">dev</span> <span class="n">libboost</span><span class="o">-</span><span class="n">system</span><span class="o">-</span><span class="n">dev</span> <span class="n">libboost</span><span class="o">-</span><span class="n">thread</span><span class="o">-</span><span class="n">dev</span> <span class="n">libopenmpi</span><span class="o">-</span><span class="n">dev</span> <span class="n">openmpi</span><span class="o">-</span><span class="nb">bin</span> <span class="n">gnuplot</span> <span class="n">libreadline</span><span class="o">-</span><span class="n">dev</span> <span class="n">libncurses</span><span class="o">-</span><span class="n">dev</span> <span class="n">libxt</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libqt5x11extras5</span><span class="o">-</span><span class="n">dev</span> <span class="n">libxt</span><span class="o">-</span><span class="n">dev</span> <span class="n">qt5</span><span class="o">-</span><span class="n">default</span> <span class="n">qttools5</span><span class="o">-</span><span class="n">dev</span> <span class="n">curl</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ubuntu 21.04 and newer dropped the <em>qt5-default</em> package. Instead use:</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">build</span><span class="o">-</span><span class="n">essential</span> <span class="n">flex</span> <span class="n">bison</span> <span class="n">git</span><span class="o">-</span><span class="n">core</span> <span class="n">cmake</span> <span class="n">zlib1g</span><span class="o">-</span><span class="n">dev</span> <span class="n">libboost</span><span class="o">-</span><span class="n">system</span><span class="o">-</span><span class="n">dev</span> <span class="n">libboost</span><span class="o">-</span><span class="n">thread</span><span class="o">-</span><span class="n">dev</span> <span class="n">libopenmpi</span><span class="o">-</span><span class="n">dev</span> <span class="n">openmpi</span><span class="o">-</span><span class="nb">bin</span> <span class="n">gnuplot</span> <span class="n">libreadline</span><span class="o">-</span><span class="n">dev</span> <span class="n">libncurses</span><span class="o">-</span><span class="n">dev</span> <span class="n">libxt</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libqt5x11extras5</span><span class="o">-</span><span class="n">dev</span> <span class="n">libxt</span><span class="o">-</span><span class="n">dev</span> <span class="n">qttools5</span><span class="o">-</span><span class="n">dev</span> <span class="n">qttools5</span><span class="o">-</span><span class="n">dev</span><span class="o">-</span><span class="n">tools</span> <span class="n">qtwebengine5</span><span class="o">-</span><span class="n">dev</span> <span class="n">libqt5svg5</span><span class="o">-</span><span class="n">dev</span> <span class="n">libqt5websockets5</span><span class="o">-</span><span class="n">dev</span> <span class="n">libqt5xmlpatterns5</span> <span class="n">qtxmlpatterns5</span><span class="o">-</span><span class="n">dev</span><span class="o">-</span><span class="n">tools</span> <span class="n">curl</span>
+</pre></div>
+</div>
+</section>
+<section id="setup-the-environment">
+<h3><span class="section-number">2.1.2. </span>Setup the environment<a class="headerlink" href="#setup-the-environment" title="Permalink to this heading">¶</a></h3>
+<p>Open your bash startup file</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Don’t forget the dot before the file name of <em>.bashrc</em></p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gedit</span> <span class="o">~/.</span><span class="n">bashrc</span>
+</pre></div>
+</div>
+<p>and add the following lines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>source $HOME/OpenFOAM/OpenFOAM-6/etc/bashrc
+export WM_NCOMPPROCS=4
+</pre></div>
+</div>
+<p>Save the file and reload it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">~/.</span><span class="n">bashrc</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Additional check</strong></p>
+<p>Open ~/OpenFOAM/OpenFOAM-6/etc/bashrc and make sure that <em>WM_MPLIB</em> is set
+correctly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">WM_MPLIB</span><span class="o">=</span><span class="n">SYSTEMOPENMPI</span>
+</pre></div>
+</div>
+<p>This should be the default setting but if you encounter some problems regarding
+MPI you might have to download the openmpi-1.10.2 source package to the third
+party folder and change the setting to <em>OPENMPI</em></p>
+</section>
+<hr class="docutils" />
+<section id="compile-thirdparty-packages">
+<h3><span class="section-number">2.1.3. </span>Compile ThirdParty packages<a class="headerlink" href="#compile-thirdparty-packages" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $WM_THIRD_PARTY_DIR
+./Allwmake
+</pre></div>
+</div>
+<p><strong>Compiling Paraview and the Paraview Reader Module</strong></p>
+<p>Paraview is a third-party software provided for graphical post-processing in
+OpenFOAM. Its compilation is automated using a script called makeParaView in the
+ThirdParty-6 directory.</p>
+<p>Before installing Paraview, check the version of cmake that is installed on the
+system. This can be done by typing</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>If the system cmake is older than version 2.8.8, clone a newer version to the
+Third Party folder and compile it by executing the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $WM_THIRD_PARTY_DIR
+git clone https://github.com/Kitware/CMake.git cmake-3.2.1
+cd cmake-3.2.1
+git checkout tags/v3.2.1
+cd ..
+./makeCmake
+</pre></div>
+</div>
+<p>In makeParaView set the path to cmake:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CMAKE_PATH</span><span class="o">=</span><span class="s2">&quot;$WM_THIRD_PARTY_DIR/platforms/linux64Gcc/cmake-3.2.1/bin&quot;</span>
+</pre></div>
+</div>
+<p>To install Paraview, execute the following</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $WM_THIRD_PARTY_DIR
+./makeParaView
+</pre></div>
+</div>
+<p>If you get the following error</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>VTK/ThirdParty/hdf5/vtkhdf5/src/H5detect.c:158:1: error: unknown type name ‘sigjmp_buf’
+static H5JMP_BUF jbuf_g;
+</pre></div>
+</div>
+<p>in VTK/ThirdParty/hdf5/vtkhdf5/config/cmake/ConfigureChecks.cmake around line 445 change</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span> <span class="p">(</span><span class="n">HDF5_EXTRA_FLAGS</span> <span class="o">-</span><span class="n">D_DEFAULT_SOURCE</span> <span class="o">-</span><span class="n">D_BSD_SOURCE</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>to</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span> <span class="p">(</span><span class="n">HDF5_EXTRA_FLAGS</span> <span class="o">-</span><span class="n">D_GNU_SOURCE</span> <span class="o">-</span><span class="n">D_DEFAULT_SOURCE</span> <span class="o">-</span><span class="n">D_BSD_SOURCE</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="compile-openfoam">
+<h3><span class="section-number">2.1.4. </span>Compile OpenFOAM<a class="headerlink" href="#compile-openfoam" title="Permalink to this heading">¶</a></h3>
+<p><strong>Compiling the source code</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $WM_PROJECT_DIR
+./Allwmake
+</pre></div>
+</div>
+<p><strong>Testing the installation</strong></p>
+<p>Create a project directory within the $HOME/OpenFOAM directory</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mkdir -p $FOAM_RUN
+</pre></div>
+</div>
+<p>Copy the tutorial examples directory in the OpenFOAM distribution to the run
+directory. If the OpenFOAM environment variables are set correctly, then the
+following command will be correct:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cp -r $FOAM_TUTORIALS $FOAM_RUN
+</pre></div>
+</div>
+<p>Run the first example case of incompressible laminar flow in a cavity:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $FOAM_RUN/tutorials/incompressible/icoFoam/cavity/cavity
+blockMesh
+icoFoam
+paraFoam
+</pre></div>
+</div>
+</section>
+</section>
+<section id="installing-cfdemcoupling">
+<h2><span class="section-number">2.2. </span>Installing CFDEMcoupling<a class="headerlink" href="#installing-cfdemcoupling" title="Permalink to this heading">¶</a></h2>
+<p>Make sure OpenFOAM is set up correctly and LIGGGHTS is installed as well. Clone
+the CFDEMcoupling source from the repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $HOME
+mkdir CFDEM
+cd CFDEM
+git clone https://github.com/ParticulateFlow/CFDEMcoupling.git
+</pre></div>
+</div>
+<p>Open the bashrc file of CFDEMcoupling</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gedit</span> <span class="o">~/</span><span class="n">CFDEM</span><span class="o">/</span><span class="n">CFDEMcoupling</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">bashrc</span> <span class="o">&amp;</span>
+</pre></div>
+</div>
+<p>Edit the lines marked as <em>USER EDITABLE PART</em> to reflect your installation paths
+correctly. Save the bashrc file and reload it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">~/</span><span class="n">CFDEM</span><span class="o">/</span><span class="n">CFDEMcoupling</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">bashrc</span>
+</pre></div>
+</div>
+<p>Entering $CFDEM_PROJECT_DIR in a the terminal should now give “… is a directory”</p>
+<p>Check if everything is set up correctly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cfdemSysTest</span>
+</pre></div>
+</div>
+<p>Compile LIGGGHTS (as a library)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cfdemCompLIG</span>
+</pre></div>
+</div>
+<p>If the compilation fails with a message like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">No</span> <span class="n">rule</span> <span class="n">to</span> <span class="n">make</span> <span class="n">target</span> <span class="s1">&#39;/usr/lib/libpython2.7.so&#39;</span>
+</pre></div>
+</div>
+<p>you probably need to create a symbolic link to the library in question.</p>
+<p>Compile CFDEMcoupling (library, solvers and utilities) in one go</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cfdemCompCFDEM</span>
+</pre></div>
+</div>
+<p>or alternatively step by step</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cfdemCompCFDEMsrc</span>
+<span class="n">cfdemCompCFDEMsol</span>
+<span class="n">cfdemCompCFDEMuti</span>
+</pre></div>
+</div>
+<p>Find the log files of the compile process</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">CFDEM</span><span class="o">/</span><span class="n">CFDEMcoupling</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">log</span>
+<span class="n">ls</span>
+</pre></div>
+</div>
+<p>If the file <strong>log_compile_results_success</strong> is present, compilation was successful.</p>
+<p>Install Octave for post-processing some of the tutorial output.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">octave</span>
+</pre></div>
+</div>
+<p>To run all tutorial cases type in a terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cfdemTestTUT</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="CFDEMcoupling_tutorials.html" class="btn btn-neutral float-right" title="3. Tutorials" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="CFDEMcoupling_about.html" class="btn btn-neutral" title="1. About CFDEMcoupling" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018 JKU Linz and DCS Computing GmbH.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'24.01',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,282 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>forceModel virtualMassForce command &mdash; CFDEMcoupling Academic 24.01
+ documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="CFDEMcoupling Academic 24.01
+ documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="CFDEMcoupling_Manual.html" class="icon icon-home"> CFDEMcoupling Academic
+        
+
+        
+        </a>
+
+        
+          
+          
+            <div class="version">
+              24.01
+
+            </div>
+          
+        
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_about.html">1. About CFDEMcoupling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_tutorials.html">3. Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_dicts.html">4. Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_solvers.html">5. Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_models.html">6. Models</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="CFDEMcoupling_Manual.html">CFDEMcoupling Academic</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="CFDEMcoupling_Manual.html">Docs</a> &raquo;</li>
+      
+    <li>forceModel virtualMassForce command</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://www.cfdem.com">Website</a>
+        
+      </li>
+  </ul>
+  <hr/>
+  
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="forcemodel-virtualmassforce-command">
+<span id="index-0"></span><h1>forceModel virtualMassForce command<a class="headerlink" href="#forcemodel-virtualmassforce-command" title="Permalink to this heading">¶</a></h1>
+<section id="syntax">
+<h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this heading">¶</a></h2>
+<p>Defined in <a class="reference internal" href="CFDEMcoupling_dicts.html#couplingproperties"><span class="std std-ref">couplingProperties</span></a>
+dictionary.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">forceModels</span>
+<span class="p">(</span>
+    <span class="n">virtualMassForce</span>
+<span class="p">);</span>
+<span class="n">virtualMassForceProps</span>
+<span class="p">{</span>
+    <span class="n">velFieldName</span> <span class="s2">&quot;U&quot;</span><span class="p">;</span>
+    <span class="n">voidfractionFieldName</span> <span class="s2">&quot;voidfraction&quot;</span><span class="p">;</span>
+    <span class="n">UsFieldName</span> <span class="s2">&quot;Us&quot;</span><span class="p">;</span>
+    <span class="n">phiFieldName</span> <span class="s2">&quot;phi&quot;</span><span class="p">;</span>
+    <span class="n">splitUrelCalculation</span> <span class="n">switch1</span><span class="p">;</span>
+    <span class="n">useUs</span> <span class="n">switch2</span><span class="p">;</span>
+    <span class="n">useFelderhof</span> <span class="n">switch3</span><span class="p">;</span>
+    <span class="n">Cadd</span> <span class="n">scalar1</span><span class="p">;</span>
+    <span class="n">treatForceExplicit</span> <span class="n">switch4</span><span class="p">;</span>
+    <span class="n">interpolation</span> <span class="n">switch5</span><span class="p">;</span>
+    <span class="n">smoothingModel</span> <span class="s2">&quot;smoothingModel&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><em>U</em> = name of the finite volume fluid velocity field</p></li>
+<li><p><em>voidfraction</em> = name of the finite volume void fraction field</p></li>
+<li><p><em>Us</em> = name of the finite volume cell averaged particle velocity field</p></li>
+<li><p><em>phi</em> = name of the finite volume flux field</p></li>
+<li><p><em>switch1</em> = (optional, default false) indicator to split calculation of Urel between CFDEM and LIGGGHTS</p></li>
+<li><p><em>switch2</em> = (optional, default false) indicator to use the cell-averaged particle velocity Us for calculation of Urel</p></li>
+<li><p><em>switch3</em> = (optional, default false) indicator to use the correlation by Felderhof for the virtual mass coefficient</p></li>
+<li><p><em>scalar1</em> = (optional, default 0.5) virtual mass coefficient</p></li>
+<li><p><em>switch4</em> = (optional, default true) sub model switch, see <a class="reference internal" href="forceSubModel.html"><span class="doc">forceSubModel</span></a> for details</p></li>
+<li><p><em>switch5</em> = (optional, default false) sub model switch, see <a class="reference internal" href="forceSubModel.html"><span class="doc">forceSubModel</span></a> for details</p></li>
+<li><p><em>smoothingModel</em> = name of smoothing model for the DU/Dt field</p></li>
+</ul>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">forceModels</span>
+<span class="p">(</span>
+    <span class="n">virtualMassForce</span>
+<span class="p">);</span>
+<span class="n">virtualMassForceProps</span>
+<span class="p">{</span>
+    <span class="n">velFieldName</span> <span class="s2">&quot;U&quot;</span><span class="p">;</span>
+    <span class="n">voidfractionFieldName</span> <span class="s2">&quot;voidfraction&quot;</span>
+    <span class="n">USFieldName</span> <span class="s2">&quot;Us&quot;</span>
+    <span class="n">phiFieldName</span> <span class="s2">&quot;phi&quot;</span><span class="p">;</span>
+    <span class="n">smoothingModel</span> <span class="n">off</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+<p>The force model performs the calculation of forces (e.g. fluid-particle
+interaction forces) acting on each DEM particle. The <em>virtualMassForce</em> model
+calculates the virtual mass force for each particle.</p>
+<p>For more detail, see <a class="reference internal" href="smoothingModel_constDiffAndTemporalSmoothing.html#nijssen2020"><span class="std std-ref">Nijssen et al. (2020)</span></a>.</p>
+<p id="nijssen2020"><strong>(Nijssen2020)</strong> T.M.J. Nijssen, J.A.M. Kuipers, J. van der Stel, A.T. Adema, K.A. Buist. (2020):
+“Complete liquid-solid momentum coupling for unresolved CFD-DEM simulations”,
+International Journal of Multiphase Flow</p>
+</section>
+<section id="restrictions">
+<h2>Restrictions<a class="headerlink" href="#restrictions" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Model not validated!</p>
+</div>
+</section>
+<section id="related-commands">
+<h2>Related commands<a class="headerlink" href="#related-commands" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference internal" href="forceModel.html"><span class="doc">forceModel</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018 JKU Linz and DCS Computing GmbH.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'24.01',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

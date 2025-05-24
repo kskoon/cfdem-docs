@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>forceModel BeetstraDrag command &mdash; CFDEMcoupling Academic 24.01
+ documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="CFDEMcoupling Academic 24.01
+ documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="CFDEMcoupling_Manual.html" class="icon icon-home"> CFDEMcoupling Academic
+        
+
+        
+        </a>
+
+        
+          
+          
+            <div class="version">
+              24.01
+
+            </div>
+          
+        
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_about.html">1. About CFDEMcoupling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_tutorials.html">3. Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_dicts.html">4. Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_solvers.html">5. Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_models.html">6. Models</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="CFDEMcoupling_Manual.html">CFDEMcoupling Academic</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="CFDEMcoupling_Manual.html">Docs</a> &raquo;</li>
+      
+    <li>forceModel BeetstraDrag  command</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://www.cfdem.com">Website</a>
+        
+      </li>
+  </ul>
+  <hr/>
+  
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="forcemodel-beetstradrag-command">
+<span id="index-0"></span><h1>forceModel BeetstraDrag  command<a class="headerlink" href="#forcemodel-beetstradrag-command" title="Permalink to this heading">¶</a></h1>
+<section id="syntax">
+<h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this heading">¶</a></h2>
+<p>Defined in <a class="reference internal" href="CFDEMcoupling_dicts.html#couplingproperties"><span class="std std-ref">couplingProperties</span></a>
+dictionary.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">forceModels</span>
+<span class="p">(</span>
+    <span class="n">BeetstraDrag</span>
+<span class="p">);</span>
+<span class="n">BeetstraDragProps</span>
+<span class="p">{</span>
+    <span class="n">velFieldName</span>          <span class="s2">&quot;U&quot;</span><span class="p">;</span>
+    <span class="n">voidfractionFieldName</span> <span class="s2">&quot;voidfraction&quot;</span><span class="p">;</span>
+    <span class="n">minVoidfraction</span>       <span class="n">scalar1</span><span class="p">;</span>
+    <span class="n">granVelFieldName</span>      <span class="s2">&quot;Us&quot;</span><span class="p">;</span>
+    <span class="n">useFilteredDragModel</span><span class="p">;</span>
+    <span class="n">g</span>                     <span class="n">gravity</span><span class="p">;</span>
+    <span class="n">dPrim</span>                 <span class="n">dPrimValue</span><span class="p">;</span>
+    <span class="n">rhoP</span>                  <span class="n">rhoPValue</span><span class="p">;</span>
+    <span class="n">rho</span>                   <span class="n">rhoValue</span><span class="p">;</span>
+    <span class="n">nuf</span>                   <span class="n">nufValue</span><span class="p">;</span>
+    <span class="n">useParcelSizeDependentFilteredDrag</span><span class="p">;</span>
+    <span class="n">k</span>                     <span class="n">kValue</span><span class="p">;</span>
+    <span class="n">treatForceExplicit</span><span class="p">;</span>
+    <span class="n">implForceDEM</span><span class="p">;</span>
+    <span class="n">verbose</span><span class="p">;</span>
+    <span class="n">interpolation</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><em>U</em> = name of the finite volume fluid velocity field</p></li>
+<li><p><em>voidfraction</em> = name of the finite volume void fraction field</p></li>
+<li><p><em>minVoidfraction</em> = minimum void fraction value to ensure meaningful interpolated void fraction (default = 0.1)</p></li>
+<li><p><em>Us</em> = name of the finite volume cell averaged particle velocity field</p></li>
+<li><p><em>useFilteredDragModel</em> = switch for using a coarsening correction for the Beetstra drag model (takes grid-size effects into account; default = off)</p></li>
+<li><p><em>gravity</em> = gravity value (default = 9.81)</p></li>
+<li><p><em>dPrimValue</em> = diameter of primary particle</p></li>
+<li><p><em>rhoPValue</em> = particle density</p></li>
+<li><p><em>rhoValue</em> = finite volume density</p></li>
+<li><p><em>nufValue</em> = kinematic viscosity</p></li>
+<li><p><em>useParcelSizeDependentFilteredDrag</em> = switch for using a coarsening correction for the Beetstra drag model (only used if <em>useFilteredDragModel</em> is on; default = off)</p></li>
+<li><p><em>kValue</em>  = factor for parcels size effect (default = 0.05; must be defined if useParcelSizeDependentFilteredDrag is used)</p></li>
+<li><p><em>interpolation</em> = flag to use interpolated void fraction and fluid velocity values (normally off)</p></li>
+<li><p><em>treatForceExplicit</em> = switch to force explicit treatment of force (normally off)</p></li>
+<li><p><em>implForceDEM</em> = flag to use implicit formulation of drag on DEM side (normally off, if on, this switch will force <em>treatForceExplicit</em> to be off)</p></li>
+<li><p><em>verbose</em> = switch to force display of data on screen (default: off; typically used for debug purposes)</p></li>
+</ul>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">forceModels</span>
+<span class="p">(</span>
+    <span class="n">BeetstraDrag</span>
+<span class="p">);</span>
+<span class="n">BeetstraDragProps</span>
+<span class="p">{</span>
+    <span class="n">velFieldName</span>          <span class="s2">&quot;U&quot;</span><span class="p">;</span>
+    <span class="n">voidfractionFieldName</span> <span class="s2">&quot;voidfraction&quot;</span><span class="p">;</span>
+    <span class="n">granVelFieldName</span>      <span class="s2">&quot;Us&quot;</span><span class="p">;</span>
+    <span class="n">interpolation</span> <span class="n">true</span><span class="p">;</span>
+    <span class="n">useFilteredDragModel</span><span class="p">;</span>
+    <span class="n">g</span>       <span class="mf">9.81</span><span class="p">;</span>
+    <span class="n">dPrim</span>   <span class="mf">100e-6</span><span class="p">;</span>
+    <span class="n">rhoP</span>    <span class="mf">7000.</span><span class="p">;</span>
+    <span class="n">rho</span>     <span class="mf">10.</span><span class="p">;</span>
+    <span class="n">nuf</span>     <span class="mf">1.5e-4</span><span class="p">;</span>
+    <span class="n">useParcelSizeDependentFilteredDrag</span><span class="p">;</span>
+    <span class="n">k</span>       <span class="mf">0.05</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+<p>The force model performs the calculation of forces (e.g. fluid-particle
+interaction forces) acting on each DEM particle. The <em>BeetstraDrag</em> model is a
+model that calculates the particle based drag force following the correlation of
+<a class="reference internal" href="#beetstra2007"><span class="std std-ref">Beetstra et al. (2007)</span></a>.
+The filtered drag model is based on <a class="reference internal" href="#radl2014"><span class="std std-ref">Radl and Sundaresan (2014)</span></a>.</p>
+</section>
+<section id="restrictions">
+<h2>Restrictions<a class="headerlink" href="#restrictions" title="Permalink to this heading">¶</a></h2>
+<p>This model is strictly valid only for monodisperse gas-particle flows.
+For the polydisperse model of <a class="reference internal" href="#beetstra2007"><span class="std std-ref">Beetstra et al. (2007)</span></a> use
+<em>BeetstraDragPoly</em>.</p>
+</section>
+<section id="related-commands">
+<h2>Related commands<a class="headerlink" href="#related-commands" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference internal" href="forceModel.html"><span class="doc">forceModel</span></a>, BeetstraDragPoly</p>
+<hr class="docutils" />
+<p id="beetstra2007"><strong>(Beetstra, 2007)</strong>
+Beetstra, R., van der Hoef, M. A. and Kuipers J. A. M.,
+“Drag force of intermediate Reynolds number flow past mono- and bidisperse arrays of spheres”,
+AIChE J., 53(2) (2007)</p>
+<p id="radl2014"><strong>(Radl, 2014)</strong> Radl, S. and Sundaresan, S.,
+“A drag model for filtered Euler-Lagrange simulations of clustered gas-particle suspensions”,
+Chem. Eng. Sci., 117, pp. 416-425 (2014)</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018 JKU Linz and DCS Computing GmbH.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'24.01',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,678 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6. Models &mdash; CFDEMcoupling Academic 24.01
+ documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="CFDEMcoupling Academic 24.01
+ documentation" href="index.html"/>
+        <link rel="prev" title="5. Solvers" href="CFDEMcoupling_solvers.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="CFDEMcoupling_Manual.html" class="icon icon-home"> CFDEMcoupling Academic
+        
+
+        
+        </a>
+
+        
+          
+          
+            <div class="version">
+              24.01
+
+            </div>
+          
+        
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_about.html">1. About CFDEMcoupling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_tutorials.html">3. Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_dicts.html">4. Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CFDEMcoupling_solvers.html">5. Solvers</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6. Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#i-o-models">6.1. I/O models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#averaging-models">6.2. Averaging models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#chemistry-models">6.3. Chemistry models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clock-models">6.4. Clock models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-exchange-models">6.5. Data exchange models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#diffusion-coefficient-models">6.6. Diffusion coefficient models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#energy-models">6.7. Energy models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#force-models">6.8. Force models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#force-sub-models">6.8.1. Force sub-models</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#liggghts-command-models">6.9. LIGGGHTS command models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#locate-models">6.10. Locate models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mass-transfer-models">6.11. Mass transfer models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mesh-motion-models">6.12. Mesh motion models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#momentum-coupling-models">6.13. Momentum coupling models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#other-force-models">6.14. Other force models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#probe-models">6.15. Probe models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#region-models">6.16. Region models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#smoothing-models">6.17. Smoothing models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#thermal-conductivity-models">6.18. Thermal conductivity models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#void-fraction-models">6.19. Void fraction models</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="CFDEMcoupling_Manual.html">CFDEMcoupling Academic</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="CFDEMcoupling_Manual.html">Docs</a> &raquo;</li>
+      
+    <li><span class="section-number">6. </span>Models</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://www.cfdem.com">Website</a>
+        
+      </li>
+  </ul>
+  <hr/>
+  
+    <div class="rst-footer-buttons" style="margin-bottom: 1em" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="CFDEMcoupling_solvers.html" class="btn btn-neutral" title="5. Solvers" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="models">
+<span id="comm"></span><span id="id1"></span><h1><span class="section-number">6. </span>Models<a class="headerlink" href="#models" title="Permalink to this heading">¶</a></h1>
+<p>This section lists all CFDEMcoupling sub-models alphabetically, with
+a separate listing below of styles within certain commands.</p>
+<section id="i-o-models">
+<h2><span class="section-number">6.1. </span>I/O models<a class="headerlink" href="#i-o-models" title="Permalink to this heading">¶</a></h2>
+<p>The <a class="reference internal" href="IOModel.html"><span class="doc">IOModel</span></a> keyword entry specifies the model for writing output
+data.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="IOModel_basicIO.html"><span class="doc">basicIO</span></a></p></td>
+<td><p><a class="reference internal" href="IOModel_noIO.html"><span class="doc">off</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="IOModel_sophIO.html"><span class="doc">sophIO</span></a></p></td>
+<td><p><a class="reference internal" href="IOModel_trackIO.html"><span class="doc">trackIO</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="averaging-models">
+<h2><span class="section-number">6.2. </span>Averaging models<a class="headerlink" href="#averaging-models" title="Permalink to this heading">¶</a></h2>
+<p>The <a class="reference internal" href="averagingModel.html"><span class="doc">averagingModel</span></a> keyword entry defines the model used to
+map the Lagrangian data to Eulerian values.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 49%" />
+<col style="width: 51%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="averagingModel_dense.html"><span class="doc">dense</span></a></p></td>
+<td><p><a class="reference internal" href="averagingModel_dilute.html"><span class="doc">dilute</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>off</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="chemistry-models">
+<h2><span class="section-number">6.3. </span>Chemistry models<a class="headerlink" href="#chemistry-models" title="Permalink to this heading">¶</a></h2>
+<p>The <a class="reference internal" href="chemistryModel.html"><span class="doc">chemistryModels</span></a> keyword is used to specify a list of
+models used for chemical reaction calculations.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 63%" />
+<col style="width: 37%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="chemistryModel_diffusionCoefficients.html"><span class="doc">diffusionCoefficients</span></a></p></td>
+<td><p>initMultiLayers</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="chemistryModel_massTransferCoeff.html"><span class="doc">massTransferCoeff</span></a></p></td>
+<td><p><a class="reference internal" href="chemistryModel_noChemistry.html"><span class="doc">off</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="chemistryModel_reactantPerParticle.html"><span class="doc">reactantPerParticle</span></a></p></td>
+<td><p><a class="reference internal" href="chemistryModel_species.html"><span class="doc">species</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="clock-models">
+<h2><span class="section-number">6.4. </span>Clock models<a class="headerlink" href="#clock-models" title="Permalink to this heading">¶</a></h2>
+<p>The <a class="reference internal" href="clockModel.html"><span class="doc">clockModel</span></a> keyword entry specifies the model used to
+examine the CFDEMcoupling code with respect to runtime.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="clockModel_noClock.html"><span class="doc">off</span></a></p></td>
+<td><p><a class="reference internal" href="clockModel_standardClock.html"><span class="doc">standardClock</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data-exchange-models">
+<h2><span class="section-number">6.5. </span>Data exchange models<a class="headerlink" href="#data-exchange-models" title="Permalink to this heading">¶</a></h2>
+<p>The <a class="reference internal" href="dataExchangeModel.html"><span class="doc">dataExchangeModel</span></a> keyword entry specifies the model
+that performs the data exchange between the DEM code and the CFD code.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 52%" />
+<col style="width: 48%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="dataExchangeModel_noDataExchange.html"><span class="doc">noDataExchange</span></a></p></td>
+<td><p><a class="reference internal" href="dataExchangeModel_oneWayVTK.html"><span class="doc">oneWayVTK</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dataExchangeModel_twoWayFiles.html"><span class="doc">twoWayFiles</span></a></p></td>
+<td><p><a class="reference internal" href="dataExchangeModel_twoWayMPI.html"><span class="doc">twoWayMPI</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dataExchangeModel_twoWayMany2Many.html"><span class="doc">twoWayMany2Many</span></a></p></td>
+<td><p><a class="reference internal" href="dataExchangeModel_twoWayOne2One.html"><span class="doc">twoWayOne2One</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="diffusion-coefficient-models">
+<h2><span class="section-number">6.6. </span>Diffusion coefficient models<a class="headerlink" href="#diffusion-coefficient-models" title="Permalink to this heading">¶</a></h2>
+<p>The <em>diffCoeffModel</em> keyword entry specifies the model for the diffusion
+coefficient of dissolved spieces in the fluid phase in the presence of particles.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 78%" />
+<col style="width: 22%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>SyamlalDiffCoeff</p></td>
+<td><p>off</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="energy-models">
+<h2><span class="section-number">6.7. </span>Energy models<a class="headerlink" href="#energy-models" title="Permalink to this heading">¶</a></h2>
+<p>The <em>energyModels</em> keyword specifies a list of energy models used for e.g.
+compressible, reacting flows.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 52%" />
+<col style="width: 48%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>heatTransferGunn</p></td>
+<td><p>heatTransferInterGrain</p></td>
+</tr>
+<tr class="row-even"><td><p>heatTransferRanzMarshall</p></td>
+<td><p>reactionHeat</p></td>
+</tr>
+<tr class="row-odd"><td><p>wallHeatTransferYagi</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="force-models">
+<h2><span class="section-number">6.8. </span>Force models<a class="headerlink" href="#force-models" title="Permalink to this heading">¶</a></h2>
+<p>The <a class="reference internal" href="forceModel.html"><span class="doc">forceModels</span></a> keyword specifies a list of models that exert
+a force on each DEM particle.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 46%" />
+<col style="width: 54%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="forceModel_Archimedes.html"><span class="doc">Archimedes</span></a></p></td>
+<td><p><a class="reference internal" href="forceModel_ArchimedesIB.html"><span class="doc">ArchimedesIB</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="forceModel_BeetstraDrag.html"><span class="doc">BeetstraDrag</span></a></p></td>
+<td><p>BeetstraDragPoly</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="forceModel_DiFeliceDrag.html"><span class="doc">DiFeliceDrag</span></a></p></td>
+<td><p>Fines</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="forceModel_GidaspowDrag.html"><span class="doc">GidaspowDrag</span></a></p></td>
+<td><p><a class="reference internal" href="forceModel_KochHillDrag.html"><span class="doc">KochHillDrag</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="forceModel_LaEuScalarTemp.html"><span class="doc">LaEuScalarTemp</span></a></p></td>
+<td><p><a class="reference internal" href="forceModel_MeiLift.html"><span class="doc">MeiLift</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="forceModel_ParmarBassetForce.html"><span class="doc">ParmarBassetForce</span></a></p></td>
+<td><p><a class="reference internal" href="forceModel_SchillerNaumannDrag.html"><span class="doc">SchillerNaumannDrag</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="forceModel_ShirgaonkarIB.html"><span class="doc">ShirgaonkarIB</span></a></p></td>
+<td><p><a class="reference internal" href="forceModel_dSauter.html"><span class="doc">dSauter</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>deactivateForce</p></td>
+<td><p>directedDiffusiveRelaxation</p></td>
+</tr>
+<tr class="row-odd"><td><p>evaluateFluctuations</p></td>
+<td><p><a class="reference internal" href="forceModel_fieldStore.html"><span class="doc">fieldStore</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="forceModel_fieldTimeAverage.html"><span class="doc">fieldTimeAverage</span></a></p></td>
+<td><p>freeStreaming</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="forceModel_gradPForce.html"><span class="doc">gradPForce</span></a></p></td>
+<td><p><a class="reference internal" href="forceModel_gradPForceSmooth.html"><span class="doc">gradPForceSmooth</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>granKineticEnergy</p></td>
+<td><p><a class="reference internal" href="forceModel_interface.html"><span class="doc">interface</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>isotropicFluctuations</p></td>
+<td><p><a class="reference internal" href="forceModel_noDrag.html"><span class="doc">noDrag</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="forceModel_particleCellVolume.html"><span class="doc">particleCellVolume</span></a></p></td>
+<td><p>particleDeformation</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="forceModel_pdCorrelation.html"><span class="doc">pdCorrelation</span></a></p></td>
+<td><p>potentialRelaxation</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="forceModel_staticPressure.html"><span class="doc">staticPressure</span></a></p></td>
+<td><p><a class="reference internal" href="forceModel_surfaceTensionForce.html"><span class="doc">surfaceTensionForce</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>terminalVelocity</p></td>
+<td><p><a class="reference internal" href="forceModel_transferFluidProperties.html"><span class="doc">transferFluidProperties</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>turbulentDispersion</p></td>
+<td><p>turbulentVelocityFluctuations</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="forceModel_virtualMassForce.html"><span class="doc">virtualMassForce</span></a></p></td>
+<td><p><a class="reference internal" href="forceModel_viscForce.html"><span class="doc">viscForce</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="forceModel_volWeightedAverage.html"><span class="doc">volWeightedAverage</span></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<section id="force-sub-models">
+<h3><span class="section-number">6.8.1. </span>Force sub-models<a class="headerlink" href="#force-sub-models" title="Permalink to this heading">¶</a></h3>
+<p>The <a class="reference internal" href="forceSubModel.html"><span class="doc">forceSubModels</span></a> keyword specifies a list
+of models that hold settings for a force model.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 74%" />
+<col style="width: 26%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="forceSubModel_ImEx.html"><span class="doc">ImEx</span></a></p></td>
+<td><p>ScaleForce</p></td>
+</tr>
+<tr class="row-even"><td><p>scaleForceBoundary</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="liggghts-command-models">
+<span id="lcm"></span><h2><span class="section-number">6.9. </span>LIGGGHTS command models<a class="headerlink" href="#liggghts-command-models" title="Permalink to this heading">¶</a></h2>
+<p>The <a class="reference internal" href="liggghtsCommandModel.html"><span class="doc">liggghtsCommandModels</span></a> keyword specifies a list
+of models that execute LIGGGHTS commands within a CFD run.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 46%" />
+<col style="width: 54%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="liggghtsCommandModel_execute.html"><span class="doc">execute</span></a></p></td>
+<td><p><a class="reference internal" href="liggghtsCommandModel_readLiggghtsData.html"><span class="doc">readLiggghtsData</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="liggghtsCommandModel_runLiggghts.html"><span class="doc">runLiggghts</span></a></p></td>
+<td><p><a class="reference internal" href="liggghtsCommandModel_writeLiggghts.html"><span class="doc">writeLiggghts</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="locate-models">
+<h2><span class="section-number">6.10. </span>Locate models<a class="headerlink" href="#locate-models" title="Permalink to this heading">¶</a></h2>
+<p>The <a class="reference internal" href="locateModel.html"><span class="doc">locateModel</span></a> keyword entry specifies the model used to
+search the CFD mesh for the CFD cell corresponding to a given position.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 59%" />
+<col style="width: 41%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="locateModel_engineSearch.html"><span class="doc">engine</span></a></p></td>
+<td><p><a class="reference internal" href="locateModel_engineSearchIB.html"><span class="doc">engineIB</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="locateModel_engineSearchMany2Many.html"><span class="doc">engineSearchMany2Many</span></a></p></td>
+<td><p><a class="reference internal" href="locateModel_standardSearch.html"><span class="doc">standard</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="locateModel_turboEngineSearch.html"><span class="doc">turboEngine</span></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="mass-transfer-models">
+<h2><span class="section-number">6.11. </span>Mass transfer models<a class="headerlink" href="#mass-transfer-models" title="Permalink to this heading">¶</a></h2>
+<p>The <em>massTransferModels</em> keyword specifies a list of mass transfer models used
+for evaluating species transfer between particles and fluids.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>massTransferGunn</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="mesh-motion-models">
+<h2><span class="section-number">6.12. </span>Mesh motion models<a class="headerlink" href="#mesh-motion-models" title="Permalink to this heading">¶</a></h2>
+<p>The <a class="reference internal" href="meshMotionModel.html"><span class="doc">meshMotionModel</span></a> keyword entry specifies the model
+used to manipulate the CFD mesh according to the DEM mesh motion.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="meshMotionModel_noMeshMotion.html"><span class="doc">noMeshMotion</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="momentum-coupling-models">
+<h2><span class="section-number">6.13. </span>Momentum coupling models<a class="headerlink" href="#momentum-coupling-models" title="Permalink to this heading">¶</a></h2>
+<p>The <a class="reference internal" href="momCoupleModel.html"><span class="doc">momCoupleModels</span></a> keyword specifies a list of models
+used for momentum exchange between DEM and CFD simulation</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>deactivateCouple</p></td>
+<td><p><a class="reference internal" href="momCoupleModel_explicitCouple.html"><span class="doc">explicitCouple</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="momCoupleModel_implicitCouple.html"><span class="doc">implicitCouple</span></a></p></td>
+<td><p><a class="reference internal" href="momCoupleModel_noCouple.html"><span class="doc">off</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="other-force-models">
+<h2><span class="section-number">6.14. </span>Other force models<a class="headerlink" href="#other-force-models" title="Permalink to this heading">¶</a></h2>
+<p>The <em>otherForceModels</em> keyword specifies a list of models that exert a force on
+each DEM particle.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 61%" />
+<col style="width: 39%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>expParticleForces</p></td>
+<td><p>gravity</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="otherForceModel_gravityEff.html"><span class="doc">gravityEff</span></a></p></td>
+<td><p>secondaryPhaseInducedBuoyancy</p></td>
+</tr>
+<tr class="row-odd"><td><p>weightSecondaryPhase</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="probe-models">
+<h2><span class="section-number">6.15. </span>Probe models<a class="headerlink" href="#probe-models" title="Permalink to this heading">¶</a></h2>
+<p>The <a class="reference internal" href="probeModel.html"><span class="doc">probeModel</span></a> keyword entry specifies the probing features in
+CFDEMcoupling simulations.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="probeModel_noProbe.html"><span class="doc">off</span></a></p></td>
+<td><p><a class="reference internal" href="probeModel_particleProbe.html"><span class="doc">particleProbe</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="region-models">
+<h2><span class="section-number">6.16. </span>Region models<a class="headerlink" href="#region-models" title="Permalink to this heading">¶</a></h2>
+<p>The <a class="reference internal" href="regionModel.html"><span class="doc">regionModel</span></a> keyword entry specifies the model used to
+select a certain region for coupled simulations.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="regionModel_allRegion.html"><span class="doc">allRegion</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="smoothing-models">
+<h2><span class="section-number">6.17. </span>Smoothing models<a class="headerlink" href="#smoothing-models" title="Permalink to this heading">¶</a></h2>
+<p>The <a class="reference internal" href="smoothingModel.html"><span class="doc">smoothingModel</span></a> keyword entry specifies the model for
+smoothing the exchange fields.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 57%" />
+<col style="width: 43%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="smoothingModel_constDiffAndTemporalSmoothing.html"><span class="doc">constDiffAndTemporalSmoothing</span></a></p></td>
+<td><p><a class="reference internal" href="smoothingModel_constDiffSmoothing.html"><span class="doc">constDiffSmoothing</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="smoothingModel_noSmoothing.html"><span class="doc">off</span></a></p></td>
+<td><p><a class="reference internal" href="smoothingModel_temporalSmoothing.html"><span class="doc">temporalSmoothing</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="thermal-conductivity-models">
+<h2><span class="section-number">6.18. </span>Thermal conductivity models<a class="headerlink" href="#thermal-conductivity-models" title="Permalink to this heading">¶</a></h2>
+<p>The <em>thermCondModel</em> keyword entry specifies the model for the thermal
+conductivity of the fluid phase in the presence of particles.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>SyamlalThermCond</p></td>
+<td><p>ZehnerSchluenderThermCond</p></td>
+</tr>
+<tr class="row-even"><td><p>off</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="void-fraction-models">
+<h2><span class="section-number">6.19. </span>Void fraction models<a class="headerlink" href="#void-fraction-models" title="Permalink to this heading">¶</a></h2>
+<p>The <a class="reference internal" href="voidFractionModel.html"><span class="doc">voidFractionModel</span></a> keyword entry specifies the model
+accounting for the volume of the particles in the CFD domain.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 54%" />
+<col style="width: 46%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="voidFractionModel_GaussVoidFraction.html"><span class="doc">Gauss</span></a></p></td>
+<td><p><a class="reference internal" href="voidFractionModel_IBVoidFraction.html"><span class="doc">IB</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="voidFractionModel_bigParticleVoidFraction.html"><span class="doc">bigParticle</span></a></p></td>
+<td><p><a class="reference internal" href="voidFractionModel_centreVoidFraction.html"><span class="doc">centre</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="voidFractionModel_dividedVoidFraction.html"><span class="doc">divided</span></a></p></td>
+<td><p>off</p></td>
+</tr>
+<tr class="row-even"><td><p>trilinear</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="CFDEMcoupling_solvers.html" class="btn btn-neutral" title="5. Solvers" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018 JKU Linz and DCS Computing GmbH.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'24.01',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

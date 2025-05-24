@@ -1,0 +1,307 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>gran tangential history/lubricated &mdash; LIGGGHTS Academic 24.01
+ documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="LIGGGHTS Academic 24.01
+ documentation" href="index.html"/>
+        <link rel="up" title="Granular Models" href="granular.html"/>
+        <link rel="next" title="gran tangential incremental_history" href="gran_tangential_incremental_history.html"/>
+        <link rel="prev" title="gran tangential history" href="gran_tangential_history.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="Manual.html" class="icon icon-home"> LIGGGHTS Academic
+        
+
+        
+        </a>
+
+        
+          
+          
+            <div class="version">
+              24.01
+
+            </div>
+          
+        
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Section_intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_start.html">2. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_commands.html">3. Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_gran_models.html">4. Contact models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_packages.html">5. Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_accelerate.html">6. Accelerating LAMMPS performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_howto.html">7. How-to discussions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="superquadric_simulations.html">8. How-to for superquadric particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_example.html">9. Example problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_perf.html">10. Performance &amp; scalability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_tools.html">11. Additional tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_modify.html">12. Modifying &amp; extending LAMMPS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_python.html">13. Python interface to LAMMPS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_errors.html">14. Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_history.html">15. Future and history</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Index</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands.html">Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="computes.html">Computes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fixes.html">Fixes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pairs.html">Pair Styles</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="granular.html">Granular Models</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gran_surface_default.html">gran surface default model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gran_surface_superquadric.html">gran surface superquadric model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gran_cohesion_sjkr.html">gran cohesion sjkr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gran_cohesion_sjkr2.html">gran cohesion sjkr2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gran_model_hertz.html">gran model hertz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gran_model_hertz_stiffness.html">gran model hertz/stiffness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gran_model_hertz_lubricated.html">gran model hertz/lubricated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gran_model_hooke.html">gran model hooke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gran_model_hooke_stiffness.html">gran model hooke/stiffness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gran_rolling_friction_cdt.html">gran rolling_friction cdt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gran_rolling_friction_epsd.html">gran rolling_friction epsd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gran_rolling_friction_epsd2.html">gran rolling_friction epsd2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gran_tangential_history.html">gran tangential history</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">gran tangential history/lubricated</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#syntax">Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#related-commands">Related commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gran_tangential_incremental_history.html">gran tangential incremental_history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gran_tangential_no_history.html">gran tangential no_history</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bonds.html">Bond Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angles.html">Angle Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dihedrals.html">Dihedral Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="impropers.html">Improper Styles</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="Manual.html">LIGGGHTS Academic</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="Manual.html">Docs</a> &raquo;</li>
+      
+          <li><a href="granular.html">Granular Models</a> &raquo;</li>
+      
+    <li>gran tangential history/lubricated</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="http://lammps.sandia.gov">Website</a>
+            <a href="Section_commands.html#comm">Commands</a>
+        
+      </li>
+  </ul>
+  <hr/>
+  
+    <div class="rst-footer-buttons" style="margin-bottom: 1em" role="navigation" aria-label="footer navigation">
+      
+        <a href="gran_tangential_incremental_history.html" class="btn btn-neutral float-right" title="gran tangential incremental_history" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="gran_tangential_history.html" class="btn btn-neutral" title="gran tangential history" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="gran-tangential-history-lubricated">
+<h1>gran tangential history/lubricated<a class="headerlink" href="#gran-tangential-history-lubricated" title="Permalink to this heading">¶</a></h1>
+<section id="syntax">
+<h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tangential</span> <span class="n">history</span><span class="o">/</span><span class="n">lubricated</span>
+</pre></div>
+</div>
+<p><strong>LIGGGHTS vs. LAMMPS Info:</strong></p>
+<p>This part of <a class="reference internal" href="pair_gran.html"><span class="doc">pair gran</span></a> and
+<a class="reference internal" href="fix_wall_gran.html"><span class="doc">fix wall/gran</span></a>
+is not available in LAMMPS.</p>
+</section>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+<p>In this granular model, the tangential contact force is calculated in the same manner
+as in <a class="reference internal" href="gran_tangential_history.html"><span class="doc">tangential history</span></a>. This model is to be used in
+conjunction with the normal model <a class="reference internal" href="gran_model_hertz_lubricated.html"><span class="doc">hertz/lubricated</span></a>,
+and will throw errors without it.</p>
+<p>The coefficient of friction is selected from the dry or the lubricated value, depending
+on the minimum approach distance between particle surfaces.</p>
+<img alt="_images/gran_tangential_history_lubricated_1.png" class="align-center" src="_images/gran_tangential_history_lubricated_1.png" />
+<p>To define the material properties, it is mandatory to use multiple <a class="reference internal" href="fix_property.html"><span class="doc">fix property/global</span></a> commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fix</span> <span class="nb">id</span> <span class="nb">all</span> <span class="nb">property</span><span class="o">/</span><span class="k">global</span> <span class="n">coefficientFriction</span> <span class="n">peratomtypepair</span> <span class="n">n_atomtypes</span> <span class="n">value_11</span> <span class="n">value_12</span> <span class="o">..</span> <span class="n">value_21</span> <span class="n">value_22</span> <span class="o">..</span> <span class="o">.</span>
+    <span class="p">(</span><span class="n">value_ij</span><span class="o">=</span><span class="n">value</span> <span class="k">for</span> <span class="n">the</span> <span class="p">(</span><span class="n">static</span><span class="p">)</span> <span class="n">dry</span> <span class="n">coefficient</span> <span class="n">of</span> <span class="n">friction</span> <span class="n">between</span> <span class="n">atom</span> <span class="nb">type</span> <span class="n">i</span> <span class="ow">and</span> <span class="n">j</span><span class="p">;</span> <span class="n">n_atomtypes</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">atom</span> <span class="n">types</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">use</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">simulation</span><span class="p">)</span>
+<span class="n">fix</span> <span class="nb">id</span> <span class="nb">all</span> <span class="nb">property</span><span class="o">/</span><span class="k">global</span> <span class="n">coefficientFrictionLubricated</span> <span class="n">peratomtypepair</span> <span class="n">n_atomtypes</span> <span class="n">value_11</span> <span class="n">value_12</span> <span class="o">..</span> <span class="n">value_21</span> <span class="n">value_22</span> <span class="o">..</span> <span class="o">.</span>
+    <span class="p">(</span><span class="n">value_ij</span><span class="o">=</span><span class="n">value</span> <span class="k">for</span> <span class="n">the</span> <span class="p">(</span><span class="n">static</span><span class="p">)</span> <span class="n">lubricated</span> <span class="n">coefficient</span> <span class="n">of</span> <span class="n">friction</span> <span class="n">between</span> <span class="n">atom</span> <span class="nb">type</span> <span class="n">i</span> <span class="ow">and</span> <span class="n">j</span><span class="p">;</span> <span class="n">n_atomtypes</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">atom</span> <span class="n">types</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">use</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">simulation</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="related-commands">
+<h2>Related commands<a class="headerlink" href="#related-commands" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference internal" href="gran_model_hertz_lubricated.html"><span class="doc">model hertz/lubricated</span></a></p>
+<p><strong>(Nijssen)</strong> T.M.J. Nijssen, M. Ottens, J.T. Padding, Powder Technology (2022).</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="gran_tangential_incremental_history.html" class="btn btn-neutral float-right" title="gran tangential incremental_history" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="gran_tangential_history.html" class="btn btn-neutral" title="gran tangential history" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018 JKU Linz, DCS Computing GmbH and Sandia Corporation.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'24.01',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,348 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>8. How-to for superquadric particles &mdash; LIGGGHTS Academic 24.01
+ documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="LIGGGHTS Academic 24.01
+ documentation" href="index.html"/>
+        <link rel="next" title="9. Example problems" href="Section_example.html"/>
+        <link rel="prev" title="7. How-to discussions" href="Section_howto.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="Manual.html" class="icon icon-home"> LIGGGHTS Academic
+        
+
+        
+        </a>
+
+        
+          
+          
+            <div class="version">
+              24.01
+
+            </div>
+          
+        
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Section_intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_start.html">2. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_commands.html">3. Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_gran_models.html">4. Contact models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_packages.html">5. Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_accelerate.html">6. Accelerating LAMMPS performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_howto.html">7. How-to discussions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8. How-to for superquadric particles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">8.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compilation">8.2. Compilation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-make">8.2.1. Using make</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-cmake">8.2.2. Using CMake</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#compile-the-paraview-plug-in">8.3. Compile the ParaView plug-in</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#detailed-description">8.4. Detailed description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#performance">8.5. Performance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Section_example.html">9. Example problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_perf.html">10. Performance &amp; scalability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_tools.html">11. Additional tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_modify.html">12. Modifying &amp; extending LAMMPS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_python.html">13. Python interface to LAMMPS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_errors.html">14. Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_history.html">15. Future and history</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Index</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands.html">Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="computes.html">Computes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fixes.html">Fixes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pairs.html">Pair Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="granular.html">Granular Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bonds.html">Bond Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angles.html">Angle Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dihedrals.html">Dihedral Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="impropers.html">Improper Styles</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="Manual.html">LIGGGHTS Academic</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="Manual.html">Docs</a> &raquo;</li>
+      
+    <li><span class="section-number">8. </span>How-to for superquadric particles</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="http://lammps.sandia.gov">Website</a>
+            <a href="Section_commands.html#comm">Commands</a>
+        
+      </li>
+  </ul>
+  <hr/>
+  
+    <div class="rst-footer-buttons" style="margin-bottom: 1em" role="navigation" aria-label="footer navigation">
+      
+        <a href="Section_example.html" class="btn btn-neutral float-right" title="9. Example problems" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Section_howto.html" class="btn btn-neutral" title="7. How-to discussions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="how-to-for-superquadric-particles">
+<h1><span class="section-number">8. </span>How-to for superquadric particles<a class="headerlink" href="#how-to-for-superquadric-particles" title="Permalink to this heading">¶</a></h1>
+<section id="introduction">
+<h2><span class="section-number">8.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+<p>Superquadric simulations allow LIGGGHTS(R) to use superquadric bodies as particles.
+This text describes how to perform superquadric simulations in LIGGGHTS(R).</p>
+</section>
+<section id="compilation">
+<h2><span class="section-number">8.2. </span>Compilation<a class="headerlink" href="#compilation" title="Permalink to this heading">¶</a></h2>
+<p>To compile LIGGGHTS(R) with this feature the <a class="reference external" href="http://www.boost.org/">boost</a> library must be
+available on the system.
+On most Linux-distributions a recent version can be installed via the package
+managment systems.</p>
+<p>The way how to enable the superquadric feature depends on the build-system.</p>
+<section id="using-make">
+<h3><span class="section-number">8.2.1. </span>Using make<a class="headerlink" href="#using-make" title="Permalink to this heading">¶</a></h3>
+<p>Before starting the compilation, you have to enable the superquadric model in
+your Makefile. You have to add the following settings to your Makefile:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LMP_INC</span> <span class="o">+=</span> <span class="o">-</span><span class="n">DSUPERQUADRIC_ACTIVE_FLAG</span> <span class="o">-</span><span class="n">DNONSPHERICAL_ACTIVE_FLAG</span>
+</pre></div>
+</div>
+<p>In case of a non-system-wide boost installation add:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">EXTRA_INC</span> <span class="o">+=</span> <span class="o">-</span><span class="n">IPath</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">your</span><span class="o">/</span><span class="n">Boost</span><span class="o">/</span><span class="n">include</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure that you add the definitions after the original assignments of
+LMP_INC and EXTRA_INC. Otherwise your changes will be overwritten.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Most Boost libraries are header-only: they consist entirely of header
+files containing templates and inline functions, and require no
+separately-compiled library binaries or special treatment when linking. (<a class="reference external" href="http://www.boost.org/">link</a>)</p>
+</div>
+</section>
+<section id="using-cmake">
+<h3><span class="section-number">8.2.2. </span>Using CMake<a class="headerlink" href="#using-cmake" title="Permalink to this heading">¶</a></h3>
+<p>To enable the superquadric feature using the CMake build system, we provide
+CMake a command-line parameter.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">../</span><span class="n">src</span> <span class="o">-</span><span class="n">DUSE_SUPERQUADRIC</span><span class="o">=</span><span class="n">on</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="compile-the-paraview-plug-in">
+<h2><span class="section-number">8.3. </span>Compile the ParaView plug-in<a class="headerlink" href="#compile-the-paraview-plug-in" title="Permalink to this heading">¶</a></h2>
+<p>The superquadric feature of LIGGGHTS comes with its own dedicated ParaView
+plug-in to properly visualize superquadric particles.</p>
+<p>The compilation of the plug-in is done with the following steps. Adjust the
+paths according to your local installation.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">CFDEM</span><span class="o">/</span><span class="n">LIGGGHTS</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">paraview</span><span class="o">/</span><span class="n">SuperquadricGlyph</span>
+<span class="n">mkdir</span> <span class="n">build</span>
+<span class="n">cd</span> <span class="n">build</span>
+<span class="n">cmake</span> <span class="o">..</span> <span class="o">-</span><span class="n">DParaView_DIR</span><span class="p">:</span><span class="n">PATH</span><span class="o">=/</span><span class="n">absolute</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">paraview</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="nb">dir</span>
+<span class="n">make</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The path to ParaView is the build directory, and not the source directory.
+If a CFDEM environment has been sourced, then CMake should be able to
+automatically find the proper path to ParaView.</p>
+</div>
+<p>If compilation finishes without any errors, then the build directory will
+contain a library named libSuperquadricGlyphFilter.so.</p>
+<p>To visualize superquadrics in ParaView, open the converted dump files of a
+superquadric case, click in the menu “Tools –&gt; Manage Plugins…”, click on the
+“Load New …” button and select the libSuperquadricGlyphFilter.so file.</p>
+</section>
+<section id="detailed-description">
+<h2><span class="section-number">8.4. </span>Detailed description<a class="headerlink" href="#detailed-description" title="Permalink to this heading">¶</a></h2>
+<p>The overall simulation structure stays the same for superquadric simulations as
+used for standard LIGGGHTS(R) simulations. In order to create a superquadric
+simulation based on an existing case you have to perform following steps:</p>
+<ul class="simple">
+<li><p>Use <a class="reference internal" href="atom_style.html"><span class="doc">atom_style superquadric</span></a></p></li>
+<li><p>For contact models (pair_style gran as well as fix wall/gran) use <a class="reference internal" href="gran_surface_superquadric.html"><span class="doc">surface superquadric</span></a></p></li>
+<li><p>The superquadric model requires a special integrator, namly <a class="reference internal" href="fix_nve_superquadric.html"><span class="doc">fix nve/superquadric</span></a></p></li>
+<li><p>To define new superquadric particles use the <a class="reference internal" href="fix_particletemplate_superquadric.html"><span class="doc">fix particletemplate/superquadric</span></a></p></li>
+</ul>
+</section>
+<section id="performance">
+<h2><span class="section-number">8.5. </span>Performance<a class="headerlink" href="#performance" title="Permalink to this heading">¶</a></h2>
+<p>The superquadric model uses the framework of LIGGGHTS(R). Therefore, the parallel
+scalability is linear as LIGGGHTS(R) itself. Compared to standard LIGGGHTS(R),
+the calculation of contact points is computational expensive for superquadric
+bodies.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Section_example.html" class="btn btn-neutral float-right" title="9. Example problems" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Section_howto.html" class="btn btn-neutral" title="7. How-to discussions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018 JKU Linz, DCS Computing GmbH and Sandia Corporation.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'24.01',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

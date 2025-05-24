@@ -1,0 +1,831 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pair_style kim command &mdash; LIGGGHTS Academic 24.01
+ documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="LIGGGHTS Academic 24.01
+ documentation" href="index.html"/>
+        <link rel="up" title="Pair Styles" href="pairs.html"/>
+        <link rel="next" title="pair_style lcbop command" href="pair_lcbop.html"/>
+        <link rel="prev" title="pair_style hybrid command" href="pair_hybrid.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="Manual.html" class="icon icon-home"> LIGGGHTS Academic
+        
+
+        
+        </a>
+
+        
+          
+          
+            <div class="version">
+              24.01
+
+            </div>
+          
+        
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Section_intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_start.html">2. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_commands.html">3. Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_gran_models.html">4. Contact models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_packages.html">5. Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_accelerate.html">6. Accelerating LAMMPS performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_howto.html">7. How-to discussions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="superquadric_simulations.html">8. How-to for superquadric particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_example.html">9. Example problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_perf.html">10. Performance &amp; scalability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_tools.html">11. Additional tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_modify.html">12. Modifying &amp; extending LAMMPS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_python.html">13. Python interface to LAMMPS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_errors.html">14. Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_history.html">15. Future and history</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Index</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands.html">Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="computes.html">Computes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fixes.html">Fixes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="pairs.html">Pair Styles</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pair_adp.html">pair_style adp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_adp.html#pair-style-adp-omp-command">pair_style adp/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_airebo.html">pair_style airebo command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_airebo.html#pair-style-airebo-omp-command">pair_style airebo/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_airebo.html#pair-style-rebo-command">pair_style rebo command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_airebo.html#pair-style-rebo-omp-command">pair_style rebo/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_awpmd.html">pair_style awpmd/cut command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_beck.html">pair_style beck command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_beck.html#pair-style-beck-gpu-command">pair_style beck/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_beck.html#pair-style-beck-omp-command">pair_style beck/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_body.html">pair_style body command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_bop.html">pair_style bop command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_born.html">pair_style born command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_born.html#pair-style-born-omp-command">pair_style born/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_born.html#pair-style-born-gpu-command">pair_style born/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_born.html#pair-style-born-coul-long-command">pair_style born/coul/long command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_born.html#pair-style-born-coul-long-cuda-command">pair_style born/coul/long/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_born.html#pair-style-born-coul-long-gpu-command">pair_style born/coul/long/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_born.html#pair-style-born-coul-long-omp-command">pair_style born/coul/long/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_born.html#pair-style-born-coul-msm-command">pair_style born/coul/msm command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_born.html#pair-style-born-coul-msm-omp-command">pair_style born/coul/msm/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_born.html#pair-style-born-coul-wolf-command">pair_style born/coul/wolf command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_born.html#pair-style-born-coul-wolf-gpu-command">pair_style born/coul/wolf/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_born.html#pair-style-born-coul-wolf-omp-command">pair_style born/coul/wolf/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_brownian.html">pair_style brownian command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_brownian.html#pair-style-brownian-omp-command">pair_style brownian/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_brownian.html#pair-style-brownian-poly-command">pair_style brownian/poly command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_brownian.html#pair-style-brownian-poly-omp-command">pair_style brownian/poly/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_buck.html">pair_style buck command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_buck.html#pair-style-buck-cuda-command">pair_style buck/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_buck.html#pair-style-buck-gpu-command">pair_style buck/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_buck.html#pair-style-buck-omp-command">pair_style buck/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_buck.html#pair-style-buck-coul-cut-command">pair_style buck/coul/cut command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_buck.html#pair-style-buck-coul-cut-cuda-command">pair_style buck/coul/cut/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_buck.html#pair-style-buck-coul-cut-gpu-command">pair_style buck/coul/cut/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_buck.html#pair-style-buck-coul-cut-omp-command">pair_style buck/coul/cut/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_buck.html#pair-style-buck-coul-long-command">pair_style buck/coul/long command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_buck.html#pair-style-buck-coul-long-cuda-command">pair_style buck/coul/long/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_buck.html#pair-style-buck-coul-long-gpu-command">pair_style buck/coul/long/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_buck.html#pair-style-buck-coul-long-omp-command">pair_style buck/coul/long/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_buck.html#pair-style-buck-coul-msm-command">pair_style buck/coul/msm command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_buck.html#pair-style-buck-coul-msm-omp-command">pair_style buck/coul/msm/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_buck_long.html">pair_style buck/long/coul/long command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_buck_long.html#pair-style-buck-long-coul-long-omp-command">pair_style buck/long/coul/long/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_charmm.html">pair_style lj/charmm/coul/charmm command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_charmm.html#pair-style-lj-charmm-coul-charmm-cuda-command">pair_style lj/charmm/coul/charmm/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_charmm.html#pair-style-lj-charmm-coul-charmm-omp-command">pair_style lj/charmm/coul/charmm/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_charmm.html#pair-style-lj-charmm-coul-charmm-implicit-command">pair_style lj/charmm/coul/charmm/implicit command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_charmm.html#pair-style-lj-charmm-coul-charmm-implicit-cuda-command">pair_style lj/charmm/coul/charmm/implicit/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_charmm.html#pair-style-lj-charmm-coul-charmm-implicit-omp-command">pair_style lj/charmm/coul/charmm/implicit/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_charmm.html#pair-style-lj-charmm-coul-long-command">pair_style lj/charmm/coul/long command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_charmm.html#pair-style-lj-charmm-coul-long-cuda-command">pair_style lj/charmm/coul/long/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_charmm.html#pair-style-lj-charmm-coul-long-gpu-command">pair_style lj/charmm/coul/long/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_charmm.html#pair-style-lj-charmm-coul-long-opt-command">pair_style lj/charmm/coul/long/opt command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_charmm.html#pair-style-lj-charmm-coul-long-omp-command">pair_style lj/charmm/coul/long/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_charmm.html#pair-style-lj-charmm-coul-msm-command">pair_style lj/charmm/coul/msm command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_charmm.html#pair-style-lj-charmm-coul-msm-omp-command">pair_style lj/charmm/coul/msm/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_class2.html">pair_style lj/class2 command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_class2.html#pair-style-lj-class2-cuda-command">pair_style lj/class2/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_class2.html#pair-style-lj-class2-gpu-command">pair_style lj/class2/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_class2.html#pair-style-lj-class2-omp-command">pair_style lj/class2/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_class2.html#pair-style-lj-class2-coul-cut-command">pair_style lj/class2/coul/cut command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_class2.html#pair-style-lj-class2-coul-cut-cuda-command">pair_style lj/class2/coul/cut/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_class2.html#pair-style-lj-class2-coul-cut-omp-command">pair_style lj/class2/coul/cut/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_class2.html#pair-style-lj-class2-coul-long-command">pair_style lj/class2/coul/long command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_class2.html#pair-style-lj-class2-coul-long-cuda-command">pair_style lj/class2/coul/long/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_class2.html#pair-style-lj-class2-coul-long-gpu-command">pair_style lj/class2/coul/long/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_class2.html#pair-style-lj-class2-coul-long-omp-command">pair_style lj/class2/coul/long/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_colloid.html">pair_style colloid command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_colloid.html#pair-style-colloid-gpu-command">pair_style colloid/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_colloid.html#pair-style-colloid-omp-command">pair_style colloid/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_comb.html">pair_style comb command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_comb.html#pair-style-comb-omp-command">pair_style comb/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_comb.html#pair-style-comb3-command">pair_style comb3 command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_coul.html">pair_style coul/cut command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_coul.html#pair-style-coul-cut-omp-command">pair_style coul/cut/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_coul.html#pair-style-coul-debye-command">pair_style coul/debye command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_coul.html#pair-style-coul-debye-omp-command">pair_style coul/debye/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_coul.html#pair-style-coul-dsf-command">pair_style coul/dsf command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_coul.html#pair-style-coul-dsf-gpu-command">pair_style coul/dsf/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_coul.html#pair-style-coul-dsf-omp-command">pair_style coul/dsf/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_coul.html#pair-style-coul-long-command">pair_style coul/long command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_coul.html#pair-style-coul-long-omp-command">pair_style coul/long/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_coul.html#pair-style-coul-long-gpu-command">pair_style coul/long/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_coul.html#pair-style-coul-msm-command">pair_style coul/msm command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_coul.html#pair-style-coul-msm-omp-command">pair_style coul/msm/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_coul.html#pair-style-coul-wolf-command">pair_style coul/wolf command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_coul.html#pair-style-coul-wolf-omp-command">pair_style coul/wolf/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_coul.html#pair-style-tip4p-cut-command">pair_style tip4p/cut command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_coul.html#pair-style-tip4p-long-command">pair_style tip4p/long command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_coul.html#pair-style-tip4p-cut-omp-command">pair_style tip4p/cut/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_coul.html#pair-style-tip4p-long-omp-command">pair_style tip4p/long/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_coul_diel.html">pair_style coul/diel command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_dipole.html">pair_style lj/cut/dipole/cut command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_dipole.html#pair-style-lj-cut-dipole-cut-gpu-command">pair_style lj/cut/dipole/cut/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_dipole.html#pair-style-lj-cut-dipole-cut-omp-command">pair_style lj/cut/dipole/cut/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_dipole.html#pair-style-lj-sf-dipole-sf-command">pair_style lj/sf/dipole/sf command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_dipole.html#pair-style-lj-sf-dipole-sf-gpu-command">pair_style lj/sf/dipole/sf/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_dipole.html#pair-style-lj-sf-dipole-sf-omp-command">pair_style lj/sf/dipole/sf/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_dipole.html#pair-style-lj-cut-dipole-long-command">pair_style lj/cut/dipole/long command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_dipole.html#pair-style-lj-long-dipole-long-command">pair_style lj/long/dipole/long command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_dpd.html">pair_style dpd command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_dpd.html#pair-style-dpd-omp-command">pair_style dpd/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_dpd.html#pair-style-dpd-tstat-command">pair_style dpd/tstat command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_dpd.html#pair-style-dpd-tstat-omp-command">pair_style dpd/tstat/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_dsmc.html">pair_style dsmc command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_eam.html">pair_style eam command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_eam.html#pair-style-eam-cuda-command">pair_style eam/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_eam.html#pair-style-eam-gpu-command">pair_style eam/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_eam.html#pair-style-eam-omp-command">pair_style eam/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_eam.html#pair-style-eam-opt-command">pair_style eam/opt command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_eam.html#pair-style-eam-alloy-command">pair_style eam/alloy command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_eam.html#pair-style-eam-alloy-cuda-command">pair_style eam/alloy/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_eam.html#pair-style-eam-alloy-gpu-command">pair_style eam/alloy/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_eam.html#pair-style-eam-alloy-omp-command">pair_style eam/alloy/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_eam.html#pair-style-eam-alloy-opt-command">pair_style eam/alloy/opt command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_eam.html#pair-style-eam-cd-command">pair_style eam/cd command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_eam.html#pair-style-eam-cd-omp-command">pair_style eam/cd/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_eam.html#pair-style-eam-fs-command">pair_style eam/fs command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_eam.html#pair-style-eam-fs-cuda-command">pair_style eam/fs/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_eam.html#pair-style-eam-fs-gpu-command">pair_style eam/fs/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_eam.html#pair-style-eam-fs-omp-command">pair_style eam/fs/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_eam.html#pair-style-eam-fs-opt-command">pair_style eam/fs/opt command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_edip.html">pair_style edip command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_eff.html">pair_style eff/cut command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_eim.html">pair_style eim command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_eim.html#pair-style-eim-omp-command">pair_style eim/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_gauss.html">pair_style gauss command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_gauss.html#pair-style-gauss-gpu-command">pair_style gauss/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_gauss.html#pair-style-gauss-omp-command">pair_style gauss/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_gauss.html#pair-style-gauss-cut-command">pair_style gauss/cut command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_gauss.html#pair-style-gauss-cut-omp-command">pair_style gauss/cut/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_gayberne.html">pair_style gayberne command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_gayberne.html#pair-style-gayberne-gpu-command">pair_style gayberne/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_gayberne.html#pair-style-gayberne-omp-command">pair_style gayberne/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_gran.html">pair_style gran command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_gromacs.html">pair_style lj/gromacs command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_gromacs.html#pair-style-lj-gromacs-cuda-command">pair_style lj/gromacs/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_gromacs.html#pair-style-lj-gromacs-omp-command">pair_style lj/gromacs/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_gromacs.html#pair-style-lj-gromacs-coul-gromacs-command">pair_style lj/gromacs/coul/gromacs command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_gromacs.html#pair-style-lj-gromacs-coul-gromacs-cuda-command">pair_style lj/gromacs/coul/gromacs/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_gromacs.html#pair-style-lj-gromacs-coul-gromacs-omp-command">pair_style lj/gromacs/coul/gromacs/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_hbond_dreiding.html">pair_style hbond/dreiding/lj command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_hbond_dreiding.html#pair-style-hbond-dreiding-lj-omp-command">pair_style hbond/dreiding/lj/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_hbond_dreiding.html#pair-style-hbond-dreiding-morse-command">pair_style hbond/dreiding/morse command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_hbond_dreiding.html#pair-style-hbond-dreiding-morse-omp-command">pair_style hbond/dreiding/morse/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_hybrid.html">pair_style hybrid command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_hybrid.html#pair-style-hybrid-omp-command">pair_style hybrid/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_hybrid.html#pair-style-hybrid-overlay-command">pair_style hybrid/overlay command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_hybrid.html#pair-style-hybrid-overlay-omp-command">pair_style hybrid/overlay/omp command</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pair_style kim command</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#syntax">Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#restrictions">Restrictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#related-commands">Related commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lcbop.html">pair_style lcbop command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_line_lj.html">pair_style line/lj command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_line_lj.html#pair-style-line-lj-omp-command">pair_style line/lj/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_list.html">pair_style list command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html">pair_style lj/cut command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-cuda-command">pair_style lj/cut/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-experimental-cuda-command">pair_style lj/cut/experimental/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-gpu-command">pair_style lj/cut/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-opt-command">pair_style lj/cut/opt command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-omp-command">pair_style lj/cut/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-coul-cut-command">pair_style lj/cut/coul/cut command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-coul-cut-cuda-command">pair_style lj/cut/coul/cut/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-coul-cut-gpu-command">pair_style lj/cut/coul/cut/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-coul-cut-omp-command">pair_style lj/cut/coul/cut/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-coul-debye-command">pair_style lj/cut/coul/debye command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-coul-debye-cuda-command">pair_style lj/cut/coul/debye/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-coul-debye-gpu-command">pair_style lj/cut/coul/debye/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-coul-debye-omp-command">pair_style lj/cut/coul/debye/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-coul-dsf-command">pair_style lj/cut/coul/dsf command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-coul-dsf-gpu-command">pair_style lj/cut/coul/dsf/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-coul-dsf-omp-command">pair_style lj/cut/coul/dsf/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-coul-long-command">pair_style lj/cut/coul/long command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-coul-long-cuda-command">pair_style lj/cut/coul/long/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-coul-long-gpu-command">pair_style lj/cut/coul/long/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-coul-long-opt-command">pair_style lj/cut/coul/long/opt command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-coul-long-omp-command">pair_style lj/cut/coul/long/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-coul-msm-command">pair_style lj/cut/coul/msm command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-coul-msm-gpu-command">pair_style lj/cut/coul/msm/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-coul-msm-omp-command">pair_style lj/cut/coul/msm/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-tip4p-cut-command">pair_style lj/cut/tip4p/cut command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-tip4p-cut-omp-command">pair_style lj/cut/tip4p/cut/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-tip4p-long-command">pair_style lj/cut/tip4p/long command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-tip4p-long-omp-command">pair_style lj/cut/tip4p/long/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj.html#pair-style-lj-cut-tip4p-long-opt-command">pair_style lj/cut/tip4p/long/opt command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj96.html">pair_style lj96/cut command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj96.html#pair-style-lj96-cut-cuda-command">pair_style lj96/cut/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj96.html#pair-style-lj96-cut-gpu-command">pair_style lj96/cut/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj96.html#pair-style-lj96-cut-omp-command">pair_style lj96/cut/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj_cubic.html">pair_style lj/cubic command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj_cubic.html#pair-style-lj-cubic-omp-command">pair_style lj/cubic/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj_expand.html">pair_style lj/expand command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj_expand.html#pair-style-lj-expand-cuda-command">pair_style lj/expand/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj_expand.html#pair-style-lj-expand-gpu-command">pair_style lj/expand/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj_expand.html#pair-style-lj-expand-omp-command">pair_style lj/expand/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj_long.html">pair_style lj/long/coul/long command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj_long.html#pair-style-lj-long-coul-long-omp-command">pair_style lj/long/coul/long/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj_long.html#pair-style-lj-long-coul-long-opt-command">pair_style lj/long/coul/long/opt command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj_long.html#pair-style-lj-long-tip4p-long-command">pair_style lj/long/tip4p/long command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj_sf.html">pair_style lj/sf command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj_sf.html#pair-style-lj-sf-omp-command">pair_style lj/sf/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj_smooth.html">pair_style lj/smooth command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj_smooth.html#pair-style-lj-smooth-cuda-command">pair_style lj/smooth/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj_smooth.html#pair-style-lj-smooth-omp-command">pair_style lj/smooth/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj_smooth_linear.html">pair_style lj/smooth/linear command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lj_smooth_linear.html#pair-style-lj-smooth-linear-omp-command">pair_style lj/smooth/linear/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lubricate.html">pair_style lubricate command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lubricate.html#pair-style-lubricate-omp-command">pair_style lubricate/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lubricate.html#pair-style-lubricate-poly-command">pair_style lubricate/poly command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lubricate.html#pair-style-lubricate-poly-omp-command">pair_style lubricate/poly/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lubricateU.html">pair_style lubricateU command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_lubricateU.html#pair-style-lubricateu-poly-command">pair_style lubricateU/poly command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_meam.html">pair_style meam command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_meam_spline.html">pair_style meam/spline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_meam_spline.html#pair-style-meam-spline-omp">pair_style meam/spline/omp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_meam_sw_spline.html">pair_style meam/sw/spline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_meam_sw_spline.html#pair-style-meam-sw-spline-omp">pair_style meam/sw/spline/omp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_mie.html">pair_style mie/cut command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_mie.html#pair-style-mie-cut-gpu-command">pair_style mie/cut/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_morse.html">pair_style morse command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_morse.html#pair-style-morse-cuda-command">pair_style morse/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_morse.html#pair-style-morse-gpu-command">pair_style morse/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_morse.html#pair-style-morse-omp-command">pair_style morse/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_morse.html#pair-style-morse-opt-command">pair_style morse/opt command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_nb3b_harmonic.html">pair_style nb3b/harmonic command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_nb3b_harmonic.html#pair-style-nb3b-harmonic-omp-command">pair_style nb3b/harmonic/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_nm.html">pair_style nm/cut command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_nm.html#pair-style-nm-cut-coul-cut-command">pair_style nm/cut/coul/cut command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_nm.html#pair-style-nm-cut-coul-long-command">pair_style nm/cut/coul/long command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_nm.html#pair-style-nm-cut-omp-command">pair_style nm/cut/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_nm.html#pair-style-nm-cut-coul-cut-omp-command">pair_style nm/cut/coul/cut/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_nm.html#pair-style-nm-cut-coul-long-omp-command">pair_style nm/cut/coul/long/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_none.html">pair_style none command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_peri.html">pair_style peri/pmb command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_peri.html#pair-style-peri-pmb-omp-command">pair_style peri/pmb/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_peri.html#pair-style-peri-lps-command">pair_style peri/lps command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_peri.html#pair-style-peri-lps-omp-command">pair_style peri/lps/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_peri.html#pair-style-peri-ves-command">pair_style peri/ves command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_reax.html">pair_style reax command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_reax_c.html">pair_style reax/c command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_resquared.html">pair_style resquared command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_resquared.html#pair-style-resquared-gpu-command">pair_style resquared/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_resquared.html#pair-style-resquared-omp-command">pair_style resquared/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_sdk.html">pair_style lj/sdk command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_sdk.html#pair-style-lj-sdk-gpu-command">pair_style lj/sdk/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_sdk.html#pair-style-lj-sdk-omp-command">pair_style lj/sdk/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_sdk.html#pair-style-lj-sdk-coul-long-command">pair_style lj/sdk/coul/long command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_sdk.html#pair-style-lj-sdk-coul-long-gpu-command">pair_style lj/sdk/coul/long/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_sdk.html#pair-style-lj-sdk-coul-long-omp-command">pair_style lj/sdk/coul/long/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_soft.html">pair_style soft command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_soft.html#pair-style-soft-gpu-command">pair_style soft/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_soft.html#pair-style-soft-omp-command">pair_style soft/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_sph.html">pair_style sph command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_sph_artvisc_tenscorr.html">pair_style sph/artVisc/tensCorr command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_sph_heatconduction.html">pair_style sph/heatconduction command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_sph_idealgas.html">pair_style sph/idealgas command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_sph_lj.html">pair_style sph/lj command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_sph_rhosum.html">pair_style sph/rhosum command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_sph_taitwater.html">pair_style sph/taitwater command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_sph_taitwater_morris.html">pair_style sph/taitwater/morris command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_sw.html">pair_style sw command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_sw.html#pair-style-sw-cuda-command">pair_style sw/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_sw.html#pair-style-sw-gpu-command">pair_style sw/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_sw.html#pair-style-sw-omp-command">pair_style sw/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_table.html">pair_style table command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_table.html#pair-style-table-gpu-command">pair_style table/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_table.html#pair-style-table-omp-command">pair_style table/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_tersoff.html">pair_style tersoff command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_tersoff.html#pair-style-tersoff-table-command">pair_style tersoff/table command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_tersoff.html#pair-style-tersoff-cuda">pair_style tersoff/cuda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_tersoff.html#pair-style-tersoff-omp">pair_style tersoff/omp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_tersoff.html#pair-style-tersoff-table-omp-command">pair_style tersoff/table/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_tersoff_mod.html">pair_style tersoff/mod command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_tersoff_mod.html#pair-style-tersoff-mod-omp-command">pair_style tersoff/mod/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_tersoff_zbl.html">pair_style tersoff/zbl command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_tersoff_zbl.html#pair-style-tersoff-zbl-omp-command">pair_style tersoff/zbl/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_tri_lj.html">pair_style tri/lj command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_tri_lj.html#pair-style-tri-lj-omp-command">pair_style tri/lj/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_yukawa.html">pair_style yukawa command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_yukawa.html#pair-style-yukawa-gpu-command">pair_style yukawa/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_yukawa.html#pair-style-yukawa-omp-command">pair_style yukawa/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_yukawa_colloid.html">pair_style yukawa/colloid command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_yukawa_colloid.html#pair-style-yukawa-colloid-gpu-command">pair_style yukawa/colloid/gpu command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_yukawa_colloid.html#pair-style-yukawa-colloid-omp-command">pair_style yukawa/colloid/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_zbl.html">pair_style zbl command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_zbl.html#pair-style-zbl-omp-command">pair_style zbl/omp command</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="granular.html">Granular Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bonds.html">Bond Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angles.html">Angle Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dihedrals.html">Dihedral Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="impropers.html">Improper Styles</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="Manual.html">LIGGGHTS Academic</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="Manual.html">Docs</a> &raquo;</li>
+      
+          <li><a href="pairs.html">Pair Styles</a> &raquo;</li>
+      
+    <li>pair_style kim command</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="http://lammps.sandia.gov">Website</a>
+            <a href="Section_commands.html#comm">Commands</a>
+        
+      </li>
+  </ul>
+  <hr/>
+  
+    <div class="rst-footer-buttons" style="margin-bottom: 1em" role="navigation" aria-label="footer navigation">
+      
+        <a href="pair_lcbop.html" class="btn btn-neutral float-right" title="pair_style lcbop command" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pair_hybrid.html" class="btn btn-neutral" title="pair_style hybrid command" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="pair-style-kim-command">
+<span id="index-0"></span><h1>pair_style kim command<a class="headerlink" href="#pair-style-kim-command" title="Permalink to this heading">¶</a></h1>
+<section id="syntax">
+<h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pair_style</span> <span class="n">kim</span> <span class="n">virialmode</span> <span class="n">model</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>virialmode = KIMvirial or LAMMPSvirial</p></li>
+<li><p>model = name of KIM model (potential)</p></li>
+</ul>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+<pre class="literal-block">pair_style kim KIMvirial model_Ar_P_Morse
+pair_coeff * * Ar Ar</pre>
+</section>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+<p>This pair style is a wrapper on the <a class="reference external" href="http://openkim.org">Knowledge Base for Interatomic Models (KIM)</a> repository of interatomic potentials,
+so that they can be used by LAMMPS scripts.</p>
+<p>In KIM lingo, a potential is a “model” and a model contains both the
+analytic formulas that define the potential as well as the parameters
+needed to run it for one or more materials, including coefficients and
+cutoffs.</p>
+<p>The argument <em>virialmode</em> determines how the global virial is
+calculated.  If <em>KIMvirial</em> is specified, the KIM model performs the
+global virial calculation.  If <em>LAMMPSvirial</em> is specified, LAMMPS
+computes the global virial using its fdotr mechanism.</p>
+<p>The argument <em>model</em> is the name of the KIM model for a specific
+potential as KIM defines it.  In principle, LAMMPS can invoke any KIM
+model.  You should get an error or warning message from either LAMMPS
+or KIM if there is an incompatibility.</p>
+<p>Only a single pair_coeff command is used with the <em>kim</em> style which
+specifies the mapping of LAMMPS atom types to KIM elements.  This is
+done by specifying N additional arguments after the * * in the
+pair_coeff command, where N is the number of LAMMPS atom types:</p>
+<ul class="simple">
+<li><p>N element names = mapping of KIM elements to atom types</p></li>
+</ul>
+<p>As an example, imagine the KIM model supports Si and C atoms.  If your
+LAMMPS simulation has 4 atom types and you want the 1st 3 to be Si,
+and the 4th to be C, you would use the following pair_coeff command:</p>
+<pre class="literal-block">pair_coeff * * Si Si Si C</pre>
+<p>The 1st 2 arguments must be * * so as to span all LAMMPS atom types.
+The first three Si arguments map LAMMPS atom types 1,2,3 to Si as
+defined within KIM.  The final C argument maps LAMMPS atom type 4 to C
+as defined within KIM.  If a mapping value is specified as NULL, the
+mapping is not performed.  This can only be used when a <em>kim</em>
+potential is used as part of the <em>hybrid</em> pair style.  The NULL values
+are placeholders for atom types that will be used with other
+potentials.</p>
+<hr class="docutils" />
+<p>In addition to the usual LAMMPS error messages, the KIM library itself
+may generate errors, which should be printed to the screen.  In this
+case it is also useful to check the kim.log file for additional error
+information.  This file kim.log should be generated in the same
+directory where LAMMPS is running.</p>
+<hr class="docutils" />
+<p>Here is information on how to build KIM for use with LAMMPS.  There is
+a directory src/KIM/ with an important file in it: Makefile.lammps.
+When you do ‘make yes-kim’ LAMMPS will use the settings in
+src/KIM/Makefile.lammps to find KIM header files and the KIM library
+itself for linking purposes.  Thus, you should ensure Makefile.lammps
+has the correct settings for your system and your build of KIM.</p>
+<p>Consult the KIM documentation for further details on KIM specifics.</p>
+<p>OpenKIM is available for download from <a class="reference external" href="http://openkim.org">this site</a>,
+namely <a class="reference external" href="http://openkim.org">http://openkim.org</a>.  The tarball you download is
+“openkim-api-vX.X.X.tgz”, which can be unpacked via</p>
+<pre class="literal-block">tar xvfz openkim*tgz</pre>
+<p>The openkim-api-vX.X.X/DOCS directory has further documentation.  For
+more information on installing KIM and troubleshooting refer to
+openkim/INSTALL.</p>
+<p>Here is a brief summary of how to build KIM:</p>
+<ol class="arabic simple">
+<li><p>If you have previously used the openkim-api package (versions 1.1.1 or
+below), it is recommended that you remove all associated environment
+variables from your environment.  (These include, KIM_DIR, KIM_INTEL,
+KIM_SYSTEM32, KIM_DYNAMIC, KIM_API_DIR, KIM_TESTS_DIR,
+KIM_MODEL_DRIVERS_DIR, and KIM_MODELS_DIR.)  All setting are now
+specified in the Makefile.KIM_Config file.</p></li>
+<li><p>Set up the Makefile.KIM_Config file</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="n">Copy</span> <span class="n">the</span> <span class="n">file</span> <span class="n">Makefile</span><span class="o">.</span><span class="n">KIM_Config</span><span class="o">.</span><span class="n">example</span> <span class="n">to</span> <span class="n">Makefile</span><span class="o">.</span><span class="n">KIM_Config</span>
+    <span class="n">For</span> <span class="n">example</span><span class="p">,</span> <span class="k">if</span> <span class="n">you</span> <span class="n">untarred</span> <span class="n">the</span> <span class="s1">&#39;openkim-api-vX.X.X.tgz&#39;</span> <span class="n">tarball</span> <span class="ow">in</span>
+    <span class="n">your</span> <span class="n">home</span> <span class="n">directory</span><span class="p">,</span> <span class="n">you</span> <span class="n">would</span> <span class="n">do</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>% cd $HOME/openkim-api-vX.X.X
+% cp Makefile.KIM_Config.example Makefile.KIM_Config
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="s1">&#39;%&#39;</span> <span class="n">symbol</span> <span class="n">represents</span> <span class="n">the</span> <span class="n">bash</span> <span class="n">sell</span> <span class="n">prompt</span> <span class="ow">and</span> <span class="n">should</span> <span class="ow">not</span> <span class="n">be</span> <span class="n">typed</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">Above</span> <span class="s1">&#39;vX.X.X&#39;</span> <span class="n">represents</span> <span class="n">the</span> <span class="n">current</span> <span class="n">release</span> <span class="n">number</span><span class="o">.</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="n">Edit</span> <span class="n">the</span> <span class="n">file</span> <span class="n">Makefile</span><span class="o">.</span><span class="n">KIM_Config</span> <span class="ow">and</span> <span class="nb">set</span> <span class="n">the</span> <span class="n">appropriate</span> <span class="n">value</span> <span class="k">for</span> <span class="n">the</span>
+    <span class="n">KIM_DIR</span> <span class="n">variable</span><span class="o">.</span>  <span class="n">This</span> <span class="n">must</span> <span class="n">expand</span> <span class="n">to</span> <span class="n">an</span> <span class="n">absolute</span> <span class="n">path</span><span class="o">.</span>  <span class="n">Using</span> <span class="n">the</span> <span class="n">same</span>
+    <span class="n">assumptions</span> <span class="k">as</span> <span class="n">above</span><span class="p">,</span> <span class="n">this</span> <span class="n">would</span> <span class="n">be</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>KIM_DIR = $(HOME)/openkim-api-vX.X.X
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="n">If</span> <span class="n">appropriate</span><span class="p">,</span> <span class="nb">set</span> <span class="n">explicit</span> <span class="n">values</span> <span class="k">for</span> <span class="n">the</span> <span class="n">remaining</span> <span class="n">three</span>
+    <span class="n">directories</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">KIM_MODEL_DRIVERS_DIR</span> <span class="o">=</span>
+<span class="n">KIM_MODELS_DIR</span> <span class="o">=</span>
+<span class="n">KIM_TESTS_DIR</span> <span class="o">=</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">these</span> <span class="n">lines</span> <span class="n">are</span> <span class="n">commented</span> <span class="n">out</span><span class="p">,</span> <span class="n">defaults</span> <span class="n">will</span> <span class="n">be</span> <span class="n">provided</span> <span class="n">by</span> <span class="n">the</span>
+<span class="n">openkim</span><span class="o">-</span><span class="n">api</span> <span class="n">make</span> <span class="n">system</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="n">Set</span> <span class="n">the</span> <span class="n">value</span> <span class="n">of</span> <span class="n">KIM_COMPILERSUITE</span><span class="o">.</span>  <span class="n">Possible</span> <span class="n">values</span> <span class="n">are</span> <span class="s1">&#39;GCC&#39;</span> <span class="ow">and</span>
+    <span class="s1">&#39;INTEL&#39;</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">KIM_COMPILERSUITE</span> <span class="o">=</span> <span class="n">GCC</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="n">Set</span> <span class="n">the</span> <span class="n">value</span> <span class="n">of</span> <span class="n">KIM_SYSTEMLINKER</span><span class="o">.</span> <span class="n">Possible</span> <span class="n">values</span> <span class="n">are</span> <span class="s1">&#39;linux&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;freebsd&#39;</span><span class="p">,</span> <span class="ow">and</span> <span class="s1">&#39;darwin&#39;</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">KIM_SYSTEMLINKER</span> <span class="o">=</span> <span class="n">linux</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="n">Set</span> <span class="n">the</span> <span class="n">value</span> <span class="n">of</span> <span class="n">KIM_SYSTEMARCH</span><span class="o">.</span>  <span class="n">Possible</span> <span class="n">values</span> <span class="n">are</span> <span class="s1">&#39;32bit&#39;</span> <span class="ow">and</span>
+    <span class="s1">&#39;64bit&#39;</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">KIM_SYSTEMARCH</span> <span class="o">=</span> <span class="mi">64</span><span class="n">bit</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">g</span><span class="p">)</span> <span class="n">Set</span> <span class="n">the</span> <span class="n">value</span> <span class="n">of</span> <span class="n">KIM_LINK</span><span class="o">.</span>  <span class="n">Possible</span> <span class="n">values</span> <span class="n">are</span> <span class="s1">&#39;dynamic-load&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;dynamic-link&#39;</span><span class="p">,</span> <span class="ow">and</span> <span class="s1">&#39;static-link&#39;</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">KIM_LINK</span> <span class="o">=</span> <span class="n">dynamic</span><span class="o">-</span><span class="n">load</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;dynamic-load&#39;</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">preferred</span> <span class="n">option</span><span class="o">.</span> <span class="p">(</span><span class="n">Unless</span> <span class="n">performance</span> <span class="ow">or</span>
+<span class="n">other</span> <span class="n">issues</span> <span class="n">require</span> <span class="n">it</span><span class="p">,</span> <span class="n">you</span> <span class="n">should</span> <span class="n">use</span> <span class="n">dynamic</span><span class="o">-</span><span class="n">load</span><span class="o">.</span><span class="p">)</span>
+<span class="s1">&#39;dynamic-link&#39;</span> <span class="ow">is</span> <span class="n">like</span> <span class="s1">&#39;dynamic-load&#39;</span> <span class="n">but</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">use</span> <span class="n">the</span> <span class="n">dl</span><span class="o">.</span><span class="n">h</span>
+<span class="n">library</span><span class="o">.</span>  <span class="n">This</span> <span class="n">option</span> <span class="n">requires</span> <span class="n">a</span> <span class="n">more</span> <span class="n">complicated</span> <span class="n">Makefile</span>
+<span class="n">process</span><span class="p">,</span> <span class="n">but</span> <span class="n">may</span> <span class="n">improve</span> <span class="n">computation</span> <span class="n">time</span> <span class="ow">in</span> <span class="n">some</span> <span class="n">instances</span><span class="o">.</span>
+<span class="s1">&#39;static-link&#39;</span> <span class="n">only</span> <span class="n">works</span> <span class="k">with</span> <span class="n">ONE</span> <span class="n">Model</span> <span class="ow">and</span> <span class="n">AT</span> <span class="n">MOST</span> <span class="n">ONE</span> <span class="n">Model</span>
+<span class="n">Driver</span> <span class="p">(</span><span class="ow">in</span> <span class="n">order</span> <span class="n">to</span> <span class="n">avoid</span> <span class="n">the</span> <span class="n">possibility</span> <span class="n">of</span> <span class="n">symbol</span>
+<span class="n">clashes</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">h</span><span class="p">)</span> <span class="n">Set</span> <span class="n">override</span> <span class="n">values</span> <span class="k">for</span> <span class="n">other</span> <span class="n">variables</span><span class="p">,</span> <span class="k">if</span> <span class="n">necessary</span><span class="p">,</span> <span class="n">by</span>
+    <span class="n">adding</span> <span class="n">the</span> <span class="n">desired</span> <span class="n">variable</span> <span class="n">name</span> <span class="p">(</span><span class="n">after</span> <span class="n">the</span> <span class="s2">&quot;# overwrite</span>
+    <span class="n">default</span> <span class="n">variable</span> <span class="n">values</span> <span class="n">here</span><span class="s2">&quot; line) and filling in appropriate</span>
+    <span class="n">values</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># overwrite default variable values here</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># overwrite default compiler options</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CC</span> <span class="o">=</span>
+<span class="n">CXX</span> <span class="o">=</span>
+<span class="n">FC</span> <span class="o">=</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># overwrite default compiler option flag lists</span>
+<span class="n">FFLAGS</span>   <span class="o">=</span>
+<span class="n">CCFLAGS</span>  <span class="o">=</span>
+<span class="n">CXXFLAGS</span> <span class="o">=</span>
+<span class="n">LDFLAGS</span>  <span class="o">=</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># overwrite default linker options</span>
+<span class="n">LDSHAREDFLAG</span> <span class="o">=</span>
+<span class="n">LINKSONAME</span> <span class="o">=</span>
+<span class="n">LDWHOLEARCHIVESTARTFLAG</span> <span class="o">=</span>
+<span class="n">LDWHOLEARCHIVEENDFLAG</span> <span class="o">=</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># overwrite default install directories</span>
+<span class="n">package_name</span> <span class="o">=</span>
+<span class="n">prefix</span> <span class="o">=</span>
+<span class="n">libdir</span> <span class="o">=</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>In the remainder of the documentation we will use the string $KD to
+represent the location of the openkim-api source package (the value of
+the KIM_DIR variable discussed above).  If you wish to, type the below
+commands exactly as written to set the shell variable KD to the
+appropriate value:</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bash:
+% export KD=$HOME/openkim-api-vX.X.X
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>To compile the package, including the provided examples, change to the
+$KD directory and execute ‘make examples’ and then ‘make’:</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>% cd $KD
+% make examples
+% make
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">builds</span> <span class="nb">all</span> <span class="n">Model</span> <span class="n">Drivers</span><span class="p">,</span> <span class="n">Models</span><span class="p">,</span> <span class="n">Tests</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">openkim</span><span class="o">-</span><span class="n">api</span> <span class="n">service</span>
+<span class="n">routine</span> <span class="n">library</span><span class="o">.</span>  <span class="n">The</span> <span class="n">targets</span> <span class="n">defined</span> <span class="n">by</span> <span class="n">the</span> <span class="n">Makefile</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">directory</span>
+<span class="n">include</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;make&#39;</span>                <span class="o">--</span> <span class="n">compiles</span> <span class="n">the</span> <span class="n">API</span> <span class="ow">and</span> <span class="nb">all</span> <span class="n">Models</span> <span class="ow">and</span> <span class="n">Tests</span>
+<span class="s1">&#39;make all&#39;</span>            <span class="o">--</span> <span class="n">same</span> <span class="k">as</span> <span class="s1">&#39;make&#39;</span>
+<span class="s1">&#39;make clean&#39;</span>          <span class="o">--</span> <span class="n">will</span> <span class="n">remove</span> <span class="n">appropriate</span> <span class="o">.</span><span class="n">o</span><span class="p">,</span> <span class="o">.</span><span class="n">mod</span><span class="p">,</span> <span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="o">.</span><span class="n">so</span> <span class="ow">and</span>
+                         <span class="n">executable</span> <span class="n">files</span>
+<span class="s1">&#39;make install&#39;</span>        <span class="o">--</span> <span class="n">install</span> <span class="n">files</span> <span class="n">to</span> <span class="s1">&#39;/usr/local/lib&#39;</span> <span class="n">by</span> <span class="n">default</span>
+<span class="s1">&#39;make uninstall&#39;</span>      <span class="o">--</span> <span class="n">delete</span> <span class="n">files</span> <span class="n">installed</span> <span class="n">by</span> <span class="s1">&#39;make install&#39;</span>
+<span class="s1">&#39;make openkim-api&#39;</span>    <span class="o">--</span> <span class="n">compiles</span> <span class="n">only</span> <span class="n">the</span> <span class="n">API</span>
+<span class="s1">&#39;make examples&#39;</span>       <span class="o">--</span> <span class="n">copies</span> <span class="n">examples</span> <span class="n">into</span> <span class="n">the</span> <span class="n">appropriate</span>
+                         <span class="n">directories</span> <span class="p">(</span><span class="n">no</span> <span class="n">overwrite</span><span class="p">)</span>
+<span class="s1">&#39;make examples-force&#39;</span> <span class="o">--</span> <span class="n">copies</span> <span class="n">examples</span> <span class="n">into</span> <span class="n">the</span> <span class="n">appropriate</span>
+                         <span class="n">directories</span> <span class="p">(</span><span class="n">overwrite</span><span class="p">)</span>
+<span class="s1">&#39;make examples-clean&#39;</span> <span class="o">--</span> <span class="n">remove</span> <span class="nb">all</span> <span class="n">examples</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span> <span class="n">MODEL_DRIVERS</span><span class="p">,</span>
+                         <span class="n">MODELS</span><span class="p">,</span> <span class="ow">and</span> <span class="n">TESTS</span> <span class="n">directories</span><span class="o">.</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Verify that the compilation was successful by running a Test.</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">provided</span> <span class="n">example</span> <span class="n">Tests</span> <span class="n">read</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">a</span> <span class="n">Model</span> <span class="p">(</span><span class="ow">or</span> <span class="n">Models</span><span class="p">)</span>
+<span class="n">which</span> <span class="n">they</span> <span class="n">use</span> <span class="n">to</span> <span class="n">perform</span> <span class="n">their</span> <span class="n">calculations</span><span class="o">.</span>  <span class="n">For</span> <span class="n">most</span> <span class="n">Tests</span> <span class="n">the</span>
+<span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Model</span> <span class="n">can</span> <span class="n">be</span> <span class="n">piped</span> <span class="ow">in</span> <span class="n">using</span> <span class="n">an</span> <span class="s1">&#39;echo&#39;</span> <span class="n">command</span><span class="o">.</span>  <span class="n">For</span>
+<span class="n">example</span><span class="p">,</span> <span class="n">the</span> <span class="n">following</span> <span class="n">Fortran</span> <span class="mi">90</span> <span class="n">Test</span> <span class="n">reads</span> <span class="ow">in</span> <span class="n">one</span> <span class="n">Model</span><span class="p">:</span>
+</pre></div>
+</div>
+<pre class="literal-block">% cd $KD/TESTs/test_Ar_free_cluster_CLUSTER_F90
+% echo &quot;model_Ar_P_MLJ_CLUSTER_C&quot; | ./test_Ar_free_cluster_CLUSTER_F90</pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">See</span> <span class="n">the</span> <span class="n">README</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">Test</span> <span class="n">directories</span> <span class="k">for</span> <span class="n">an</span> <span class="n">explanation</span> <span class="n">of</span> <span class="n">what</span>
+ <span class="n">the</span> <span class="n">Tests</span> <span class="n">do</span><span class="o">.</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Each Test (and Model) has its own make file for compiling and linking.
+If changes are made to the code, re-compile (from the $KD
+directory).</p></li>
+</ol>
+<hr class="docutils" />
+<p><strong>Mixing, shift, table, tail correction, restart, rRESPA info</strong>:</p>
+<p>This pair style does not support the <a class="reference internal" href="pair_modify.html"><span class="doc">pair_modify</span></a>
+mix, shift, table, and tail options.</p>
+<p>This pair style does not write its information to <a class="reference internal" href="restart.html"><span class="doc">binary restart files</span></a>, since KIM stores the potential parameters.
+Thus, you need to re-specify the pair_style and pair_coeff commands in
+an input script that reads a restart file.</p>
+<p>This pair style can only be used via the <em>pair</em> keyword of the
+<a class="reference internal" href="run_style.html"><span class="doc">run_style respa</span></a> command.  It does not support the
+<em>inner</em>, <em>middle</em>, <em>outer</em> keywords.</p>
+</section>
+<hr class="docutils" />
+<section id="restrictions">
+<h2>Restrictions<a class="headerlink" href="#restrictions" title="Permalink to this heading">¶</a></h2>
+<p>This pair style is part of the KIM package.  It is only enabled if
+LAMMPS was built with that package.  See the <a class="reference internal" href="Section_start.html#start-3"><span class="std std-ref">Making LAMMPS</span></a> section for more info.</p>
+<p>This current version of pair_style kim is compatible with the
+openkim-api package version 1.2.0 and higher.</p>
+</section>
+<section id="related-commands">
+<h2>Related commands<a class="headerlink" href="#related-commands" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference internal" href="pair_coeff.html"><span class="doc">pair_coeff</span></a></p>
+<p><strong>Default:</strong> none</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pair_lcbop.html" class="btn btn-neutral float-right" title="pair_style lcbop command" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pair_hybrid.html" class="btn btn-neutral" title="pair_style hybrid command" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018 JKU Linz, DCS Computing GmbH and Sandia Corporation.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'24.01',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

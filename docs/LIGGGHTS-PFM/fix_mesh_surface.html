@@ -1,0 +1,661 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fix mesh/surface command &mdash; LIGGGHTS Academic 24.01
+ documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="LIGGGHTS Academic 24.01
+ documentation" href="index.html"/>
+        <link rel="up" title="Fixes" href="fixes.html"/>
+        <link rel="next" title="fix mesh/surface/stress command" href="fix_mesh_surface_stress.html"/>
+        <link rel="prev" title="fix meanfreetime command" href="fix_mean_free_time.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="Manual.html" class="icon icon-home"> LIGGGHTS Academic
+        
+
+        
+        </a>
+
+        
+          
+          
+            <div class="version">
+              24.01
+
+            </div>
+          
+        
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Section_intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_start.html">2. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_commands.html">3. Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_gran_models.html">4. Contact models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_packages.html">5. Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_accelerate.html">6. Accelerating LAMMPS performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_howto.html">7. How-to discussions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="superquadric_simulations.html">8. How-to for superquadric particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_example.html">9. Example problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_perf.html">10. Performance &amp; scalability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_tools.html">11. Additional tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_modify.html">12. Modifying &amp; extending LAMMPS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_python.html">13. Python interface to LAMMPS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_errors.html">14. Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_history.html">15. Future and history</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Index</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands.html">Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="computes.html">Computes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="fixes.html">Fixes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="fix_adapt.html">fix adapt command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_addforce.html">fix addforce command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_addforce.html#fix-addforce-cuda-command">fix addforce/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_addtorque.html">fix addtorque command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_append_atoms.html">fix append/atoms command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_atc.html">fix atc command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_ave_atom.html">fix ave/atom command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_ave_correlate.html">fix ave/correlate command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_ave_euler.html">fix ave/euler command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_ave_euler_region.html">fix ave/euler/region command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_ave_euler_region.html#fix-ave-euler-region-universe-command">fix ave/euler/region/universe command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_ave_histo.html">fix ave/histo command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_ave_spatial.html">fix ave/spatial command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_ave_time.html">fix ave/time command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_aveforce.html">fix aveforce command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_aveforce.html#fix-aveforce-cuda-command">fix aveforce/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_balance.html">fix balance command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_bond_break.html">fix bond/break command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_bond_create.html">fix bond/create command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_bond_swap.html">fix bond/swap command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_box_relax.html">fix box/relax command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_break_particle.html">fix break/particle command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_buoyancy.html">fix buoyancy command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_cfd_coupling_chemistry.html">fix couple/cfd/chemistry command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_cfd_coupling_convection.html">fix couple/cfd/convection command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_cfd_coupling_deform.html">fix couple/cfd/deform command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_cfd_coupling_dissolve.html">fix couple/cfd/dissolve command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_cfd_coupling_fluidproperties.html">fix couple/cfd/fluidproperties command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_cfd_coupling_recurrence.html">fix couple/cfd/recurrence command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_check_timestep_gran.html">fix check/timestep/gran command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_chem_shrink.html">fix chem/shrink command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_chem_shrink_core.html">fix chem/shrink/core command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_colvars.html">fix colvars command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_deform.html">fix deform command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_deposit.html">fix deposit command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_drag.html">fix drag command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_dt_reset.html">fix dt/reset command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_efield.html">fix efield command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_enforce2d.html">fix enforce2d command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_enforce2d.html#fix-enforce2d-cuda-command">fix enforce2d/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_evaporate.html">fix evaporate command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_execute.html">fix execute command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_external.html">fix external command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_forcecontrol_region.html">fix forcecontrol/region command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_forcecontrol_region.html#fix-forcecontrol-region-universe-command">fix forcecontrol/region/universe command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_freeze.html">fix freeze command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_freeze.html#fix-freeze-cuda-command">fix freeze/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_gcmc.html">fix gcmc command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_gld.html">fix gld command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_gravity.html">fix gravity command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_gravity.html#fix-gravity-cuda-command">fix gravity/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_gravity.html#fix-gravity-omp-command">fix gravity/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_heat.html">fix heat command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_heat_gran_conduction.html">fix heat/gran command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_heat_gran_conduction.html#fix-heat-gran-conduction-command">fix heat/gran/conduction command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_heat_gran_radiation.html">fix heat/gran/radiation command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_imd.html">fix imd command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_indent.html">fix indent command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_insert_pack.html">fix insert/pack command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_insert_pack_dense.html">fix insert/pack/dense command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_insert_pack_face.html">fix insert/pack/face command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_insert_pack_face.html#fix-insert-pack-face-universe-command">fix insert/pack/face/universe command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_insert_rate_region.html">fix insert/rate/region command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_insert_stream.html">fix insert/stream command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_insert_stream_moving.html">fix insert/stream/moving command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_langevin.html">fix langevin command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_langevin_eff.html">fix langevin/eff command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_lb_fluid.html">fix lb/fluid command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_lb_momentum.html">fix lb/momentum command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_lb_pc.html">fix lb/pc command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_lb_rigid_pc_sphere.html">fix lb/rigid/pc/sphere command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_lb_viscous.html">fix lb/viscous command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_limit_property_atom.html">fix limit/property/atom command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_limit_vel.html">fix limit/vel command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_lineforce.html">fix lineforce command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_massflow_mesh.html">fix massflow/mesh command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_massflow_mesh_face.html">fix massflow/mesh/face command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_massflow_mesh_face.html#fix-massflow-mesh-face-universe-command">fix massflow/mesh/face/universe command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_mean_free_time.html">fix meanfreetime command</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">fix mesh/surface command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fix-mesh-surface-planar-command">fix mesh/surface/planar command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fix-mesh-surface-omp-command">fix mesh/surface/omp command</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#syntax">Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#restrictions">Restrictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#related-commands">Related commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fix_mesh_surface_stress.html">fix mesh/surface/stress command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_mesh_surface_stress_6dof.html">fix mesh/6dof command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_mesh_surface_stress_servo.html">fix mesh/surface/stress/servo command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_meso.html">fix meso command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_meso_stationary.html">fix meso/stationary command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_modify.html">fix_modify command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_momentum.html">fix momentum command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_move.html">fix move command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_move_mesh.html">fix move/mesh command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_msst.html">fix msst command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_multisphere.html">fix multisphere command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_neb.html">fix neb command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nh.html">fix nvt command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nh.html#fix-nvt-cuda-command">fix nvt/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nh.html#fix-nvt-omp-command">fix nvt/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nh.html#fix-npt-command">fix npt command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nh.html#fix-npt-cuda-command">fix npt/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nh.html#fix-npt-omp-command">fix npt/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nh.html#fix-nph-command">fix nph command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nh.html#fix-nph-omp-command">fix nph/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nh_eff.html">fix nvt/eff command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nh_eff.html#fix-npt-eff-command">fix npt/eff command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nh_eff.html#fix-nph-eff-command">fix nph/eff command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nph_asphere.html">fix nph/asphere command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nph_asphere.html#fix-nph-asphere-omp-command">fix nph/asphere/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nph_sphere.html">fix nph/sphere command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nph_sphere.html#fix-nph-sphere-omp-command">fix nph/sphere/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nphug.html">fix nphug command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nphug.html#fix-nphug-omp-command">fix nphug/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_npt_asphere.html">fix npt/asphere command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_npt_asphere.html#fix-npt-asphere-omp-command">fix npt/asphere/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_npt_sphere.html">fix npt/sphere command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_npt_sphere.html#fix-npt-sphere-omp-command">fix npt/sphere/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nve.html">fix nve command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nve.html#fix-nve-cuda-command">fix nve/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nve.html#fix-nve-omp-command">fix nve/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nve_asphere.html">fix nve/asphere command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nve_asphere_noforce.html">fix nve/asphere/noforce command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nve_body.html">fix nve/body command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nve_eff.html">fix nve/eff command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nve_limit.html">fix nve/limit command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nve_line.html">fix nve/line command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nve_noforce.html">fix nve/noforce command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nve_sphere.html">fix nve/sphere command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nve_sphere.html#fix-nve-sphere-omp-command">fix nve/sphere/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nve_superquadric.html">fix nve/superquadric command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nve_tri.html">fix nve/tri command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nvt_asphere.html">fix nvt/asphere command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nvt_asphere.html#fix-nvt-asphere-omp-command">fix nvt/asphere/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nvt_sllod.html">fix nvt/sllod command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nvt_sllod.html#fix-nvt-sllod-omp-command">fix nvt/sllod/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nvt_sllod_eff.html">fix nvt/sllod/eff command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nvt_sphere.html">fix nvt/sphere command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_nvt_sphere.html#fix-nvt-sphere-omp-command">fix nvt/sphere/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_orient_fcc.html">fix orient/fcc command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_particledistribution_discrete.html">fix particledistribution/discrete command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_particletemplate_fragments.html">fix particletemplate/fragments command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_particletemplate_multiplespheres.html">fix particletemplate/multiplespheres command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_particletemplate_multisphere.html">fix particletemplate/multisphere command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_particletemplate_sphere.html">fix particletemplate/sphere command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_particletemplate_superquadric.html">fix particletemplate/superquadric command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_phonon.html">fix phonon command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_planeforce.html">fix planeforce command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_poems.html">fix poems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_pour.html">fix pour/legacy command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_press_berendsen.html">fix press/berendsen command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_print.html">fix print command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_property.html">fix property/global command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_property.html#fix-property-atom-command">fix property/atom command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_property_atom_cumulativetracer.html">fix property/atom/cumulativetracer command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_property_atom_polydispparcel.html">fix property/atom/polydispparcel command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_property_atom_timetracer.html">fix property/atom/timetracer command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_property_atom_tracer.html">fix property/atom/tracer command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_property_atom_tracer_stream.html">fix property/atom/tracer/stream command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_qeq_comb.html">fix qeq/comb command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_qeq_comb.html#fix-qeq-comb-omp-command">fix qeq/comb/omp command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_qeq_reax.html">fix qeq/reax command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_reax_bonds.html">fix reax/bonds command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_reax_bonds.html#fix-reax-c-bonds-command">fix reax/c/bonds command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_reaxc_species.html">fix reax/c/species command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_recenter.html">fix recenter command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_remove.html">fix remove command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_restrain.html">fix restrain command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_rigid.html">fix rigid command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_rigid.html#fix-rigid-nve-command">fix rigid/nve command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_rigid.html#fix-rigid-nvt-command">fix rigid/nvt command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_rigid.html#fix-rigid-npt-command">fix rigid/npt command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_rigid.html#fix-rigid-nph-command">fix rigid/nph command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_rigid.html#fix-rigid-small-command">fix rigid/small command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_scale_diameter.html">fix scale/diameter command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_setforce.html">fix setforce command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_setforce.html#fix-setforce-cuda-command">fix setforce/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_shake.html">fix shake command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_shake.html#fix-shake-cuda-command">fix shake/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_smd.html">fix smd command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_speedcontrol.html">fix speedcontrol command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_sph_density_continuity.html">fix sph/density/continuity command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_sph_density_corr.html">fix sph/density/corr command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_sph_density_summation.html">fix sph/density/summation command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_sph_pressure.html">fix sph/pressure command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_spring.html">fix spring command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_spring_rg.html">fix spring/rg command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_spring_self.html">fix spring/self command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_srd.html">fix srd command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_store_force.html">fix store/force command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_store_state.html">fix store/state command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_temp_berendsen.html">fix temp/berendsen command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_temp_berendsen.html#fix-temp-berendsen-cuda-command">fix temp/berendsen/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_temp_rescale.html">fix temp/rescale command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_temp_rescale.html#fix-temp-rescale-cuda-command">fix temp/rescale/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_temp_rescale.html#fix-temp-rescale-limit-cuda-command">fix temp/rescale/limit/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_temp_rescale_eff.html">fix temp/rescale/eff command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_thermal_conductivity.html">fix thermal/conductivity command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_ti_rs.html">fix ti/rs command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_ti_spring.html">fix ti/spring command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_tmd.html">fix tmd command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_ttm.html">fix ttm command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_tune_kspace.html">fix tune/kspace command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_viscosity.html">fix viscosity command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_viscous.html">fix viscous command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_viscous.html#fix-viscous-cuda-command">fix viscous/cuda command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_wall.html">fix wall/lj93 command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_wall.html#fix-wall-lj126-command">fix wall/lj126 command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_wall.html#fix-wall-lj1043-command">fix wall/lj1043 command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_wall.html#fix-wall-colloid-command">fix wall/colloid command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_wall.html#fix-wall-harmonic-command">fix wall/harmonic command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_wall_gran.html">fix wall/gran  command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_wall_gran.html#fix-wall-gran-omp-command">fix wall/gran/omp  command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_wall_piston.html">fix wall/piston command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_wall_reflect.html">fix wall/reflect command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_wall_region.html">fix wall/region command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_wall_region_sph.html">fix wall/region/sph command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_wall_srd.html">fix wall/srd command</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pairs.html">Pair Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="granular.html">Granular Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bonds.html">Bond Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angles.html">Angle Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dihedrals.html">Dihedral Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="impropers.html">Improper Styles</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="Manual.html">LIGGGHTS Academic</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="Manual.html">Docs</a> &raquo;</li>
+      
+          <li><a href="fixes.html">Fixes</a> &raquo;</li>
+      
+    <li>fix mesh/surface command</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="http://lammps.sandia.gov">Website</a>
+            <a href="Section_commands.html#comm">Commands</a>
+        
+      </li>
+  </ul>
+  <hr/>
+  
+    <div class="rst-footer-buttons" style="margin-bottom: 1em" role="navigation" aria-label="footer navigation">
+      
+        <a href="fix_mesh_surface_stress.html" class="btn btn-neutral float-right" title="fix mesh/surface/stress command" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="fix_mean_free_time.html" class="btn btn-neutral" title="fix meanfreetime command" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="fix-mesh-surface-command">
+<span id="index-0"></span><h1>fix mesh/surface command<a class="headerlink" href="#fix-mesh-surface-command" title="Permalink to this heading">¶</a></h1>
+</section>
+<section id="fix-mesh-surface-planar-command">
+<h1>fix mesh/surface/planar command<a class="headerlink" href="#fix-mesh-surface-planar-command" title="Permalink to this heading">¶</a></h1>
+</section>
+<section id="fix-mesh-surface-omp-command">
+<h1>fix mesh/surface/omp command<a class="headerlink" href="#fix-mesh-surface-omp-command" title="Permalink to this heading">¶</a></h1>
+<section id="syntax">
+<h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">mesh</span><span class="o">/</span><span class="n">surface</span> <span class="n">file</span> <span class="n">filename</span> <span class="n">premesh_keywords</span> <span class="n">premesh_values</span> <span class="n">mesh_keywords</span> <span class="n">mesh_values</span> <span class="n">surface_keywords</span> <span class="n">surface_values</span>
+<span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">mesh</span><span class="o">/</span><span class="n">surface</span><span class="o">/</span><span class="n">planar</span> <span class="n">file</span> <span class="n">filename</span> <span class="n">premesh_keywords</span> <span class="n">premesh_values</span> <span class="n">mesh_keywords</span> <span class="n">mesh_values</span> <span class="n">surface_keywords</span> <span class="n">surface_values</span>
+</pre></div>
+</div>
+<ul>
+<li><p>ID is documented in <a class="reference internal" href="fix.html"><span class="doc">fix</span></a> command.</p></li>
+<li><p>mesh/surface or mesh/surface/planar = style name of this fix command</p></li>
+<li><p>file = obligatory keyword</p></li>
+<li><p>filename = name of STL or VTK file containing the triangle mesh data</p></li>
+<li><p>zero or more premesh_keywords/premesh_value pairs may be appended</p></li>
+<li><p>premesh_keyword = <em>type</em> or <em>precision</em> or <em>heal</em> or <em>element_exclusion_list</em> or <em>cell_data</em> or <em>verbose</em></p>
+<pre class="literal-block"><em>type</em> value = atom type (material type) of the wall imported from the STL file
+<em>precision</em> value = length mesh nodes this far away at maximum will be recognized as identical (length units)
+<em>heal</em> value = auto_remove_duplicates or no
+<em>element_exclusion_list</em> values = mode element_exlusion_file
+  mode = read or write
+  element_exlusion_file = name of file containing the elements to be excluded
+<em>cell_data</em> value = yes or no to load per element data from VTK files
+<em>verbose</em> value = yes or no</pre>
+</li>
+<li><p>zero or more mesh_keywords/mesh_value pairs may be appended</p></li>
+<li><p>mesh_keyword = <em>scale</em> or <em>move</em> or <em>rotate</em> or <em>temperature</em></p>
+<pre class="literal-block"><em>scale</em> value = factor
+  factor = factor to scale the mesh in x-, y-, and z-direction (double value)
+<em>move</em> values = mx my mz
+  mx my mz = move the mesh by this extent in x-, y-, and z-direction (length units)
+<em>rotate</em> values = axis ax ay az angle ang
+  axis = obligatory keyword
+  ax, ay, az = axis vector for rotation (length units)
+  angle = obligatory keyword
+  ang = angle to rotate the geometry around the specified axis (in degrees)
+<em>temperature</em> value = T0
+  T0 = Temperature of the wall (temperature units)</pre>
+</li>
+<li><p>zero or more surface_keywords/surface_value pairs may be appended</p></li>
+<li><p>surface_keyword = <em>surface_vel</em> or <em>surface_ang_vel</em> or <em>curvature</em> or <em>curvature_tolerant</em></p>
+<pre class="literal-block"><em>surface_vel</em> values = vx vy vz
+  vx vy vz = conveyor belt surface velocity  (velocity units)
+<em>surface_ang_vel</em> values = origin ox oy oz axis ax ay az omega om
+  origin = mandatory keyword
+  ox oy oz = origin of rotation (length units)
+  axis = mandatory keyword
+  ax ay az = axis vector for rotation (length units)
+  omega = mandatory keyword
+  om = rotaional velocity around specifyied axis (rad/time units)
+<em>curvature</em> value = c
+  c = maximum angle between mesh faces belonging to the same surface (in degree)
+<em>curvature_tolerant</em> value = ct
+  ct = yes or no</pre>
+</li>
+</ul>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fix</span> <span class="n">cad</span> <span class="nb">all</span> <span class="n">mesh</span><span class="o">/</span><span class="n">surface</span> <span class="n">file</span> <span class="n">mesh</span><span class="o">.</span><span class="n">stl</span> <span class="nb">type</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p><strong>LIGGGHTS vs. LAMMPS Info:</strong></p>
+<p>This command is not available in LAMMPS.</p>
+</section>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+<p>This fix allows the import of triangular surface mesh wall geometry for granular simulations from
+ASCII STL files or legacy ASCII VTK files. Style <em>mesh/surface</em> is a general surface mesh, and
+<em>mesh/surface/planar</em> represents a planar mesh. <em>mesh/surface/planar</em> requires the mesh to
+consist of only 1 planar face.</p>
+<p>Generally, you can apply scaling, offset and rotation to the imported mesh via keywords <em>scale</em>,
+<em>move</em>, <em>rotate</em>. Operations are applied in the order as they are specified. The group-ID defines
+which particles will “see” the mesh, in case it is used as a granular wall.</p>
+<p>One fix represents one wall with a specific material, where the material is identified
+via keyword <em>type</em>. If multiple meshes with different materials are desired, the respective
+meshes must be imported with different fix mesh/surface commands.</p>
+<p>With the <em>temperature</em> keyword, you can define a constant temperature for a mesh in
+conjunction with heat conduction via <a class="reference internal" href="fix_heat_gran_conduction.html"><span class="doc">fix heat/gran</span></a>. Note that the
+actual calculation of the heat transfer happens only if you use the mesh in conjunction
+with a granular wall, see <a class="reference internal" href="fix_wall_gran.html"><span class="doc">fix wall/gran</span></a>.</p>
+<p>With the optional <em>surface_vel</em> keyword, you can specify the imported mesh as conveyor belt.
+The velocity direction for each mesh face is given by the projection of the conveyor
+belt velocity parallel to the mesh face, the velocity magnitude for each mesh face is
+equal to the conveyor belt velocity. This ensures the model makes sense also in case
+the mesh is curved. Likewise, the optional rotation model activated via keyword
+<em>surface_ang_vel</em> mimics rotational motion of the mesh (e.g. for modeling a shear cell)</p>
+<p>The <em>precision</em> keyword specifies how far away mesh nodes can be at maximum to
+be recognized as identical.</p>
+<p>If LIGGGHTS stalls because of duplicate elements, you can try setting
+<em>heal</em> to auto_remove_duplicates. LIGGGHTS will then try to heal the geometry
+by removing duplicate elements.</p>
+<p>If the optional <em>element_exclusion_list</em> keyword is used in mode ‘write’, LIGGGHTS
+will write a list of elements which</p>
+<ul class="simple">
+<li><p>have more than the allowed 5 face neighbors per surface</p></li>
+<li><p>have an angle below 0.0181185 degrees</p></li>
+<li><p>are duplicate elements</p></li>
+</ul>
+<p>to a file. The ‘read’ mode can then use this file and will skip the elements in
+the list. However, you can also manually write such a file to exclude certain elements.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <em>element_exclusion_list write</em> model works in serial only. However,
+this is not a real restriction, since you can generate the exclusion lists in serial,
+but then read them to import the mesh into a parallel simulation</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you use the ‘heal’ or ‘element_exclusion_list’ keywords,
+you should check the changes to the geometry, e.g. by using a <a class="reference internal" href="dump.html"><span class="doc">dump mesh/stl</span></a> command.</p>
+</div>
+<p>The <em>curvature</em> keyword lets you specify up to which angle between two triangles the
+triangles should be treated as belonging to the same surface (e.g. useful for bends).
+This angle is used to decide if (a) contact history is copied from one triangle to
+the other as the contact point proceeds and (b) if edge and corner interaction is
+calculated.</p>
+<p>The <em>curvature_tolerant</em> keyword can simply turn off the check that
+the <em>curvature</em> must not be larger than any angle in any mesh element.
+This is typically not recommended, but can be used as a last resort measure.</p>
+<p><strong>Quality checks / error and warning messages:</strong></p>
+<p>LIGGGHTS checks a couple of quality criteria upon loading a mesh. LIGGGHTS tries
+to give you as much information about the issue as possible.</p>
+<p>Warning messages:</p>
+<ul class="simple">
+<li><p>There should be no angle &lt; 0.5&amp;deg; in any element</p></li>
+<li><p>The number of neighbor elements should be &lt;= 5 for any element</p></li>
+<li><p>All nodes should be within the simulation box</p></li>
+</ul>
+<p>If any of the above rules is not fulfilled, a warning is generated. Keyword
+<em>verbose</em> controls if details about the warning are written to the screen.</p>
+<p>Error messages:</p>
+<ul class="simple">
+<li><p>The <em>curvature</em> must not be larger than any angle in any mesh element</p></li>
+<li><p>Mesh elements must not be duplicate</p></li>
+<li><p>Coplanar mesh elements that share an edge must not overlap</p></li>
+<li><p>Mesh elements must not leave the simulation domain</p></li>
+</ul>
+<p>If any of the above rules is not fulfilled, an error is generated and
+LIGGGHTS halts. Error messages are always <em>verbose</em>.
+If LIGGGHTS halts due to the last error, you might think about (a)
+changing the mesh import parameters (<em>scale</em>, <em>move</em>, <em>rotate</em>), (b)
+changing the mesh dynamics if a <a class="reference internal" href="fix_move_mesh.html"><span class="doc">fix move/mesh</span></a> is
+applied or using <a class="reference internal" href="boundary.html"><span class="doc">boundary m m m</span></a>.</p>
+<hr class="docutils" />
+<p>Styles with a <em>cuda</em>, <em>gpu</em>, <em>omp</em>, or <em>opt</em> suffix are functionally
+the same as the corresponding style without the suffix.  They have
+been optimized to run faster, depending on your available hardware, as
+discussed in <a class="reference internal" href="Section_accelerate.html"><span class="doc">Section_accelerate</span></a> of the
+manual.  The accelerated styles take the same arguments and should
+produce the same results, except for round-off and precision issues.</p>
+<p>These accelerated styles are part of the USER-CUDA, GPU, USER-OMP and OPT
+packages, respectively.  They are only enabled if LAMMPS was built with
+those packages.  See the <a class="reference internal" href="Section_start.html#start-3"><span class="std std-ref">Making LAMMPS</span></a>
+section for more info.</p>
+<p>You can specify the accelerated styles explicitly in your input script
+by including their suffix, or you can use the <a class="reference internal" href="Section_start.html#start-7"><span class="std std-ref">-suffix command-line switch</span></a> when you invoke LAMMPS, or you can
+use the <a class="reference internal" href="suffix.html"><span class="doc">suffix</span></a> command in your input script.</p>
+<p>See <a class="reference internal" href="Section_accelerate.html"><span class="doc">Section_accelerate</span></a> of the manual for
+more instructions on how to use the accelerated styles effectively.</p>
+<hr class="docutils" />
+<p><strong>Restart, fix_modify, output, run start/stop, minimize info:</strong></p>
+<p>This fix writes the STL data to binary <a class="reference internal" href="restart.html"><span class="doc">restart files</span></a> to be able to
+correctly resume the simulation in case the mesh is moved. None of the
+<a class="reference internal" href="fix_modify.html"><span class="doc">fix_modify</span></a> options are relevant to this fix. No global
+scalar or vector or per-atom quantities are stored by this fix for access by
+various <a class="reference internal" href="Section_howto.html#howto-15"><span class="std std-ref">output commands</span></a>. No parameter of this fix
+can be used with the <em>start/stop</em> keywords of the <a class="reference internal" href="run.html"><span class="doc">run</span></a> command.
+This fix is not invoked during <a class="reference internal" href="minimize.html"><span class="doc">energy minimization</span></a>.</p>
+</section>
+<section id="restrictions">
+<h2>Restrictions<a class="headerlink" href="#restrictions" title="Permalink to this heading">¶</a></h2>
+<p>To date, only ASCII STL and VTK files can be read (binary is not supported).
+In the current implementation, each processor allocates memory for the whole
+geometry, which may lead to memory issues for very large geometries .
+It is not supported to use both the moving mesh and the conveyor belt feature.</p>
+</section>
+<section id="related-commands">
+<h2>Related commands<a class="headerlink" href="#related-commands" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference internal" href="fix_wall_gran.html"><span class="doc">fix wall/gran</span></a></p>
+<p><strong>Default:</strong> curvature = 0.256235 degrees, precision = 1e-8, verbose = no, heal = no</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="fix_mesh_surface_stress.html" class="btn btn-neutral float-right" title="fix mesh/surface/stress command" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="fix_mean_free_time.html" class="btn btn-neutral" title="fix meanfreetime command" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018 JKU Linz, DCS Computing GmbH and Sandia Corporation.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'24.01',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

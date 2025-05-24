@@ -1,0 +1,498 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>read_restart command &mdash; LIGGGHTS Academic 24.01
+ documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="LIGGGHTS Academic 24.01
+ documentation" href="index.html"/>
+        <link rel="up" title="Commands" href="commands.html"/>
+        <link rel="next" title="region command" href="region.html"/>
+        <link rel="prev" title="read_dump command" href="read_dump.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="Manual.html" class="icon icon-home"> LIGGGHTS Academic
+        
+
+        
+        </a>
+
+        
+          
+          
+            <div class="version">
+              24.01
+
+            </div>
+          
+        
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Section_intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_start.html">2. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_commands.html">3. Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_gran_models.html">4. Contact models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_packages.html">5. Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_accelerate.html">6. Accelerating LAMMPS performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_howto.html">7. How-to discussions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="superquadric_simulations.html">8. How-to for superquadric particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_example.html">9. Example problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_perf.html">10. Performance &amp; scalability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_tools.html">11. Additional tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_modify.html">12. Modifying &amp; extending LAMMPS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_python.html">13. Python interface to LAMMPS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_errors.html">14. Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_history.html">15. Future and history</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Index</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="commands.html">Commands</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="angle_coeff.html">angle_coeff command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="angle_style.html">angle_style command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="atom_modify.html">atom_modify command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="atom_style.html">atom_style command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="balance.html">balance command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bond_coeff.html">bond_coeff command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bond_style.html">bond_style command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boundary.html">boundary command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="box.html">box command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="change_box.html">change_box command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clear.html">clear command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coarsegraining.html">coarsegraining command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="communicate.html">communicate command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compute.html">compute command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compute_modify.html">compute_modify command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_atoms.html">create_atoms command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_box.html">create_box command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_multisphere_clump.html">create_multisphere_clump command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="delete_atoms.html">delete_atoms command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="delete_bonds.html">delete_bonds command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dielectric.html">dielectric command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dihedral_coeff.html">dihedral_coeff command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dihedral_style.html">dihedral_style command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dimension.html">dimension command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="displace_atoms.html">displace_atoms command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dump.html">dump command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dump.html#dump-image-command"><span class="xref std std-doc">dump image</span> command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dump.html#dump-movie-command"><span class="xref std std-doc">dump movie</span> command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dump.html#dump-molfile-command"><span class="xref std std-doc">dump molfile</span> command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dump_image.html">dump image command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dump_image.html#dump-movie-command">dump movie command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dump_modify.html">dump_modify command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dump_molfile.html">dump molfile command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dump_custom_vtk.html">dump custom/vtk command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="echo.html">echo command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extract_surface.html">extract_surface command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extrude_surface.html">extrude_surface command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix.html">fix command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix_modify.html">fix_modify command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="group.html">group command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="group2ndx.html">group2ndx command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="if.html">if command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="improper_coeff.html">improper_coeff command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="improper_style.html">improper_style command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="include.html">include command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jump.html">jump command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kspace_modify.html">kspace_modify command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kspace_style.html">kspace_style command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="label.html">label command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lattice.html">lattice command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log.html">log command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mass.html">mass command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="min_modify.html">min_modify command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="min_style.html">min_style command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="minimize.html">minimize command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modify_timing.html">modify_timing command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neb.html">neb command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neigh_modify.html">neigh_modify command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neighbor.html">neighbor command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="newton.html">newton command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="next.html">next command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="package.html">package command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_coeff.html">pair_coeff command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_modify.html">pair_modify command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_style.html">pair_style command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_write.html">pair_write command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="partition.html">partition command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prd.html">prd command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="print.html">print command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="processors.html">processors command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quit.html">quit command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read_data.html">read_data command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read_dump.html">read_dump command</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">read_restart command</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#syntax">Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#restrictions">Restrictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#related-commands">Related commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="region.html">region command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="replicate.html">replicate command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rerun.html">rerun command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reset_timestep.html">reset_timestep command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restart.html">restart command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run.html">run command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run_style.html">run_style command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="set.html">set command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell.html">shell command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="special_bonds.html">special_bonds command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="suffix.html">suffix command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tad.html">tad command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="temper.html">temper command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thermo.html">thermo command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thermo_log.html">thermo_log command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thermo_modify.html">thermo_modify command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thermo_style.html">thermo_style command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timestep.html">timestep command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uncompute.html">uncompute command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="undump.html">undump command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unfix.html">unfix command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html">units command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable.html">variable command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="velocity.html">velocity command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="write_data.html">write_data command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="write_dump.html">write_dump command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="write_restart.html">write_restart command</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="computes.html">Computes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fixes.html">Fixes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pairs.html">Pair Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="granular.html">Granular Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bonds.html">Bond Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angles.html">Angle Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dihedrals.html">Dihedral Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="impropers.html">Improper Styles</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="Manual.html">LIGGGHTS Academic</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="Manual.html">Docs</a> &raquo;</li>
+      
+          <li><a href="commands.html">Commands</a> &raquo;</li>
+      
+    <li>read_restart command</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="http://lammps.sandia.gov">Website</a>
+            <a href="Section_commands.html#comm">Commands</a>
+        
+      </li>
+  </ul>
+  <hr/>
+  
+    <div class="rst-footer-buttons" style="margin-bottom: 1em" role="navigation" aria-label="footer navigation">
+      
+        <a href="region.html" class="btn btn-neutral float-right" title="region command" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="read_dump.html" class="btn btn-neutral" title="read_dump command" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="read-restart-command">
+<span id="index-0"></span><h1>read_restart command<a class="headerlink" href="#read-restart-command" title="Permalink to this heading">¶</a></h1>
+<section id="syntax">
+<h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">read_restart</span> <span class="n">file</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>file = name of binary restart file to read in</p></li>
+</ul>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+<pre class="literal-block">read_restart save.10000
+read_restart restart.*
+read_restart poly.*.%</pre>
+</section>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+<p>Read in a previously saved simulation from a restart file.  This
+allows continuation of a previous run.  Information about what is
+stored in a restart file is given below.</p>
+<p>Restart files are saved in binary format to enable exact restarts,
+meaning that the trajectories of a restarted run will precisely match
+those produced by the original run had it continued on.</p>
+<p>Several things can prevent exact restarts due to round-off effects, in
+which case the trajectories in the 2 runs will slowly diverge.  These
+include running on a different number of processors or changing
+certain settings such as those set by the <a class="reference internal" href="newton.html"><span class="doc">newton</span></a> or
+<a class="reference internal" href="processors.html"><span class="doc">processors</span></a> commands.  LAMMPS will issue a warning in
+these cases.</p>
+<p>Certain fixes will not restart exactly, though they should provide
+statistically similar results.  These include <a class="reference internal" href="fix_shake.html"><span class="doc">fix shake</span></a> and <a class="reference internal" href="fix_langevin.html"><span class="doc">fix langevin</span></a>.</p>
+<p>Certain pair styles will not restart exactly, though they should
+provide statistically similar results.  This is because the forces
+they compute depend on atom velocities, which are used at half-step
+values every timestep when forces are computed.  When a run restarts,
+forces are initially evaluated with a full-step velocity, which is
+different than if the run had continued.  These pair styles include
+<a class="reference internal" href="pair_gran.html"><span class="doc">granular pair styles</span></a>, <a class="reference internal" href="pair_dpd.html"><span class="doc">pair dpd</span></a>, and
+<a class="reference internal" href="pair_lubricate.html"><span class="doc">pair lubricate</span></a>.</p>
+<p>If a restarted run is immediately different than the run which
+produced the restart file, it could be a LAMMPS bug, so consider
+<a class="reference internal" href="Section_errors.html#err-2"><span class="std std-ref">reporting it</span></a> if you think the behavior is
+wrong.</p>
+<p>Because restart files are binary, they may not be portable to other
+machines.  In this case, you can use the <a class="reference internal" href="Section_start.html#start-7"><span class="std std-ref">-r command-line switch</span></a> to convert a restart file to a data
+file.</p>
+<p>Similar to how restart files are written (see the
+<a class="reference internal" href="write_restart.html"><span class="doc">write_restart</span></a> and <a class="reference internal" href="restart.html"><span class="doc">restart</span></a>
+commands), the restart filename can contain two wild-card characters.
+If a “*” appears in the filename, the directory is searched for all
+filenames that match the pattern where “*” is replaced with a timestep
+value.  The file with the largest timestep value is read in.  Thus,
+this effectively means, read the latest restart file.  It’s useful if
+you want your script to continue a run from where it left off.  See
+the <a class="reference internal" href="run.html"><span class="doc">run</span></a> command and its “upto” option for how to specify
+the run command so it doesn’t need to be changed either.</p>
+<p>If a “%” character appears in the restart filename, LAMMPS expects a
+set of multiple files to exist.  The <a class="reference internal" href="restart.html"><span class="doc">restart</span></a> and
+<a class="reference internal" href="write_restart.html"><span class="doc">write_restart</span></a> commands explain how such sets are
+created.  Read_restart will first read a filename where “%” is
+replaced by “base”.  This file tells LAMMPS how many processors
+created the set and how many files are in it.  Read_restart then reads
+the additional files.  For example, if the restart file was specified
+as save.% when it was written, then read_restart reads the files
+save.base, save.0, save.1, … save.P-1, where P is the number of
+processors that created the restart file.  The processors in the
+current LAMMPS simulation share the work of reading these files; each
+reads a roughly equal subset of the files.  The number of processors
+which created the set can be different the number of processors in the
+current LAMMPS simulation.  This can be a fast mode of input on
+parallel machines that support parallel I/O.</p>
+<hr class="docutils" />
+<p>A restart file stores the following information about a simulation:
+units and atom style, simulation box size and shape and boundary
+settings, group definitions, per-type atom settings such as mass,
+per-atom attributes including their group assignments and molecular
+topology attributes, force field styles and coefficients, and
+<a class="reference internal" href="special_bonds.html"><span class="doc">special_bonds</span></a> settings.  This means that commands
+for these quantities do not need to be re-specified in the input
+script that reads the restart file, though you can redefine settings
+after the restart file is read.</p>
+<p>One exception is that some pair styles do not store their info in
+restart files.  The doc pages for individual pair styles note if this
+is the case.  This is also true of bond_style hybrid (and angle_style,
+dihedral_style, improper_style hybrid).</p>
+<p>All settings made by the <a class="reference internal" href="pair_modify.html"><span class="doc">pair_modify</span></a> command,
+such as the shift and tail settings, are stored in the restart file
+with the pair style.  The one exception is the <a class="reference internal" href="pair_modify.html"><span class="doc">pair_modify compute</span></a> setting is not stored.</p>
+<p>Information about <a class="reference internal" href="kspace_style.html"><span class="doc">kspace_style</span></a> settings are not
+stored in the restart file.  Hence if you wish to use an Ewald or PPPM
+solver, these commands must be re-issued after the restart file is
+read.</p>
+<p>The list of <a class="reference internal" href="fix.html"><span class="doc">fixes</span></a> used for a simulation is not stored in
+the restart file.  This means the new input script should specify all
+fixes it will use.  Note that some fixes store an internal “state”
+which is written to the restart file.  This allows the fix to continue
+on with its calculations in a restarted simulation.  To re-enable such
+a fix, the fix command in the new input script must use the same
+fix-ID and group-ID as was used in the input script that wrote the
+restart file.  If a match is found, LAMMPS prints a message indicating
+that the fix is being re-enabled.  If no match is found before the
+first run or minimization is performed by the new script, the “state”
+information for the saved fix is discarded.  See the doc pages for
+individual fixes for info on which ones can be restarted in this
+manner.</p>
+<p>Bond interactions (angle, etc) that have been turned off by the <a class="reference internal" href="fix_shake.html"><span class="doc">fix shake</span></a> or <a class="reference internal" href="delete_bonds.html"><span class="doc">delete_bonds</span></a> command will
+be written to a restart file as if they are turned on.  This means
+they will need to be turned off again in a new run after the restart
+file is read.</p>
+<p>Bonds that are broken (e.g. by a bond-breaking potential) are written
+to the restart file as broken bonds with a type of 0.  Thus these
+bonds will still be broken when the restart file is read.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>No other information is stored in the restart file.
+This means that an input script that reads a restart file should
+specify settings for quantities like <a class="reference internal" href="timestep.html"><span class="doc">timestep size</span></a>,
+<a class="reference internal" href="thermo_style.html"><span class="doc">thermodynamic</span></a>, <a class="reference internal" href="neighbor.html"><span class="doc">neighbor list</span></a>
+criteria including settings made via the
+<a class="reference internal" href="neigh_modify.html"><span class="doc">neigh_modify</span></a> command, <a class="reference internal" href="dump.html"><span class="doc">dump</span></a> file
+output, <a class="reference internal" href="region.html"><span class="doc">geometric regions</span></a>, etc.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="restrictions">
+<h2>Restrictions<a class="headerlink" href="#restrictions" title="Permalink to this heading">¶</a></h2>
+<blockquote>
+<div><p>none</p>
+</div></blockquote>
+</section>
+<section id="related-commands">
+<h2>Related commands<a class="headerlink" href="#related-commands" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference internal" href="read_data.html"><span class="doc">read_data</span></a>, <a class="reference internal" href="read_dump.html"><span class="doc">read_dump</span></a>,
+<a class="reference internal" href="write_restart.html"><span class="doc">write_restart</span></a>, <a class="reference internal" href="restart.html"><span class="doc">restart</span></a></p>
+<p><strong>Default:</strong> none</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="region.html" class="btn btn-neutral float-right" title="region command" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="read_dump.html" class="btn btn-neutral" title="read_dump command" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018 JKU Linz, DCS Computing GmbH and Sandia Corporation.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'24.01',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

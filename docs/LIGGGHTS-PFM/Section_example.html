@@ -1,0 +1,413 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>9. Example problems &mdash; LIGGGHTS Academic 24.01
+ documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="LIGGGHTS Academic 24.01
+ documentation" href="index.html"/>
+        <link rel="next" title="10. Performance &amp; scalability" href="Section_perf.html"/>
+        <link rel="prev" title="8. How-to for superquadric particles" href="superquadric_simulations.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="Manual.html" class="icon icon-home"> LIGGGHTS Academic
+        
+
+        
+        </a>
+
+        
+          
+          
+            <div class="version">
+              24.01
+
+            </div>
+          
+        
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Section_intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_start.html">2. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_commands.html">3. Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_gran_models.html">4. Contact models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_packages.html">5. Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_accelerate.html">6. Accelerating LAMMPS performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_howto.html">7. How-to discussions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="superquadric_simulations.html">8. How-to for superquadric particles</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">9. Example problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_perf.html">10. Performance &amp; scalability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_tools.html">11. Additional tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_modify.html">12. Modifying &amp; extending LAMMPS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_python.html">13. Python interface to LAMMPS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_errors.html">14. Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_history.html">15. Future and history</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Index</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands.html">Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="computes.html">Computes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fixes.html">Fixes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pairs.html">Pair Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="granular.html">Granular Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bonds.html">Bond Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angles.html">Angle Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dihedrals.html">Dihedral Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="impropers.html">Improper Styles</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="Manual.html">LIGGGHTS Academic</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="Manual.html">Docs</a> &raquo;</li>
+      
+    <li><span class="section-number">9. </span>Example problems</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="http://lammps.sandia.gov">Website</a>
+            <a href="Section_commands.html#comm">Commands</a>
+        
+      </li>
+  </ul>
+  <hr/>
+  
+    <div class="rst-footer-buttons" style="margin-bottom: 1em" role="navigation" aria-label="footer navigation">
+      
+        <a href="Section_perf.html" class="btn btn-neutral float-right" title="10. Performance &amp; scalability" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="superquadric_simulations.html" class="btn btn-neutral" title="8. How-to for superquadric particles" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="example-problems">
+<h1><span class="section-number">9. </span>Example problems<a class="headerlink" href="#example-problems" title="Permalink to this heading">¶</a></h1>
+<p>The LAMMPS distribution includes an examples sub-directory with
+several sample problems.  Each problem is in a sub-directory of its
+own.  Most are 2d models so that they run quickly, requiring at most a
+couple of minutes to run on a desktop machine.  Each problem has an
+input script (in.*) and produces a log file (log.*) and dump file
+(dump.*) when it runs.  Some use a data file (data.*) of initial
+coordinates as additional input.  A few sample log file outputs on
+different machines and different numbers of processors are included in
+the directories to compare your answers to.  E.g. a log file like
+log.crack.foo.P means it ran on P processors of machine “foo”.</p>
+<p>For examples that use input data files, many of them were produced by
+<a class="reference external" href="http://pizza.sandia.gov">Pizza.py</a> or setup tools described in the
+<a class="reference internal" href="Section_tools.html"><span class="doc">Additional Tools</span></a> section of the LAMMPS
+documentation and provided with the LAMMPS distribution.</p>
+<p>If you uncomment the <a class="reference internal" href="dump.html"><span class="doc">dump</span></a> command in the input script, a
+text dump file will be produced, which can be animated by various
+<a class="reference external" href="http://lammps.sandia.gov/viz.html">visualization programs</a>.  It can
+also be animated using the xmovie tool described in the <a class="reference internal" href="Section_tools.html"><span class="doc">Additional Tools</span></a> section of the LAMMPS documentation.</p>
+<p>If you uncomment the <a class="reference internal" href="dump.html"><span class="doc">dump image</span></a> command in the input
+script, and assuming you have built LAMMPS with a JPG library, JPG
+snapshot images will be produced when the simulation runs.  They can
+be quickly post-processed into a movie using commands described on the
+<a class="reference internal" href="dump_image.html"><span class="doc">dump image</span></a> doc page.</p>
+<p>Animations of many of these examples can be viewed on the Movies
+section of the <a class="reference external" href="http://lammps.sandia.gov">LAMMPS WWW Site</a>.</p>
+<p>These are the sample problems in the examples sub-directories:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 84%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>body</p></td>
+<td><p>body particles, 2d system</p></td>
+</tr>
+<tr class="row-even"><td><p>colloid</p></td>
+<td><p>big colloid particles in a small particle solvent, 2d system</p></td>
+</tr>
+<tr class="row-odd"><td><p>comb</p></td>
+<td><p>models using the COMB potential</p></td>
+</tr>
+<tr class="row-even"><td><p>crack</p></td>
+<td><p>crack propagation in a 2d solid</p></td>
+</tr>
+<tr class="row-odd"><td><p>dipole</p></td>
+<td><p>point dipolar particles, 2d system</p></td>
+</tr>
+<tr class="row-even"><td><p>dreiding</p></td>
+<td><p>methanol via Dreiding FF</p></td>
+</tr>
+<tr class="row-odd"><td><p>eim</p></td>
+<td><p>NaCl using the EIM potential</p></td>
+</tr>
+<tr class="row-even"><td><p>ellipse</p></td>
+<td><p>ellipsoidal particles in spherical solvent, 2d system</p></td>
+</tr>
+<tr class="row-odd"><td><p>flow</p></td>
+<td><p>Couette and Poiseuille flow in a 2d channel</p></td>
+</tr>
+<tr class="row-even"><td><p>friction</p></td>
+<td><p>frictional contact of spherical asperities between 2d surfaces</p></td>
+</tr>
+<tr class="row-odd"><td><p>gpu</p></td>
+<td><p>use of the GPU package for GPU acceleration</p></td>
+</tr>
+<tr class="row-even"><td><p>hugoniostat</p></td>
+<td><p>Hugoniostat shock dynamics</p></td>
+</tr>
+<tr class="row-odd"><td><p>indent</p></td>
+<td><p>spherical indenter into a 2d solid</p></td>
+</tr>
+<tr class="row-even"><td><p>kim</p></td>
+<td><p>use of potentials in Knowledge Base for Interatomic Models (KIM)</p></td>
+</tr>
+<tr class="row-odd"><td><p>line</p></td>
+<td><p>line segment particles in 2d rigid bodies</p></td>
+</tr>
+<tr class="row-even"><td><p>meam</p></td>
+<td><p>MEAM test for SiC and shear (same as shear examples)</p></td>
+</tr>
+<tr class="row-odd"><td><p>melt</p></td>
+<td><p>rapid melt of 3d LJ system</p></td>
+</tr>
+<tr class="row-even"><td><p>micelle</p></td>
+<td><p>self-assembly of small lipid-like molecules into 2d bilayers</p></td>
+</tr>
+<tr class="row-odd"><td><p>min</p></td>
+<td><p>energy minimization of 2d LJ melt</p></td>
+</tr>
+<tr class="row-even"><td><p>msst</p></td>
+<td><p>MSST shock dynamics</p></td>
+</tr>
+<tr class="row-odd"><td><p>neb</p></td>
+<td><p>nudged elastic band (NEB) calculation for barrier finding</p></td>
+</tr>
+<tr class="row-even"><td><p>nemd</p></td>
+<td><p>non-equilibrium MD of 2d sheared system</p></td>
+</tr>
+<tr class="row-odd"><td><p>obstacle</p></td>
+<td><p>flow around two voids in a 2d channel</p></td>
+</tr>
+<tr class="row-even"><td><p>peptide</p></td>
+<td><p>dynamics of a small solvated peptide chain (5-mer)</p></td>
+</tr>
+<tr class="row-odd"><td><p>peri</p></td>
+<td><p>Peridynamic model of cylinder impacted by indenter</p></td>
+</tr>
+<tr class="row-even"><td><p>pour</p></td>
+<td><p>pouring of granular particles into a 3d box, then chute flow</p></td>
+</tr>
+<tr class="row-odd"><td><p>prd</p></td>
+<td><p>parallel replica dynamics of vacancy diffusion in bulk Si</p></td>
+</tr>
+<tr class="row-even"><td><p>reax</p></td>
+<td><p>RDX and TATB models using the ReaxFF</p></td>
+</tr>
+<tr class="row-odd"><td><p>rigid</p></td>
+<td><p>rigid bodies modeled as independent or coupled</p></td>
+</tr>
+<tr class="row-even"><td><p>shear</p></td>
+<td><p>sideways shear applied to 2d solid, with and without a void</p></td>
+</tr>
+<tr class="row-odd"><td><p>srd</p></td>
+<td><p>stochastic rotation dynamics (SRD) particles as solvent</p></td>
+</tr>
+<tr class="row-even"><td><p>tad</p></td>
+<td><p>temperature-accelerated dynamics of vacancy diffusion in bulk Si</p></td>
+</tr>
+<tr class="row-odd"><td><p>tri</p></td>
+<td><p>triangular particles in rigid bodies</p></td>
+</tr>
+</tbody>
+</table>
+<p>Here is how you might run and visualize one of the sample problems:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">indent</span>
+<span class="n">cp</span> <span class="o">../../</span><span class="n">src</span><span class="o">/</span><span class="n">lmp_linux</span> <span class="o">.</span>           <span class="c1"># copy LAMMPS executable to this dir</span>
+<span class="n">lmp_linux</span> <span class="o">&lt;</span> <span class="ow">in</span><span class="o">.</span><span class="n">indent</span>              <span class="c1"># run the problem</span>
+</pre></div>
+</div>
+<p>Running the simulation produces the files <em>dump.indent</em> and
+<em>log.lammps</em>.  You can visualize the dump file as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">../../</span><span class="n">tools</span><span class="o">/</span><span class="n">xmovie</span><span class="o">/</span><span class="n">xmovie</span> <span class="o">-</span><span class="n">scale</span> <span class="n">dump</span><span class="o">.</span><span class="n">indent</span>
+</pre></div>
+</div>
+<p>If you uncomment the <a class="reference internal" href="dump_image.html"><span class="doc">dump image</span></a> line(s) in the input
+script a series of JPG images will be produced by the run.  These can
+be viewed individually or turned into a movie or animated by tools
+like ImageMagick or QuickTime or various Windows-based tools.  See the
+<a class="reference internal" href="dump_image.html"><span class="doc">dump image</span></a> doc page for more details.  E.g. this
+Imagemagick command would create a GIF file suitable for viewing in a
+browser.</p>
+<pre class="literal-block">% convert -loop 1 *.jpg foo.gif</pre>
+<hr class="docutils" />
+<p>There is also a COUPLE directory with examples of how to use LAMMPS as
+a library, either by itself or in tandem with another code or library.
+See the COUPLE/README file to get started.</p>
+<p>There is also an ELASTIC directory with an example script for
+computing elastic constants, using a zero temperature Si example.  See
+the in.elastic file for more info.</p>
+<p>There is also a USER directory which contains subdirectories of
+user-provided examples for user packages.  See the README files in
+those directories for more info.  See the
+<a class="reference internal" href="Section_start.html"><span class="doc">Section_start.html</span></a> file for more info about user
+packages.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Section_perf.html" class="btn btn-neutral float-right" title="10. Performance &amp; scalability" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="superquadric_simulations.html" class="btn btn-neutral" title="8. How-to for superquadric particles" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018 JKU Linz, DCS Computing GmbH and Sandia Corporation.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'24.01',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

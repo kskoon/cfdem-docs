@@ -1,0 +1,450 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>MPI/OpenMP hybrid parallelization in LIGGGHTS &mdash; LIGGGHTS Academic 24.01
+ documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="LIGGGHTS Academic 24.01
+ documentation" href="index.html"/>
+        <link rel="up" title="Tutorials" href="tutorials.html"/>
+        <link rel="next" title="Body particles" href="body.html"/>
+        <link rel="prev" title="LIGGGHTS 3.X vs. LIGGGHTS 2.X - syntax changes" href="liggghts_3.X_tutorial.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="Manual.html" class="icon icon-home"> LIGGGHTS Academic
+        
+
+        
+        </a>
+
+        
+          
+          
+            <div class="version">
+              24.01
+
+            </div>
+          
+        
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Section_intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_start.html">2. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_commands.html">3. Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_gran_models.html">4. Contact models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_packages.html">5. Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_accelerate.html">6. Accelerating LAMMPS performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_howto.html">7. How-to discussions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="superquadric_simulations.html">8. How-to for superquadric particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_example.html">9. Example problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_perf.html">10. Performance &amp; scalability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_tools.html">11. Additional tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_modify.html">12. Modifying &amp; extending LAMMPS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_python.html">13. Python interface to LAMMPS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_errors.html">14. Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_history.html">15. Future and history</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Index</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="githubAccess_public.html">Github access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="liggghts_2.X_tutorial.html">LIGGGHTS 2.X vs. LIGGGHTS - syntax changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="liggghts_3.X_tutorial.html">LIGGGHTS 3.X vs. LIGGGHTS 2.X - syntax changes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MPI/OpenMP hybrid parallelization in LIGGGHTS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compiling-zoltan-installing-zoltan">Compiling Zoltan &amp; Installing Zoltan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compiling-liggghts-with-hybrid-parallelization">Compiling LIGGGHTS with hybrid parallelization</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-usage">Basic Usage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#package-omp">Package OMP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#partitioning-of-data">Partitioning of Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pair-styles">Pair Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#meshes">Meshes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#walls">Walls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#other-fixes">Other Fixes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="body.html">Body particles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="commands.html">Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="computes.html">Computes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fixes.html">Fixes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pairs.html">Pair Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="granular.html">Granular Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bonds.html">Bond Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angles.html">Angle Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dihedrals.html">Dihedral Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="impropers.html">Improper Styles</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="Manual.html">LIGGGHTS Academic</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="Manual.html">Docs</a> &raquo;</li>
+      
+          <li><a href="tutorials.html">Tutorials</a> &raquo;</li>
+      
+    <li>MPI/OpenMP hybrid parallelization in LIGGGHTS</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="http://lammps.sandia.gov">Website</a>
+            <a href="Section_commands.html#comm">Commands</a>
+        
+      </li>
+  </ul>
+  <hr/>
+  
+    <div class="rst-footer-buttons" style="margin-bottom: 1em" role="navigation" aria-label="footer navigation">
+      
+        <a href="body.html" class="btn btn-neutral float-right" title="Body particles" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="liggghts_3.X_tutorial.html" class="btn btn-neutral" title="LIGGGHTS 3.X vs. LIGGGHTS 2.X - syntax changes" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="mpi-openmp-hybrid-parallelization-in-liggghts">
+<h1>MPI/OpenMP hybrid parallelization in LIGGGHTS<a class="headerlink" href="#mpi-openmp-hybrid-parallelization-in-liggghts" title="Permalink to this heading">¶</a></h1>
+<section id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this heading">¶</a></h2>
+<p>The MPI/OpenMP hybrid parallelization in LIGGGHTS is a new way to achieve better load-balancing within simulations. Traditional MPI simulations can only be load-balanced using <a class="reference internal" href="fix_balance.html"><span class="doc">fix/balance</span></a>. The following figure illustrates how static 8x1 decomposition might look like. In this example colors are used to show areas which require high amount of computational work (red) in contract to other areas which leave processors idle (blue). Using a static decomposition processes the boundaries of the domain can become idle quickly. To avoid this, MPI dynamic load balancing was introduced with <a class="reference internal" href="fix_balance.html"><span class="doc">fix/balance</span></a>. It adjusts the boundaries making sure each subdomain has an equal amount of particles in them.</p>
+<img alt="_images/1Ddecomposition.png" class="align-center" src="_images/1Ddecomposition.png" />
+<p>MPI load-balancing works very well with simple decompositions. However load-imbalance remains a dominant issue if higher number of cores used. At some point decomposing along one dimension alone will no longer add any benefit. Adding a cut to additional dimensions will only work well if the load is symmetric. The following figure shows how the symmetric testcase can easily be computed using 16 processes in stead of 8 by adding another decomposition along the y-Axis.</p>
+<img alt="_images/2Ddecomposition.png" class="align-center" src="_images/2Ddecomposition.png" />
+<p>Unsymmetrical loads are very difficult to decompose. The margin of error is significant. Simulations can take 2x-4x more time if decompositions are chosen poorly and MPI load-balancing used improperly. The following illustrates a simulation which is harder to decompose because the cuts in space span the entire domain.</p>
+<img alt="_images/2Ddecomposition_unsymmetric.png" class="align-center" src="_images/2Ddecomposition_unsymmetric.png" />
+<p>A hybrid parallelization which uses MPI and OpenMP allows us to reduce the amount of MPI processes and let automatic partitioning figure out a good decomposition inside our subdomains. In our next Figure we show how the hybrid can use only two MPI processes to cut the domain in half along the y-Axis and then partitions the subdomains among 8 threads. In other words, our hybrid parallelization adds a second layer of parallelization to LIGGGHTS which is more flexible and does automatic load-balancing.</p>
+<img alt="_images/2Ddecomposition_hybrid.png" class="align-center" src="_images/2Ddecomposition_hybrid.png" />
+<p>The main idea behind using a hybrid parallelization therefore is to first split the domain into large, potentially MPI-load-balanced portions. Each MPI subdomain is then further partitioned for a given number of threads.</p>
+<img alt="_images/Hybrid_Overview.png" class="align-center" src="_images/Hybrid_Overview.png" />
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h2>
+<p>The hybrid parallelization is implemented using the OpenMP standard. This standard for threading is supported by most compiler vendors by now. Some still compilers only support it in their development versions right now. To compile LIGGGHTS with hybrid parallelization we need additional compiler flags and additional implementation files which replace some core components of the usual LIGGGHTS integration loop with threaded versions.</p>
+<section id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>GCC &gt;= 4.7</p></li>
+<li><p>Zoltan Library 3.6</p></li>
+</ul>
+</section>
+<section id="compiling-zoltan-installing-zoltan">
+<h3>Compiling Zoltan &amp; Installing Zoltan<a class="headerlink" href="#compiling-zoltan-installing-zoltan" title="Permalink to this heading">¶</a></h3>
+<p>Zoltan is a library containing many useful partitioning and load-balancing algorithms. We utilize this library in our implementation. Before compiling LIGGGHTS with hybrid parallelization, we need to compile and install this library as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">LIGGGHTS</span><span class="o">-</span><span class="n">PFM</span><span class="o">/</span>
+<span class="n">git</span> <span class="n">submodule</span> <span class="n">init</span>
+<span class="n">git</span> <span class="n">submodule</span> <span class="n">update</span>
+<span class="n">cd</span> <span class="n">lib</span><span class="o">/</span><span class="n">zoltan</span><span class="o">/</span>
+<span class="n">mkdir</span> <span class="n">BUILD</span>
+<span class="n">cd</span> <span class="n">BUILD</span>
+<span class="o">../</span><span class="n">configure</span>
+<span class="n">make</span> <span class="n">everything</span>
+<span class="n">make</span> <span class="n">install</span>
+</pre></div>
+</div>
+</section>
+<section id="compiling-liggghts-with-hybrid-parallelization">
+<h3>Compiling LIGGGHTS with hybrid parallelization<a class="headerlink" href="#compiling-liggghts-with-hybrid-parallelization" title="Permalink to this heading">¶</a></h3>
+<p>Once all the prerequisites are met, we can compile a hybrid version of LIGGGHTS using the <em>hybrid</em> makefile.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">LIGGGHTS</span><span class="o">-</span><span class="n">PFM</span><span class="o">/</span><span class="n">src</span><span class="o">/</span>
+<span class="n">make</span> <span class="o">-</span><span class="n">j</span> <span class="mi">4</span> <span class="n">hybrid</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="basic-usage">
+<h2>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this heading">¶</a></h2>
+<p>Using this new parallelization of LIGGGHTS requires the compilation of a LIGGGHTS binary as mentioned in the previous section. This version of LIGGGHTS supports additional styles and fixes which all end with an additional /omp suffix.</p>
+<section id="package-omp">
+<h3>Package OMP<a class="headerlink" href="#package-omp" title="Permalink to this heading">¶</a></h3>
+<p>Prior to using any OpenMP styles or fixes, one must enable OpenMP by using the <a class="reference internal" href="package.html"><span class="doc">package</span></a> command.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">omp</span> <span class="mi">8</span> <span class="n">force</span><span class="o">/</span><span class="n">neigh</span> <span class="n">thread</span><span class="o">-</span><span class="n">binding</span> <span class="n">verbose</span>
+</pre></div>
+</div>
+<p>The thread-binding option will force each thread to be bound to a CPU core using SMP-style numbering. This means that it assumes that cores which are next to each other are numbered with consecutive numbers.</p>
+</section>
+<section id="partitioning-of-data">
+<h3>Partitioning of Data<a class="headerlink" href="#partitioning-of-data" title="Permalink to this heading">¶</a></h3>
+<p>Pair styles and wall fixes require particle data to be partitioned. Each thread will then operate on one of the partitions. Currently there is only a single partitioner implemented using the Zoltan library. Key-Value pairs passed as arguments to the <em>partitioner_style</em> are passed 1:1 to the Zoltan library.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">partitioner_style</span> <span class="n">zoltan</span> <span class="n">RCB_REUSE</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>By default, the partitioner uses the following options:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 9%" />
+<col style="width: 77%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>DEBUG_LEVEL</p></td>
+<td><p>0</p></td>
+<td><p>Controls Debug output</p></td>
+</tr>
+<tr class="row-even"><td><p>LB_METHOD</p></td>
+<td><p>RCB</p></td>
+<td><p>Selection of RCB as partitioning algorithm</p></td>
+</tr>
+<tr class="row-odd"><td><p>NUM_GID_ENTRIES</p></td>
+<td><p>1</p></td>
+<td><p>number of global ids per element <strong>DO NOT CHANGE</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>NUM_LID_ENTRIES</p></td>
+<td><p>1</p></td>
+<td><p>number of local ids per element <strong>DO NOT CHANGE</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>NUM_LOCAL_PARTS</p></td>
+<td><p><em>NUM_THREADS</em></p></td>
+<td><p>number of partitions generated. this should always be equal to the number of threads. This is done by default, therefore <strong>DO NOT CHANGE</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>RETURN_LISTS</p></td>
+<td><p>PARTS</p></td>
+<td><p>tells Zoltan to return a list containing the mapping of particles to parts <strong>DO NOT CHANGE</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>KEEP_CUTS</p></td>
+<td><p>1</p></td>
+<td><p>Zoltan should keep information of past partitionings <strong>DO NOT CHANGE</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>RCB_REUSE</p></td>
+<td><p>0</p></td>
+<td><p>Zoltan should use past partitioning information for repartitioning <strong>Recommended to set to 1</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>RCB_OUTPUT_LEVEL</p></td>
+<td><p>0</p></td>
+<td><p>RCB specific debug output</p></td>
+</tr>
+<tr class="row-even"><td><p>RCB_RECTILINEAR_BLOCKS</p></td>
+<td><p>0</p></td>
+<td><p>RCB specific option</p></td>
+</tr>
+</tbody>
+</table>
+<p>Additional information can be found <a class="reference external" href="http://www.cs.sandia.gov/zoltan/ug_html/ug_alg_rcb.html">here</a>.</p>
+</section>
+<section id="pair-styles">
+<h3>Pair Styles<a class="headerlink" href="#pair-styles" title="Permalink to this heading">¶</a></h3>
+<p>All granular pair styles have a OpenMP implementation. To select them simply use <em>gran/omp</em> instead of <em>gran</em> as <a class="reference internal" href="pair_style.html"><span class="doc">pair_style</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pair_style</span> <span class="n">gran</span><span class="o">/</span><span class="n">omp</span> <span class="n">model</span> <span class="n">hertz</span> <span class="n">tangential</span> <span class="n">history</span>
+</pre></div>
+</div>
+</section>
+<section id="meshes">
+<h3>Meshes<a class="headerlink" href="#meshes" title="Permalink to this heading">¶</a></h3>
+<p>Meshes of type <a class="reference internal" href="fix_mesh_surface.html"><span class="doc">mesh/surface</span></a> which are used by a wall fix are required to be replaced by their OpenMP version of <a class="reference internal" href="fix_mesh_surface.html"><span class="doc">mesh/surface/omp</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fix</span> <span class="n">cadMix1</span> <span class="nb">all</span> <span class="n">mesh</span><span class="o">/</span><span class="n">surface</span><span class="o">/</span><span class="n">omp</span> <span class="n">file</span> <span class="n">meshes</span><span class="o">/</span><span class="n">Mixer</span><span class="o">.</span><span class="n">stl</span> <span class="nb">type</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section id="walls">
+<h3>Walls<a class="headerlink" href="#walls" title="Permalink to this heading">¶</a></h3>
+<p>Walls of type <a class="reference internal" href="fix_wall_gran.html"><span class="doc">wall/gran</span></a> should be replaced by their OpenMP version of <a class="reference internal" href="fix_wall_gran.html"><span class="doc">wall/gran/omp</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fix</span> <span class="n">meshes</span> <span class="nb">all</span> <span class="n">wall</span><span class="o">/</span><span class="n">gran</span><span class="o">/</span><span class="n">omp</span> <span class="n">model</span> <span class="n">hertz</span> <span class="n">tangential</span> <span class="n">history</span> <span class="n">mesh</span> <span class="n">n_meshes</span> <span class="mi">12</span> <span class="n">meshes</span> <span class="n">cadShaft</span> <span class="n">cadBlade1</span> <span class="n">cadBlade2</span> <span class="n">cadBlade3</span> <span class="n">cadBlade4</span> <span class="n">cadMix1</span> <span class="n">cadMix2</span> <span class="n">cadMix3</span> <span class="n">cadMix4</span> <span class="n">cadMix5</span> <span class="n">cadMix6</span> <span class="n">cadDrum</span>
+</pre></div>
+</div>
+</section>
+<section id="other-fixes">
+<h3>Other Fixes<a class="headerlink" href="#other-fixes" title="Permalink to this heading">¶</a></h3>
+<p>The implementation of the hybrid parallelization is not feature complete. Some fixes might not even need an OpenMP version at all. Here is a list of other fixes which have been optimized so far.</p>
+<section id="gravity">
+<h4>Gravity<a class="headerlink" href="#gravity" title="Permalink to this heading">¶</a></h4>
+<p>The <a class="reference internal" href="fix_gravity.html"><span class="doc">gravity</span></a> fix should be replaced by <a class="reference internal" href="fix_gravity.html"><span class="doc">gravity/omp</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fix</span> <span class="n">gravi</span> <span class="nb">all</span> <span class="n">gravity</span><span class="o">/</span><span class="n">omp</span> <span class="mf">9.81</span> <span class="n">vector</span> <span class="mf">0.0</span> <span class="mf">0.0</span> <span class="o">-</span><span class="mf">1.0</span>
+</pre></div>
+</div>
+</section>
+<section id="integration">
+<h4>Integration<a class="headerlink" href="#integration" title="Permalink to this heading">¶</a></h4>
+<p>The <a class="reference internal" href="fix_nve_sphere.html"><span class="doc">nve/sphere</span></a> integration fix should be replaced by <a class="reference internal" href="fix_nve_sphere.html"><span class="doc">nve/sphere/omp</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fix</span> <span class="n">integr</span> <span class="n">nve_group</span> <span class="n">nve</span><span class="o">/</span><span class="n">sphere</span><span class="o">/</span><span class="n">omp</span>
+</pre></div>
+</div>
+</section>
+<section id="restrictions">
+<h4>Restrictions<a class="headerlink" href="#restrictions" title="Permalink to this heading">¶</a></h4>
+<p>The MPI/OpenMP hybrid implementation can only be used if LIGGGHTS
+was built with the USER-OMP and USER-ZOLTAN package. See the
+<a class="reference internal" href="Section_start.html#start-3"><span class="std std-ref">Making LAMMPS</span></a> section for more info.</p>
+<p>Insertion of particles is currently not optimized with OpenMP.</p>
+</section>
+<section id="related-commands">
+<h4>Related commands<a class="headerlink" href="#related-commands" title="Permalink to this heading">¶</a></h4>
+<p><a class="reference internal" href="package.html"><span class="doc">package</span></a>
+<a class="reference internal" href="pair_style.html"><span class="doc">pair_style</span></a>
+<a class="reference internal" href="fix_wall_gran.html"><span class="doc">fix/wall/gran/omp</span></a>
+<a class="reference internal" href="fix_mesh_surface.html"><span class="doc">fix/mesh/surface/omp</span></a>
+<a class="reference internal" href="fix_nve_sphere.html"><span class="doc">fix/nve/sphere/omp</span></a>
+<a class="reference internal" href="fix_gravity.html"><span class="doc">fix/gravity/omp</span></a>
+<a class="reference internal" href="suffix.html"><span class="doc">suffix</span></a></p>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="body.html" class="btn btn-neutral float-right" title="Body particles" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="liggghts_3.X_tutorial.html" class="btn btn-neutral" title="LIGGGHTS 3.X vs. LIGGGHTS 2.X - syntax changes" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018 JKU Linz, DCS Computing GmbH and Sandia Corporation.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'24.01',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

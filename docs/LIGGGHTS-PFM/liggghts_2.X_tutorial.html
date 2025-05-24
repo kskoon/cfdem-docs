@@ -1,0 +1,437 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>LIGGGHTS 2.X vs. LIGGGHTS - syntax changes &mdash; LIGGGHTS Academic 24.01
+ documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="LIGGGHTS Academic 24.01
+ documentation" href="index.html"/>
+        <link rel="up" title="Tutorials" href="tutorials.html"/>
+        <link rel="next" title="LIGGGHTS 3.X vs. LIGGGHTS 2.X - syntax changes" href="liggghts_3.X_tutorial.html"/>
+        <link rel="prev" title="Github access" href="githubAccess_public.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="Manual.html" class="icon icon-home"> LIGGGHTS Academic
+        
+
+        
+        </a>
+
+        
+          
+          
+            <div class="version">
+              24.01
+
+            </div>
+          
+        
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Section_intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_start.html">2. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_commands.html">3. Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_gran_models.html">4. Contact models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_packages.html">5. Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_accelerate.html">6. Accelerating LAMMPS performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_howto.html">7. How-to discussions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="superquadric_simulations.html">8. How-to for superquadric particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_example.html">9. Example problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_perf.html">10. Performance &amp; scalability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_tools.html">11. Additional tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_modify.html">12. Modifying &amp; extending LAMMPS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_python.html">13. Python interface to LAMMPS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_errors.html">14. Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_history.html">15. Future and history</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Index</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="githubAccess_public.html">Github access</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">LIGGGHTS 2.X vs. LIGGGHTS - syntax changes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#commands-covered-by-this-tutorial">Commands covered by this tutorial:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#changes-in-syntax-for-each-command">Changes in syntax for each command:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="liggghts_3.X_tutorial.html">LIGGGHTS 3.X vs. LIGGGHTS 2.X - syntax changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hybrid_parallelization.html">MPI/OpenMP hybrid parallelization in LIGGGHTS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="body.html">Body particles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="commands.html">Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="computes.html">Computes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fixes.html">Fixes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pairs.html">Pair Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="granular.html">Granular Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bonds.html">Bond Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angles.html">Angle Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dihedrals.html">Dihedral Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="impropers.html">Improper Styles</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="Manual.html">LIGGGHTS Academic</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="Manual.html">Docs</a> &raquo;</li>
+      
+          <li><a href="tutorials.html">Tutorials</a> &raquo;</li>
+      
+    <li>LIGGGHTS 2.X vs. LIGGGHTS - syntax changes</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="http://lammps.sandia.gov">Website</a>
+            <a href="Section_commands.html#comm">Commands</a>
+        
+      </li>
+  </ul>
+  <hr/>
+  
+    <div class="rst-footer-buttons" style="margin-bottom: 1em" role="navigation" aria-label="footer navigation">
+      
+        <a href="liggghts_3.X_tutorial.html" class="btn btn-neutral float-right" title="LIGGGHTS 3.X vs. LIGGGHTS 2.X - syntax changes" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="githubAccess_public.html" class="btn btn-neutral" title="Github access" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="liggghts-2-x-vs-liggghts-syntax-changes">
+<h1>LIGGGHTS 2.X vs. LIGGGHTS - syntax changes<a class="headerlink" href="#liggghts-2-x-vs-liggghts-syntax-changes" title="Permalink to this heading">¶</a></h1>
+<section id="introduction">
+<h2>Introduction:<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+<p>This is a short outline of the most important changes in LIGGGHTS 2.X
+compared to LIGGGHTS 1.5.3 regarding the syntax of major commands. The
+motivation for these changes was to make the script language more readable and to
+improve extendability (in the sense of object oriented programming) with respect
+to modelling approaches.</p>
+</section>
+<section id="commands-covered-by-this-tutorial">
+<h2>Commands covered by this tutorial:<a class="headerlink" href="#commands-covered-by-this-tutorial" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>atom_style sphere (formerly atom_style granular)</p></li>
+<li><p>dump mesh/stl (formerly dump stl)</p></li>
+<li><p>dump mesh/vtk (formerly dump mesh/gran/VTK)</p></li>
+<li><p>fix heat/gran</p></li>
+<li><p>fix mesh/surface (formerly fix mesh/gran)</p></li>
+<li><p>fix mesh/surface/stress (formerly fix mesh/gran/stressanalysis)</p></li>
+<li><p>fix move/mesh (formerly fix move/mesh/gran)</p></li>
+<li><p>fix wall/gran/*</p></li>
+<li><p>pair_style gran/*</p></li>
+</ul>
+</section>
+<section id="changes-in-syntax-for-each-command">
+<h2>Changes in syntax for each command:<a class="headerlink" href="#changes-in-syntax-for-each-command" title="Permalink to this heading">¶</a></h2>
+<p>Changes are indicated as follows</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OLD</span><span class="p">:</span> <span class="n">old_syntax</span>
+<span class="n">NEW</span><span class="p">:</span> <span class="n">new_syntax</span>
+</pre></div>
+</div>
+<p>where <em>old_syntax</em> refers to the syntax used in LIGGGHTS 1.5.3 and before,
+and <em>new_syntax</em> refers to the syntax used in LIGGGHTS 2.X</p>
+<hr class="docutils" />
+<p><strong>atom_style sphere (formerly atom_style granular):</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OLD</span><span class="p">:</span> <span class="n">atom_style</span> <span class="n">granular</span>
+<span class="n">NEW</span><span class="p">:</span> <span class="n">atom_style</span> <span class="n">sphere</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For compatibility reasons, the old syntax can still be used in LIGGGHTS 2.0</p>
+</div>
+<p>For details, see <a class="reference internal" href="atom_style.html"><span class="doc">atom_style sphere</span></a>.</p>
+<hr class="docutils" />
+<p><strong>dump mesh/stl:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OLD</span><span class="p">:</span> <span class="n">dmpstl</span> <span class="nb">all</span> <span class="n">stl</span> <span class="mi">300</span> <span class="n">post</span><span class="o">/</span><span class="n">dump</span><span class="o">*.</span><span class="n">stl</span>
+<span class="n">NEW</span><span class="p">:</span> <span class="n">dmpstl</span> <span class="nb">all</span> <span class="n">mesh</span><span class="o">/</span><span class="n">stl</span> <span class="mi">300</span> <span class="n">post</span><span class="o">/</span><span class="n">dump</span><span class="o">*.</span><span class="n">stl</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For compatibility reasons, the old syntax can still be used in LIGGGHTS 2.0</p>
+</div>
+<hr class="docutils" />
+<p><strong>dump mesh/vtk:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OLD</span><span class="p">:</span> <span class="n">dmpstl</span> <span class="nb">all</span> <span class="n">stl</span> <span class="mi">300</span> <span class="n">post</span><span class="o">/</span><span class="n">dump</span><span class="o">*.</span><span class="n">stl</span>
+<span class="n">NEW</span><span class="p">:</span> <span class="n">dmpstl</span> <span class="nb">all</span> <span class="n">mesh</span><span class="o">/</span><span class="n">stl</span> <span class="mi">300</span> <span class="n">post</span><span class="o">/</span><span class="n">dump</span><span class="o">*.</span><span class="n">stl</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For compatibility reasons, the old syntax can still be used in LIGGGHTS 2.0</p>
+</div>
+<hr class="docutils" />
+<p><strong>fix heat/gran:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OLD</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">heat</span><span class="o">/</span><span class="n">gran</span> <span class="mf">273.15</span>
+<span class="n">NEW</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">heat</span><span class="o">/</span><span class="n">gran</span> <span class="n">initial_temperature</span> <span class="mf">273.15</span>
+
+<span class="n">OLD</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">heat</span><span class="o">/</span><span class="n">gran</span> <span class="mf">273.15</span> <span class="o">+</span> <span class="n">activate</span> <span class="n">area</span> <span class="n">correction</span> <span class="n">via</span> <span class="n">fix</span> <span class="nb">property</span><span class="o">/</span><span class="k">global</span>
+<span class="n">NEW</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">heat</span><span class="o">/</span><span class="n">gran</span> <span class="n">initial_temperature</span> <span class="mf">273.15</span> <span class="n">area_correction</span> <span class="n">on</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>fix mesh/surface (formerly fix mesh/gran):</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OLD</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">mesh</span><span class="o">/</span><span class="n">gran</span> <span class="n">mesh</span><span class="o">.</span><span class="n">stl</span> <span class="mi">1</span> <span class="mf">1.0</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span>
+<span class="n">NEW</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">mesh</span><span class="o">/</span><span class="n">surface</span> <span class="n">file</span> <span class="n">mesh</span><span class="o">.</span><span class="n">stl</span> <span class="nb">type</span> <span class="mi">1</span>
+
+<span class="n">OLD</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">mesh</span><span class="o">/</span><span class="n">gran</span> <span class="n">mesh</span><span class="o">.</span><span class="n">stl</span> <span class="mi">1</span> <span class="mf">0.001</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="o">-</span><span class="mf">90.</span> <span class="mf">0.</span> <span class="mf">0.</span>
+<span class="n">NEW</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">mesh</span><span class="o">/</span><span class="n">surface</span> <span class="n">file</span> <span class="n">mesh</span><span class="o">.</span><span class="n">stl</span> <span class="nb">type</span> <span class="mi">1</span> <span class="n">scale</span> <span class="mf">0.001</span> <span class="n">rotate</span> <span class="n">axis</span> <span class="mf">1.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="n">angle</span> <span class="o">-</span><span class="mf">90.</span>
+
+<span class="n">OLD</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">mesh</span><span class="o">/</span><span class="n">gran</span> <span class="n">mesh</span><span class="o">.</span><span class="n">stl</span> <span class="mi">1</span> <span class="mf">1.0</span> <span class="mf">1.</span> <span class="mf">2.</span> <span class="mf">3.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span>
+<span class="n">NEW</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">mesh</span><span class="o">/</span><span class="n">surface</span> <span class="n">file</span> <span class="n">mesh</span><span class="o">.</span><span class="n">stl</span> <span class="nb">type</span> <span class="mi">1</span> <span class="n">move</span> <span class="mf">1.</span> <span class="mf">2.</span> <span class="mi">3</span>
+
+<span class="n">OLD</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">mesh</span><span class="o">/</span><span class="n">gran</span> <span class="n">mesh</span><span class="o">.</span><span class="n">stl</span> <span class="mi">1</span> <span class="mf">1.0</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="n">conveyor</span> <span class="mf">5.</span> <span class="mf">0.</span> <span class="mf">0.</span>
+<span class="n">NEW</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">mesh</span><span class="o">/</span><span class="n">surface</span> <span class="n">file</span> <span class="n">mesh</span><span class="o">.</span><span class="n">stl</span> <span class="nb">type</span> <span class="mi">1</span> <span class="n">surface_vel</span> <span class="mf">5.</span> <span class="mf">0.</span> <span class="mf">0.</span>
+
+<span class="n">OLD</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">mesh</span><span class="o">/</span><span class="n">gran</span> <span class="n">mesh</span><span class="o">.</span><span class="n">stl</span> <span class="mi">1</span> <span class="mf">1.0</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="n">rotate</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">1.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">5.</span>
+<span class="n">NEW</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">mesh</span><span class="o">/</span><span class="n">surface</span> <span class="n">file</span> <span class="n">mesh</span><span class="o">.</span><span class="n">stl</span> <span class="nb">type</span> <span class="mi">1</span> <span class="n">surface_ang_vel</span> <span class="n">origin</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="n">axis</span>  <span class="mf">1.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="n">omega</span> <span class="mf">5.</span>
+</pre></div>
+</div>
+<p>For details, see <a class="reference internal" href="fix_mesh_surface.html"><span class="doc">fix mesh/surface</span></a>.</p>
+<hr class="docutils" />
+<p><strong>fix mesh/surface/stress (formerly fix mesh/gran/stressanalysis):</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OLD</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">mesh</span><span class="o">/</span><span class="n">gran</span><span class="o">/</span><span class="n">stressanalysis</span> <span class="n">mesh</span><span class="o">.</span><span class="n">stl</span> <span class="mi">1</span> <span class="mf">1.0</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="n">finnie</span> <span class="n">yes</span>
+<span class="n">NEW</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">fix</span> <span class="n">mesh</span><span class="o">/</span><span class="n">surface</span><span class="o">/</span><span class="n">stress</span> <span class="n">file</span> <span class="n">mesh</span><span class="o">.</span><span class="n">stl</span> <span class="nb">type</span> <span class="mi">1</span> <span class="n">wear</span> <span class="n">finnie</span>
+</pre></div>
+</div>
+<p>For details, see <a class="reference internal" href="fix_mesh_surface_stress.html"><span class="doc">fix mesh/surface/stress</span></a>.</p>
+<hr class="docutils" />
+<p><strong>fix move/mesh (formerly fix move/mesh/gran):</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OLD</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">move</span><span class="o">/</span><span class="n">mesh</span><span class="o">/</span><span class="n">gran</span> <span class="n">wiggle</span> <span class="o">-</span><span class="mf">0.1</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.02</span> <span class="n">cad1</span> <span class="mi">1</span>
+<span class="n">NEW</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">move</span><span class="o">/</span><span class="n">mesh</span> <span class="n">mesh</span> <span class="n">cad1</span> <span class="n">wiggle</span> <span class="n">amplitude</span> <span class="o">-</span><span class="mf">0.1</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="n">period</span> <span class="mf">0.02</span>
+
+<span class="n">OLD</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">move</span><span class="o">/</span><span class="n">mesh</span><span class="o">/</span><span class="n">gran</span> <span class="n">rotate</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">1.</span> <span class="mf">0.05</span> <span class="n">cad1</span> <span class="mi">1</span>
+<span class="n">NEW</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">move</span><span class="o">/</span><span class="n">mesh</span> <span class="n">mesh</span> <span class="n">cad1</span> <span class="n">rotate</span> <span class="n">origin</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="n">axis</span>  <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">1.</span> <span class="n">period</span> <span class="mf">0.05</span>
+
+<span class="n">OLD</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">move</span><span class="o">/</span><span class="n">mesh</span><span class="o">/</span><span class="n">gran</span> <span class="n">linear</span> <span class="mf">20.</span> <span class="mf">20.</span> <span class="mf">0.</span> <span class="n">cad1</span> <span class="mi">1</span>
+<span class="n">NEW</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">move</span><span class="o">/</span><span class="n">mesh</span> <span class="n">mesh</span> <span class="n">cad1</span> <span class="n">linear</span> <span class="mf">20.</span> <span class="mf">20.</span> <span class="mf">0.</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The trailing “1” for the <em>old_syntax</em> was no longer used in LIGGGHTS 1.5.3</p></li>
+<li><p>For compatibility reasons, the command name <em>fix move/mesh/gran</em> can be used in LIGGGHTS 2.0.
+However, the syntax has to follow the LIGGGHTS 2.0 syntax.</p></li>
+</ul>
+</div>
+<p>For details, see <a class="reference internal" href="fix_move_mesh.html"><span class="doc">fix move/mesh</span></a>.</p>
+<hr class="docutils" />
+<p><strong>fix wall/gran/*:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OLD</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">wall</span><span class="o">/</span><span class="n">gran</span><span class="o">/</span><span class="n">hertz</span><span class="o">/</span><span class="n">history</span> <span class="mi">1</span> <span class="mi">0</span> <span class="n">mesh</span><span class="o">/</span><span class="n">gran</span> <span class="mi">2</span> <span class="n">cad1</span> <span class="n">cad2</span>
+<span class="n">NEW</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">wall</span><span class="o">/</span><span class="n">gran</span><span class="o">/</span><span class="n">hertz</span><span class="o">/</span><span class="n">history</span> <span class="n">mesh</span> <span class="n">n_meshes</span> <span class="mi">2</span> <span class="n">meshes</span> <span class="n">cad1</span> <span class="n">cad2</span>
+
+<span class="n">OLD</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">wall</span><span class="o">/</span><span class="n">gran</span><span class="o">/</span><span class="n">hertz</span><span class="o">/</span><span class="n">history</span> <span class="mi">1</span> <span class="mi">0</span> <span class="n">xplane</span> <span class="o">-</span><span class="mf">0.5</span> <span class="mf">0.5</span> <span class="mi">1</span>
+<span class="n">NEW</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID1</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">wall</span><span class="o">/</span><span class="n">gran</span><span class="o">/</span><span class="n">hertz</span><span class="o">/</span><span class="n">history</span> <span class="nb">type</span> <span class="mi">1</span> <span class="n">xplane</span> <span class="o">-</span><span class="mf">0.5</span>
+     <span class="n">fix</span> <span class="n">ID2</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">wall</span><span class="o">/</span><span class="n">gran</span><span class="o">/</span><span class="n">hertz</span><span class="o">/</span><span class="n">history</span> <span class="nb">type</span> <span class="mi">1</span> <span class="n">xplane</span> <span class="mf">0.5</span>
+
+<span class="n">OLD</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">wall</span><span class="o">/</span><span class="n">gran</span><span class="o">/</span><span class="n">hertz</span><span class="o">/</span><span class="n">history</span> <span class="mi">3</span> <span class="mi">0</span> <span class="n">xplane</span> <span class="o">-</span><span class="mf">0.5</span> <span class="mf">0.5</span> <span class="mi">1</span>
+<span class="n">NEW</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID1</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">wall</span><span class="o">/</span><span class="n">gran</span><span class="o">/</span><span class="n">hertz</span><span class="o">/</span><span class="n">history</span> <span class="n">primitive</span> <span class="nb">type</span> <span class="mi">1</span> <span class="n">xplane</span> <span class="o">-</span><span class="mf">0.5</span> <span class="n">rolling_friction</span> <span class="n">cdt</span>
+     <span class="n">fix</span> <span class="n">ID2</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">wall</span><span class="o">/</span><span class="n">gran</span><span class="o">/</span><span class="n">hertz</span><span class="o">/</span><span class="n">history</span> <span class="n">primitive</span> <span class="nb">type</span> <span class="mi">1</span> <span class="n">xplane</span>  <span class="mf">0.5</span> <span class="n">rolling_friction</span> <span class="n">cdt</span>
+
+<span class="n">OLD</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">wall</span><span class="o">/</span><span class="n">gran</span><span class="o">/</span><span class="n">hertz</span><span class="o">/</span><span class="n">history</span> <span class="mi">1</span> <span class="mi">1</span> <span class="n">xplane</span> <span class="o">-</span><span class="mf">0.5</span> <span class="mf">0.5</span> <span class="mi">1</span>
+<span class="n">NEW</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">wall</span><span class="o">/</span><span class="n">gran</span><span class="o">/</span><span class="n">hertz</span><span class="o">/</span><span class="n">history</span> <span class="n">primitive</span> <span class="nb">type</span> <span class="mi">1</span> <span class="n">xplane</span> <span class="o">-</span><span class="mf">0.5</span> <span class="mf">0.5</span> <span class="n">cohesion</span> <span class="n">sjkr</span>
+
+<span class="n">OLD</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">wall</span><span class="o">/</span><span class="n">gran</span><span class="o">/</span><span class="n">hertz</span><span class="o">/</span><span class="n">history</span> <span class="mi">0</span> <span class="mi">0</span> <span class="n">zcylinder</span> <span class="mf">0.05</span> <span class="mi">1</span>
+<span class="n">NEW</span><span class="p">:</span> <span class="n">fix</span> <span class="n">ID</span> <span class="n">group</span><span class="o">-</span><span class="n">ID</span> <span class="n">wall</span><span class="o">/</span><span class="n">gran</span><span class="o">/</span><span class="n">hertz</span><span class="o">/</span><span class="n">history</span> <span class="n">primitive</span> <span class="nb">type</span> <span class="mi">1</span> <span class="n">zcylinder</span> <span class="mf">0.05</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="n">tangential_damping</span> <span class="n">off</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Same applies for hooke/history, hooke, hooke/history/simple, hertz/history/simple</p></li>
+<li><p><em>sjkr</em> stands for ‘simplified JKR (Johnson-Kendall-Roberts)’ model, and {cdt} for ‘constant directional torque’ model</p></li>
+<li><p>styles <em>xplane</em>, <em>yplane</em>, <em>zplane</em> take only one arg now (the wall position), if you want two walls you have to use two fix commands</p></li>
+<li><p>in addition to the existing style <em>zcylinder</em>, there is now <em>xcylinder</em> and <em>ycylinder</em> as well</p></li>
+<li><p><em>xcylinder</em>, <em>ycylinder</em> and <em>zcylinder</em> take 3 args: the cylinder radius, and the location of the axis in the other two dimensions</p></li>
+</ul>
+</div>
+<p>For details, see <a class="reference internal" href="fix_wall_gran.html"><span class="doc">fix wall/gran</span></a>.</p>
+<hr class="docutils" />
+<p><strong>pair_style gran/*:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OLD</span><span class="p">:</span> <span class="n">pair_style</span> <span class="n">gran</span><span class="o">/</span><span class="n">hertz</span><span class="o">/</span><span class="n">history</span> <span class="mi">1</span> <span class="mi">0</span>
+<span class="n">NEW</span><span class="p">:</span> <span class="n">pair_style</span> <span class="n">gran</span><span class="o">/</span><span class="n">hertz</span><span class="o">/</span><span class="n">history</span>
+
+<span class="n">OLD</span><span class="p">:</span> <span class="n">pair_style</span> <span class="n">gran</span><span class="o">/</span><span class="n">hertz</span><span class="o">/</span><span class="n">history</span> <span class="mi">3</span> <span class="mi">0</span>
+<span class="n">NEW</span><span class="p">:</span> <span class="n">pair_style</span> <span class="n">gran</span><span class="o">/</span><span class="n">hertz</span><span class="o">/</span><span class="n">history</span> <span class="n">rolling_friction</span> <span class="n">cdt</span>
+
+<span class="n">OLD</span><span class="p">:</span> <span class="n">pair_style</span> <span class="n">gran</span><span class="o">/</span><span class="n">hertz</span><span class="o">/</span><span class="n">history</span> <span class="mi">1</span> <span class="mi">1</span>
+<span class="n">NEW</span><span class="p">:</span> <span class="n">pair_style</span> <span class="n">gran</span><span class="o">/</span><span class="n">hertz</span><span class="o">/</span><span class="n">history</span> <span class="n">cohesion</span> <span class="n">sjkr</span>
+
+<span class="n">OLD</span><span class="p">:</span> <span class="n">pair_style</span> <span class="n">gran</span><span class="o">/</span><span class="n">hertz</span><span class="o">/</span><span class="n">history</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="n">NEW</span><span class="p">:</span> <span class="n">pair_style</span> <span class="n">gran</span><span class="o">/</span><span class="n">hertz</span><span class="o">/</span><span class="n">history</span> <span class="n">tangential_damping</span> <span class="n">off</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Same applies for hooke/history, hooke, hooke/history/simple, hertz/history/simple</p></li>
+<li><p><em>sjkr</em> stands for ‘simplified JKR (Johnson-Kendall-Roberts)’ model, and {cdt} for ‘constant directional torque’ model</p></li>
+</ul>
+</div>
+<p>For details, see <a class="reference internal" href="pair_gran.html"><span class="doc">pair_style gran</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="liggghts_3.X_tutorial.html" class="btn btn-neutral float-right" title="LIGGGHTS 3.X vs. LIGGGHTS 2.X - syntax changes" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="githubAccess_public.html" class="btn btn-neutral" title="Github access" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018 JKU Linz, DCS Computing GmbH and Sandia Corporation.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'24.01',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

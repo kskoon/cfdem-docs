@@ -1,0 +1,1044 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5. Packages &mdash; LIGGGHTS Academic 24.01
+ documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="LIGGGHTS Academic 24.01
+ documentation" href="index.html"/>
+        <link rel="next" title="6. Accelerating LAMMPS performance" href="Section_accelerate.html"/>
+        <link rel="prev" title="4. Contact models" href="Section_gran_models.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="Manual.html" class="icon icon-home"> LIGGGHTS Academic
+        
+
+        
+        </a>
+
+        
+          
+          
+            <div class="version">
+              24.01
+
+            </div>
+          
+        
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Section_intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_start.html">2. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_commands.html">3. Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_gran_models.html">4. Contact models</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Packages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#standard-packages">5.1. Standard packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#user-packages">5.2. User packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#user-misc-package">5.3. USER-MISC package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#user-atc-package">5.4. USER-ATC package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#user-awpmd-package">5.5. USER-AWPMD package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#user-colvars-package">5.6. USER-COLVARS package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#user-cg-cmm-package">5.7. USER-CG-CMM package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#user-cuda-package">5.8. USER-CUDA package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#user-eff-package">5.9. USER-EFF package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#user-omp-package">5.10. USER-OMP package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#user-reaxc-package">5.11. USER-REAXC package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#user-sph-package">5.12. USER-SPH package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Section_accelerate.html">6. Accelerating LAMMPS performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_howto.html">7. How-to discussions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="superquadric_simulations.html">8. How-to for superquadric particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_example.html">9. Example problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_perf.html">10. Performance &amp; scalability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_tools.html">11. Additional tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_modify.html">12. Modifying &amp; extending LAMMPS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_python.html">13. Python interface to LAMMPS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_errors.html">14. Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Section_history.html">15. Future and history</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Index</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands.html">Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="computes.html">Computes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fixes.html">Fixes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pairs.html">Pair Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="granular.html">Granular Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bonds.html">Bond Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angles.html">Angle Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dihedrals.html">Dihedral Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="impropers.html">Improper Styles</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="Manual.html">LIGGGHTS Academic</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="Manual.html">Docs</a> &raquo;</li>
+      
+    <li><span class="section-number">5. </span>Packages</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="http://lammps.sandia.gov">Website</a>
+            <a href="Section_commands.html#comm">Commands</a>
+        
+      </li>
+  </ul>
+  <hr/>
+  
+    <div class="rst-footer-buttons" style="margin-bottom: 1em" role="navigation" aria-label="footer navigation">
+      
+        <a href="Section_accelerate.html" class="btn btn-neutral float-right" title="6. Accelerating LAMMPS performance" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Section_gran_models.html" class="btn btn-neutral" title="4. Contact models" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="packages">
+<h1><span class="section-number">5. </span>Packages<a class="headerlink" href="#packages" title="Permalink to this heading">¶</a></h1>
+<p>This section gives a quick overview of the add-on packages that extend
+LAMMPS functionality.</p>
+<div class="line-block">
+<div class="line">5.1 <a class="reference internal" href="#pkg-1"><span class="std std-ref">Standard packages</span></a></div>
+<div class="line">5.2 <a class="reference internal" href="#pkg-2"><span class="std std-ref">User packages</span></a></div>
+<div class="line"><br /></div>
+</div>
+<p>LAMMPS includes many optional packages, which are groups of files that
+enable a specific set of features.  For example, force fields for
+molecular systems or granular systems are in packages.  You can see
+the list of all packages by typing “make package” from within the src
+directory of the LAMMPS distribution.</p>
+<p>See <a class="reference internal" href="Section_start.html#start-3"><span class="std std-ref">Section_start 3</span></a> of the manual for
+details on how to include/exclude specific packages as part of the
+LAMMPS build process, and for more details about the differences
+between standard packages and user packages in LAMMPS.</p>
+<p>Below, the packages currently available in LAMMPS are listed.  For
+standard packages, just a one-line description is given.  For user
+packages, more details are provided.</p>
+<section id="standard-packages">
+<span id="pkg-1"></span><h2><span class="section-number">5.1. </span>Standard packages<a class="headerlink" href="#standard-packages" title="Permalink to this heading">¶</a></h2>
+<p>The current list of standard packages is as follows:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 21%" />
+<col style="width: 24%" />
+<col style="width: 35%" />
+<col style="width: 6%" />
+<col style="width: 7%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Package</p></td>
+<td><p>Description</p></td>
+<td><p>Author(s)</p></td>
+<td><p>Doc page</p></td>
+<td><p>Example</p></td>
+<td><p>Library</p></td>
+</tr>
+<tr class="row-even"><td><p>ASPHERE</p></td>
+<td><p>aspherical particles</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p><a class="reference internal" href="Section_howto.html#howto-14"><span class="std std-ref">Section_howto</span></a></p></td>
+<td><p>ellipse</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>CLASS2</p></td>
+<td><p>class 2 force fields</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p><a class="reference internal" href="pair_class2.html"><span class="doc">pair_style lj/class2</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>COLLOID</p></td>
+<td><p>colloidal particles</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p><a class="reference internal" href="atom_style.html"><span class="doc">atom_style colloid</span></a></p></td>
+<td><p>colloid</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>DIPOLE</p></td>
+<td><p>point dipole particles</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p><a class="reference internal" href="pair_dipole.html"><span class="doc">pair_style dipole/cut</span></a></p></td>
+<td><p>dipole</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>FLD</p></td>
+<td><p>Fast Lubrication Dynamics</p></td>
+<td><p>Kumar &amp; Bybee &amp; Higdon (1)</p></td>
+<td><p><a class="reference internal" href="pair_lubricateU.html"><span class="doc">pair_style lubricateU</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>GPU</p></td>
+<td><p>GPU-enabled potentials</p></td>
+<td><p>Mike Brown (ORNL)</p></td>
+<td><p><a class="reference internal" href="Section_accelerate.html#acc-6"><span class="std std-ref">Section accelerate</span></a></p></td>
+<td><p>gpu</p></td>
+<td><p>lib/gpu</p></td>
+</tr>
+<tr class="row-even"><td><p>GRANULAR</p></td>
+<td><p>granular systems</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p><a class="reference internal" href="Section_howto.html#howto-6"><span class="std std-ref">Section_howto</span></a></p></td>
+<td><p>pour</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>KIM</p></td>
+<td><p>openKIM potentials</p></td>
+<td><p>Smirichinski &amp; Elliot &amp; Tadmor (3)</p></td>
+<td><p><a class="reference internal" href="pair_kim.html"><span class="doc">pair_style kim</span></a></p></td>
+<td><p>kim</p></td>
+<td><p>KIM</p></td>
+</tr>
+<tr class="row-even"><td><p>KSPACE</p></td>
+<td><p>long-range Coulombic solvers</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p><a class="reference internal" href="kspace_style.html"><span class="doc">kspace_style</span></a></p></td>
+<td><p>peptide</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>MANYBODY</p></td>
+<td><p>many-body potentials</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p><a class="reference internal" href="pair_tersoff.html"><span class="doc">pair_style tersoff</span></a></p></td>
+<td><p>shear</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>MEAM</p></td>
+<td><p>modified EAM potential</p></td>
+<td><p>Greg Wagner (Sandia)</p></td>
+<td><p><a class="reference internal" href="pair_meam.html"><span class="doc">pair_style meam</span></a></p></td>
+<td><p>meam</p></td>
+<td><p>lib/meam</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC</p></td>
+<td><p>Monte Carlo options</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p><a class="reference internal" href="fix_gcmc.html"><span class="doc">fix gcmc</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>MOLECULE</p></td>
+<td><p>molecular system force fields</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p><a class="reference internal" href="Section_howto.html#howto-3"><span class="std std-ref">Section_howto</span></a></p></td>
+<td><p>peptide</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>OPT</p></td>
+<td><p>optimized pair potentials</p></td>
+<td><p>Fischer &amp; Richie &amp; Natoli (2)</p></td>
+<td><p><a class="reference internal" href="Section_accelerate.html#acc-4"><span class="std std-ref">Section accelerate</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>PERI</p></td>
+<td><p>Peridynamics models</p></td>
+<td><p>Mike Parks (Sandia)</p></td>
+<td><p><a class="reference internal" href="pair_peri.html"><span class="doc">pair_style peri</span></a></p></td>
+<td><p>peri</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>POEMS</p></td>
+<td><p>coupled rigid body motion</p></td>
+<td><p>Rudra Mukherjee (JPL)</p></td>
+<td><p><a class="reference internal" href="fix_poems.html"><span class="doc">fix poems</span></a></p></td>
+<td><p>rigid</p></td>
+<td><p>lib/poems</p></td>
+</tr>
+<tr class="row-even"><td><p>REAX</p></td>
+<td><p>ReaxFF potential</p></td>
+<td><p>Aidan Thompson (Sandia)</p></td>
+<td><p><a class="reference internal" href="pair_reax.html"><span class="doc">pair_style reax</span></a></p></td>
+<td><p>reax</p></td>
+<td><p>lib/reax</p></td>
+</tr>
+<tr class="row-odd"><td><p>REPLICA</p></td>
+<td><p>multi-replica methods</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p><a class="reference internal" href="Section_howto.html#howto-5"><span class="std std-ref">Section_howto</span></a></p></td>
+<td><p>tad</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>RIGID</p></td>
+<td><p>rigid bodies</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p><a class="reference internal" href="fix_rigid.html"><span class="doc">fix rigid</span></a></p></td>
+<td><p>rigid</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>SHOCK</p></td>
+<td><p>shock loading methods</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p><a class="reference internal" href="fix_msst.html"><span class="doc">fix msst</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>SRD</p></td>
+<td><p>stochastic rotation dynamics</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p><a class="reference internal" href="fix_srd.html"><span class="doc">fix srd</span></a></p></td>
+<td><p>srd</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>VORONOI</p></td>
+<td><p>Voronoi tesselations</p></td>
+<td><p>Daniel Schwen (LANL)</p></td>
+<td><p><a class="reference internal" href="compute_voronoi_atom.html"><span class="doc">compute voronoi/atom</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>Voro++</p></td>
+</tr>
+<tr class="row-even"><td><p>XTC</p></td>
+<td><p>dumps in XTC format</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p><a class="reference internal" href="dump.html"><span class="doc">dump</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The “Authors” column lists a name(s) if a specific person is
+responsible for creating and maintaining the package.</p>
+<p>(1) The FLD package was created by Amit Kumar and Michael Bybee from
+Jonathan Higdon’s group at UIUC.</p>
+<p>(2) The OPT package was created by James Fischer (High Performance
+Technologies), David Richie, and Vincent Natoli (Stone Ridge
+Technolgy).</p>
+<p>(3) The KIM package was created by Valeriu Smirichinski, Ryan Elliott,
+and Ellad Tadmor (U Minn).</p>
+<p>The “Doc page” column links to either a portion of the
+<a class="reference internal" href="Section_howto.html"><span class="doc">Section_howto</span></a> of the manual, or an input script
+command implemented as part of the package.</p>
+<p>The “Example” column is a sub-directory in the examples directory of
+the distribution which has an input script that uses the package.
+E.g. “peptide” refers to the examples/peptide directory.</p>
+<p>The “Library” column lists an external library which must be built
+first and which LAMMPS links to when it is built.  If it is listed as
+lib/package, then the code for the library is under the lib directory
+of the LAMMPS distribution.  See the lib/package/README file for info
+on how to build the library.  If it is not listed as lib/package, then
+it is a third-party library not included in the LAMMPS distribution.
+See the src/package/README or src/package/Makefile.lammps file for
+info on where to download the library.  <a class="reference internal" href="Section_start.html#start-3-3"><span class="std std-ref">Section start</span></a> of the manual also gives details
+on how to build LAMMPS with both kinds of auxiliary libraries.</p>
+</section>
+<section id="user-packages">
+<span id="pkg-2"></span><h2><span class="section-number">5.2. </span>User packages<a class="headerlink" href="#user-packages" title="Permalink to this heading">¶</a></h2>
+<p>The current list of user-contributed packages is as follows:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 18%" />
+<col style="width: 20%" />
+<col style="width: 29%" />
+<col style="width: 7%" />
+<col style="width: 12%" />
+<col style="width: 7%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Package</p></td>
+<td><p>Description</p></td>
+<td><p>Author(s)</p></td>
+<td><p>Doc page</p></td>
+<td><p>Example</p></td>
+<td><p>Pic/movie</p></td>
+<td><p>Library</p></td>
+</tr>
+<tr class="row-even"><td><p>USER-ATC</p></td>
+<td><p>atom-to-continuum coupling</p></td>
+<td><p>Jones &amp; Templeton &amp; Zimmerman (2)</p></td>
+<td><p><a class="reference internal" href="fix_atc.html"><span class="doc">fix atc</span></a></p></td>
+<td><p>USER/atc</p></td>
+<td><p><a class="reference external" href="http://lammps.sandia.gov/pictures.html#atc">atc</a></p></td>
+<td><p>lib/atc</p></td>
+</tr>
+<tr class="row-odd"><td><p>USER-AWPMD</p></td>
+<td><p>wave-packet MD</p></td>
+<td><p>Ilya Valuev (JIHT)</p></td>
+<td><p><a class="reference internal" href="pair_awpmd.html"><span class="doc">pair_style awpmd/cut</span></a></p></td>
+<td><p>USER/awpmd</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>lib/awpmd</p></td>
+</tr>
+<tr class="row-even"><td><p>USER-CG-CMM</p></td>
+<td><p>coarse-graining model</p></td>
+<td><p>Axel Kohlmeyer (Temple U)</p></td>
+<td><p><a class="reference internal" href="pair_sdk.html"><span class="doc">pair_style lj/sdk</span></a></p></td>
+<td><p>USER/cg-cmm</p></td>
+<td><p><a class="reference external" href="http://lammps.sandia.gov/pictures.html#cg">cg</a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>USER-COLVARS</p></td>
+<td><p>collective variables</p></td>
+<td><p>Fiorin &amp; Henin &amp; Kohlmeyer (3)</p></td>
+<td><p><a class="reference internal" href="fix_colvars.html"><span class="doc">fix colvars</span></a></p></td>
+<td><p>USER/colvars</p></td>
+<td><p><a class="reference external" href="colvars">colvars</a></p></td>
+<td><p>lib/colvars</p></td>
+</tr>
+<tr class="row-even"><td><p>USER-CUDA</p></td>
+<td><p>NVIDIA GPU styles</p></td>
+<td><p>Christian Trott (U Tech Ilmenau)</p></td>
+<td><p><a class="reference internal" href="Section_accelerate.html#acc-7"><span class="std std-ref">Section accelerate</span></a></p></td>
+<td><p>USER/cuda</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>lib/cuda</p></td>
+</tr>
+<tr class="row-odd"><td><p>USER-EFF</p></td>
+<td><p>electron force field</p></td>
+<td><p>Andres Jaramillo-Botero (Caltech)</p></td>
+<td><p><a class="reference internal" href="pair_eff.html"><span class="doc">pair_style eff/cut</span></a></p></td>
+<td><p>USER/eff</p></td>
+<td><p><a class="reference external" href="http://lammps.sandia.gov/movies.html#eff">eff</a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>USER-LB</p></td>
+<td><p>Lattice Boltzmann fluid</p></td>
+<td><p>Colin Denniston (U Western Ontario)</p></td>
+<td><p><a class="reference internal" href="fix_lb_fluid.html"><span class="doc">fix lb/fluid</span></a></p></td>
+<td><p>USER/lb</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>USER-MISC</p></td>
+<td><p>single-file contributions</p></td>
+<td><p>USER-MISC/README</p></td>
+<td><p>USER-MISC/README</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>USER-MOLFILE</p></td>
+<td><p><a class="reference external" href="http://www.ks.uiuc.edu/Research/vmd">VMD</a> molfile plug-ins</p></td>
+<td><p>Axel Kohlmeyer (Temple U)</p></td>
+<td><p><a class="reference internal" href="dump_molfile.html"><span class="doc">dump molfile</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>VMD-MOLFILE</p></td>
+</tr>
+<tr class="row-odd"><td><p>USER-OMP</p></td>
+<td><p>OpenMP threaded styles</p></td>
+<td><p>Axel Kohlmeyer (Temple U)</p></td>
+<td><p><a class="reference internal" href="Section_accelerate.html#acc-5"><span class="std std-ref">Section accelerate</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>USER-REAXC</p></td>
+<td><p>C version of ReaxFF</p></td>
+<td><p>Metin Aktulga (LBNL)</p></td>
+<td><p><a class="reference internal" href="pair_reax_c.html"><span class="doc">pair_style reaxc</span></a></p></td>
+<td><p>reax</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>USER-SPH</p></td>
+<td><p>smoothed particle hydrodynamics</p></td>
+<td><p>Georg Ganzenmuller (EMI)</p></td>
+<td><p><a class="reference external" href="USER/sph/SPH_LAMMPS_userguide.pdf">userguide.pdf</a></p></td>
+<td><p>USER/sph</p></td>
+<td><p><a class="reference external" href="http://lammps.sandia.gov/movies.html#sph">sph</a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The “Authors” column lists a name(s) if a specific person is
+responsible for creating and maintaining the package.</p>
+<p>If the Library is not listed as lib/package, then it is a third-party
+library not included in the LAMMPS distribution.  See the
+src/package/Makefile.lammps file for info on where to download the
+library from.</p>
+<p>(2) The ATC package was created by Reese Jones, Jeremy Templeton, and
+Jon Zimmerman (Sandia).</p>
+<p>(3) The COLVARS package was created by Axel Kohlmeyer (Temple U) using
+the colvars module library written by Giacomo Fiorin (Temple U) and
+Jerome Henin (LISM, Marseille, France).</p>
+<p>The “Doc page” column links to either a portion of the
+<a class="reference internal" href="Section_howto.html"><span class="doc">Section_howto</span></a> of the manual, or an input script
+command implemented as part of the package, or to additional
+documentation provided with the package.</p>
+<p>The “Example” column is a sub-directory in the examples directory of
+the distribution which has an input script that uses the package.
+E.g. “peptide” refers to the examples/peptide directory.  USER/cuda
+refers to the examples/USER/cuda directory.</p>
+<p>The “Library” column lists an external library which must be built
+first and which LAMMPS links to when it is built.  If it is listed as
+lib/package, then the code for the library is under the lib directory
+of the LAMMPS distribution.  See the lib/package/README file for info
+on how to build the library.  If it is not listed as lib/package, then
+it is a third-party library not included in the LAMMPS distribution.
+See the src/package/Makefile.lammps file for info on where to download
+the library.  <a class="reference internal" href="Section_start.html#start-3-3"><span class="std std-ref">Section start</span></a> of the
+manual also gives details on how to build LAMMPS with both kinds of
+auxiliary libraries.</p>
+<p>More details on each package, from the USER-*/README file is given
+below.</p>
+</section>
+<hr class="docutils" />
+<section id="user-misc-package">
+<h2><span class="section-number">5.3. </span>USER-MISC package<a class="headerlink" href="#user-misc-package" title="Permalink to this heading">¶</a></h2>
+<p>The files in this package are a potpourri of (mostly) unrelated
+features contributed to LAMMPS by users.  Each feature is a single
+pair of files (*.cpp and *.h).</p>
+<p>More information about each feature can be found by reading its doc
+page in the LAMMPS doc directory.  The doc page which lists all LAMMPS
+input script commands is as follows:</p>
+<p><a class="reference internal" href="Section_commands.html#cmd-5"><span class="std std-ref">Section_commands</span></a></p>
+<p>User-contributed features are listed at the bottom of the fix,
+compute, pair, etc sections.</p>
+<p>The list of features and author of each is given in the
+src/USER-MISC/README file.</p>
+<p>You should contact the author directly if you have specific questions
+about the feature or its coding.</p>
+</section>
+<hr class="docutils" />
+<section id="user-atc-package">
+<h2><span class="section-number">5.4. </span>USER-ATC package<a class="headerlink" href="#user-atc-package" title="Permalink to this heading">¶</a></h2>
+<p>This package implements a “fix atc” command which can be used in a
+LAMMPS input script.  This fix can be employed to either do concurrent
+coupling of MD with FE-based physics surrogates or on-the-fly
+post-processing of atomic information to continuum fields.</p>
+<p>See the doc page for the fix atc command to get started.  At the
+bottom of the doc page are many links to additional documentation
+contained in the doc/USER/atc directory.</p>
+<p>There are example scripts for using this package in examples/USER/atc.</p>
+<p>This package uses an external library in lib/atc which must be
+compiled before making LAMMPS.  See the lib/atc/README file and the
+LAMMPS manual for information on building LAMMPS with external
+libraries.</p>
+<p>The primary people who created this package are Reese Jones (rjones at
+sandia.gov), Jeremy Templeton (jatempl at sandia.gov) and Jon
+Zimmerman (jzimmer at sandia.gov) at Sandia.  Contact them directly if
+you have questions.</p>
+</section>
+<hr class="docutils" />
+<section id="user-awpmd-package">
+<h2><span class="section-number">5.5. </span>USER-AWPMD package<a class="headerlink" href="#user-awpmd-package" title="Permalink to this heading">¶</a></h2>
+<p>This package contains a LAMMPS implementation of the Antisymmetrized
+Wave Packet Molecular Dynamics (AWPMD) method.</p>
+<p>See the doc page for the pair_style awpmd/cut command to get started.</p>
+<p>There are example scripts for using this package in examples/USER/awpmd.</p>
+<p>This package uses an external library in lib/awpmd which must be
+compiled before making LAMMPS.  See the lib/awpmd/README file and the
+LAMMPS manual for information on building LAMMPS with external
+libraries.</p>
+<p>The person who created this package is Ilya Valuev at the JIHT in
+Russia (valuev at physik.hu-berlin.de).  Contact him directly if you
+have questions.</p>
+</section>
+<hr class="docutils" />
+<section id="user-colvars-package">
+<h2><span class="section-number">5.6. </span>USER-COLVARS package<a class="headerlink" href="#user-colvars-package" title="Permalink to this heading">¶</a></h2>
+<p>This package implements the “fix colvars” command which can be
+used in a LAMMPS input script.</p>
+<p>This fix allows to use “collective variables” to implement
+Adaptive Biasing Force, Metadynamics, Steered MD, Umbrella
+Sampling and Restraints. This code consists of two parts:</p>
+<ul class="simple">
+<li><p>A portable collective variable module library written and maintained by Giacomo Fiorin (ICMS, Temple University, Philadelphia, PA, USA) and Jerome Henin (LISM, CNRS, Marseille, France). This code is located in the directory lib/colvars and needs to be compiled first.</p></li>
+<li><p>The colvars fix and an interface layer, exchanges information between LAMMPS and the collective variable module.</p></li>
+</ul>
+<p>See the doc page of <a class="reference internal" href="fix_colvars.html"><span class="doc">fix colvars</span></a> for more details.</p>
+<p>There are example scripts for using this package in
+examples/USER/colvars</p>
+<p>This is a very new interface that does not yet support all
+features in the module and will see future optimizations
+and improvements. The colvars module library is also available
+in NAMD has been thoroughly used and tested there. Bugs and
+problems are likely due to the interface layers code.
+Thus the current version of this package should be considered
+beta quality.</p>
+<p>The person who created this package is Axel Kohlmeyer at Temple U
+(akohlmey at gmail.com).  Contact him directly if you have questions.</p>
+</section>
+<hr class="docutils" />
+<section id="user-cg-cmm-package">
+<h2><span class="section-number">5.7. </span>USER-CG-CMM package<a class="headerlink" href="#user-cg-cmm-package" title="Permalink to this heading">¶</a></h2>
+<p>This package implements 3 commands which can be used in a LAMMPS input
+script:</p>
+<ul class="simple">
+<li><p>pair_style lj/sdk</p></li>
+<li><p>pair_style lj/sdk/coul/long</p></li>
+<li><p>angle_style sdk</p></li>
+</ul>
+<p>These styles allow coarse grained MD simulations with the
+parametrization of Shinoda, DeVane, Klein, Mol Sim, 33, 27 (2007)
+(SDK), with extensions to simulate ionic liquids, electrolytes, lipids
+and charged amino acids.</p>
+<p>See the doc pages for these commands for details.</p>
+<p>There are example scripts for using this package in
+examples/USER/cg-cmm.</p>
+<p>This is the second generation implementation reducing the clutter
+of the previous version. For many systems with electrostatics, it will
+be faster to use pair_style hybrid/overlay with lj/sdk and coul/long
+instead of the combined lj/sdk/coul/long style.  since the number of
+charged atom types is usually small.  For any other coulomb
+interactions this is now required.  To exploit this property, the use
+of the kspace_style pppm/cg is recommended over regular pppm. For all
+new styles, input file backward compatibility is provided.  The old
+implementation is still available through appending the /old
+suffix. These will be discontinued and removed after the new
+implementation has been fully validated.</p>
+<p>The current version of this package should be considered beta
+quality. The CG potentials work correctly for “normal” situations, but
+have not been testing with all kinds of potential parameters and
+simulation systems.</p>
+<p>The person who created this package is Axel Kohlmeyer at Temple U
+(akohlmey at gmail.com).  Contact him directly if you have questions.</p>
+</section>
+<hr class="docutils" />
+<section id="user-cuda-package">
+<h2><span class="section-number">5.8. </span>USER-CUDA package<a class="headerlink" href="#user-cuda-package" title="Permalink to this heading">¶</a></h2>
+<p>This package provides acceleration of various LAMMPS pair styles, fix
+styles, compute styles, and long-range Coulombics via PPPM for NVIDIA
+GPUs.</p>
+<p>See this section of the manual to get started:</p>
+<p><a class="reference internal" href="Section_accelerate.html#acc-7"><span class="std std-ref">Section_accelerate</span></a></p>
+<p>There are example scripts for using this package in
+examples/USER/cuda.</p>
+<p>This package uses an external library in lib/cuda which must be
+compiled before making LAMMPS.  See the lib/cuda/README file and the
+LAMMPS manual for information on building LAMMPS with external
+libraries.</p>
+<p>The person who created this package is Christian Trott at the
+University of Technology Ilmenau, Germany (christian.trott at
+tu-ilmenau.de).  Contact him directly if you have questions.</p>
+</section>
+<hr class="docutils" />
+<section id="user-eff-package">
+<h2><span class="section-number">5.9. </span>USER-EFF package<a class="headerlink" href="#user-eff-package" title="Permalink to this heading">¶</a></h2>
+<p>This package contains a LAMMPS implementation of the electron Force
+Field (eFF) currently under development at Caltech, as described in
+A. Jaramillo-Botero, J. Su, Q. An, and W.A. Goddard III, JCC,
+2010. The eFF potential was first introduced by Su and Goddard, in
+2007.</p>
+<p>eFF can be viewed as an approximation to QM wave packet dynamics and
+Fermionic molecular dynamics, combining the ability of electronic
+structure methods to describe atomic structure, bonding, and chemistry
+in materials, and of plasma methods to describe nonequilibrium
+dynamics of large systems with a large number of highly excited
+electrons. We classify it as a mixed QM-classical approach rather than
+a conventional force field method, which introduces QM-based terms (a
+spin-dependent repulsion term to account for the Pauli exclusion
+principle and the electron wavefunction kinetic energy associated with
+the Heisenberg principle) that reduce, along with classical
+electrostatic terms between nuclei and electrons, to the sum of a set
+of effective pairwise potentials.  This makes eFF uniquely suited to
+simulate materials over a wide range of temperatures and pressures
+where electronically excited and ionized states of matter can occur
+and coexist.</p>
+<p>The necessary customizations to the LAMMPS core are in place to
+enable the correct handling of explicit electron properties during
+minimization and dynamics.</p>
+<p>See the doc page for the pair_style eff/cut command to get started.</p>
+<p>There are example scripts for using this package in
+examples/USER/eff.</p>
+<p>There are auxiliary tools for using this package in tools/eff.</p>
+<p>The person who created this package is Andres Jaramillo-Botero at
+CalTech (ajaramil at wag.caltech.edu).  Contact him directly if you
+have questions.</p>
+</section>
+<hr class="docutils" />
+<section id="user-omp-package">
+<h2><span class="section-number">5.10. </span>USER-OMP package<a class="headerlink" href="#user-omp-package" title="Permalink to this heading">¶</a></h2>
+<p>This package provides OpenMP multi-threading support and
+other optimizations of various LAMMPS pair styles, dihedral
+styles, and fix styles.</p>
+<p>See this section of the manual to get started:</p>
+<p><a class="reference internal" href="Section_accelerate.html#acc-5"><span class="std std-ref">Section_accelerate</span></a></p>
+<p>The person who created this package is Axel Kohlmeyer at Temple U
+(akohlmey at gmail.com).  Contact him directly if you have questions.</p>
+</section>
+<hr class="docutils" />
+<section id="user-reaxc-package">
+<h2><span class="section-number">5.11. </span>USER-REAXC package<a class="headerlink" href="#user-reaxc-package" title="Permalink to this heading">¶</a></h2>
+<p>This package contains a implementation for LAMMPS of the ReaxFF force
+field.  ReaxFF uses distance-dependent bond-order functions to
+represent the contributions of chemical bonding to the potential
+energy.  It was originally developed by Adri van Duin and the Goddard
+group at CalTech.</p>
+<p>The USER-REAXC version of ReaxFF (pair_style reax/c), implemented in
+C, should give identical or very similar results to pair_style reax,
+which is a ReaxFF implementation on top of a Fortran library, a
+version of which library was originally authored by Adri van Duin.</p>
+<p>The reax/c version should be somewhat faster and more scalable,
+particularly with respect to the charge equilibration calculation.  It
+should also be easier to build and use since there are no complicating
+issues with Fortran memory allocation or linking to a Fortran library.</p>
+<p>For technical details about this implementation of ReaxFF, see
+this paper:</p>
+<p>Parallel and Scalable Reactive Molecular Dynamics: Numerical Methods
+and Algorithmic Techniques, H. M. Aktulga, J. C. Fogarty,
+S. A. Pandit, A. Y. Grama, Parallel Computing, in press (2011).</p>
+<p>See the doc page for the pair_style reax/c command for details
+of how to use it in LAMMPS.</p>
+<p>The person who created this package is Hasan Metin Aktulga (hmaktulga
+at lbl.gov), while at Purdue University.  Contact him directly, or
+Aidan Thompson at Sandia (athomps at sandia.gov), if you have
+questions.</p>
+</section>
+<hr class="docutils" />
+<section id="user-sph-package">
+<h2><span class="section-number">5.12. </span>USER-SPH package<a class="headerlink" href="#user-sph-package" title="Permalink to this heading">¶</a></h2>
+<p>This package implements smoothed particle hydrodynamics (SPH) in
+LAMMPS.  Currently, the package has the following features:</p>
+<ul class="simple">
+<li><p>Tait, ideal gas, Lennard-Jones equation of states, full support for complete (i.e. internal-energy dependent) equations of state</p></li>
+<li><p>plain or Monaghans XSPH integration of the equations of motion</p></li>
+<li><p>density continuity or density summation to propagate the density field</p></li>
+<li><p>commands to set internal energy and density of particles from the input script</p></li>
+<li><p>output commands to access internal energy and density for dumping and thermo output</p></li>
+</ul>
+<p>See the file doc/USER/sph/SPH_LAMMPS_userguide.pdf to get started.</p>
+<p>There are example scripts for using this package in examples/USER/sph.</p>
+<p>The person who created this package is Georg Ganzenmuller at the
+Fraunhofer-Institute for High-Speed Dynamics, Ernst Mach Institute in
+Germany (georg.ganzenmueller at emi.fhg.de).  Contact him directly if
+you have questions.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Section_accelerate.html" class="btn btn-neutral float-right" title="6. Accelerating LAMMPS performance" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Section_gran_models.html" class="btn btn-neutral" title="4. Contact models" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018 JKU Linz, DCS Computing GmbH and Sandia Corporation.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'24.01',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

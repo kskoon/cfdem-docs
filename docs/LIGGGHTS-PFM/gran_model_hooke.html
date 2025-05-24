@@ -26,15 +26,15 @@
 
   
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
   
 
   
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
   
-    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+    <link rel="stylesheet" href="static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   
 
   
@@ -48,7 +48,7 @@
         <link rel="prev" title="gran model hertz/lubricated" href="gran_model_hertz_lubricated.html"/> 
 
   
-  <script src="_static/js/modernizr.min.js"></script>
+  <script src="static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -228,7 +228,7 @@ is not available in LAMMPS.</p>
 <p>This granular model uses the following formula for the frictional force between two granular
 particles, when the distance r between two particles of radii Ri and Rj is less than their
 contact distance d = Ri + Rj. There is no force between the particles when r &gt; d:</p>
-<img alt="_images/pair_gran_html_60b8ced2.png" class="align-center" src="_images/pair_gran_html_60b8ced2.png" />
+<img alt="images/pair_gran_html_60b8ced2.png" class="align-center" src="images/pair_gran_html_60b8ced2.png" />
 <p>In the first term is the normal force between the two particles and the second term is the
 tangential force. The normal force has 2 terms, a spring force and a damping force. The
 tangential force also has 2 terms: a shear force and a damping force. The shear force is
@@ -252,8 +252,8 @@ tangential direction.</p>
 <li><p>w_r = relative rotational velocity of the 2 particles</p></li>
 </ul>
 <p>The Kn, Kt, gamma_n, and gamma_t coefficients are calculated as follows from the material properties:</p>
-<img alt="_images/pair_gran_html_147eaf38.png" class="align-center" src="_images/pair_gran_html_147eaf38.png" />
-<img alt="_images/pair_gran_html_m225ba7de.png" class="align-center" src="_images/pair_gran_html_m225ba7de.png" />
+<img alt="images/pair_gran_html_147eaf38.png" class="align-center" src="images/pair_gran_html_147eaf38.png" />
+<img alt="images/pair_gran_html_m225ba7de.png" class="align-center" src="images/pair_gran_html_m225ba7de.png" />
 <p>To define those material properties, it is mandatory to use multiple <a class="reference internal" href="fix_property.html"><span class="doc">fix property/global</span></a> commands:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fix</span> <span class="nb">id</span> <span class="nb">all</span> <span class="nb">property</span><span class="o">/</span><span class="k">global</span> <span class="n">youngsModulus</span> <span class="n">peratomtype</span> <span class="n">value_1</span> <span class="n">value_2</span> <span class="o">...</span>
     <span class="p">(</span><span class="n">value_i</span><span class="o">=</span><span class="n">value</span> <span class="k">for</span> <span class="n">Youngs</span> <span class="n">Modulus</span> <span class="n">of</span> <span class="n">atom</span> <span class="nb">type</span> <span class="n">i</span><span class="p">)</span>
@@ -373,19 +373,19 @@ When using the limitForce, the specified coefficient of restitution is only appr
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="_static/documentation_options.js"></script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
-      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+      <script type="text/javascript" src="static/documentation_options.js"></script>
+      <script type="text/javascript" src="static/jquery.js"></script>
+      <script type="text/javascript" src="static/underscore.js"></script>
+      <script type="text/javascript" src="static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="static/doctools.js"></script>
+      <script type="text/javascript" src="static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+      <script type="text/javascript" src="static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 
   
 
   
   
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <script type="text/javascript" src="static/js/theme.js"></script>
   
 
   

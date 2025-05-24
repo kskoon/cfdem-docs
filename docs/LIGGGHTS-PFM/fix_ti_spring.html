@@ -26,15 +26,15 @@
 
   
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
   
 
   
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
   
-    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+    <link rel="stylesheet" href="static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   
 
   
@@ -48,7 +48,7 @@
         <link rel="prev" title="fix ti/rs command" href="fix_ti_rs.html"/> 
 
   
-  <script src="_static/js/modernizr.min.js"></script>
+  <script src="static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -434,7 +434,7 @@ is its location at the time the fix command was issued. More details
 about the springs are available in <a class="reference internal" href="fix_spring_self.html"><span class="doc">fix spring/self</span></a>. The forces on the atoms are
 dynamically scaled during the simulation, the rescaling is done in the
 following manner:</p>
-<img alt="_images/fix_ti_spring_force.jpg" class="align-center" src="_images/fix_ti_spring_force.jpg" />
+<img alt="images/fix_ti_spring_force.jpg" class="align-center" src="images/fix_ti_spring_force.jpg" />
 <p>where F_harm is the force due to the springs, F_solid is the total
 force on the atoms due to the interatomic potential and lambda is the
 coupling parameter of the thermodynamic integration.</p>
@@ -456,11 +456,11 @@ eliminate the dissipated heat due to the nonequilibrium process.</p>
 rates, the option <em>1</em> results in a constant rescaling where the lambda
 parameter changes at a constant rate during the switching time
 according to the switching function</p>
-<img alt="_images/fix_ti_spring_function_1.jpg" class="align-center" src="_images/fix_ti_spring_function_1.jpg" />
+<img alt="images/fix_ti_spring_function_1.jpg" class="align-center" src="images/fix_ti_spring_function_1.jpg" />
 <p>where tau is the scaled time variable t/t_switch. The option number
 <em>2</em> performs the switching at a rate defined by the following
 switching function</p>
-<img alt="_images/fix_ti_spring_function_2.jpg" class="align-center" src="_images/fix_ti_spring_function_2.jpg" />
+<img alt="images/fix_ti_spring_function_2.jpg" class="align-center" src="images/fix_ti_spring_function_2.jpg" />
 <p>This function has zero slope as lambda approaches its extreme values
 (0 and 1), according to (<a class="reference internal" href="#dekoning96"><span class="std std-ref">de Koning96)</span></a> this results in
 smaller fluctuations on the integral to be computed on the
@@ -574,19 +574,19 @@ LAMMPS was built with those packages.  See the <a class="reference internal" hre
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="_static/documentation_options.js"></script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
-      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+      <script type="text/javascript" src="static/documentation_options.js"></script>
+      <script type="text/javascript" src="static/jquery.js"></script>
+      <script type="text/javascript" src="static/underscore.js"></script>
+      <script type="text/javascript" src="static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="static/doctools.js"></script>
+      <script type="text/javascript" src="static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+      <script type="text/javascript" src="static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 
   
 
   
   
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <script type="text/javascript" src="static/js/theme.js"></script>
   
 
   

@@ -26,15 +26,15 @@
 
   
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
   
 
   
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
   
-    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+    <link rel="stylesheet" href="static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   
 
   
@@ -48,7 +48,7 @@
         <link rel="prev" title="pair_style list command" href="pair_list.html"/> 
 
   
-  <script src="_static/js/modernizr.min.js"></script>
+  <script src="static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -645,10 +645,10 @@ pair_coeff 1 1 100.0 3.5 9.0</pre>
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
 <p>The <em>lj/cut</em> styles compute the standard 12/6 Lennard-Jones potential,
 given by</p>
-<img alt="_images/pair_lj.jpg" class="align-center" src="_images/pair_lj.jpg" />
+<img alt="images/pair_lj.jpg" class="align-center" src="images/pair_lj.jpg" />
 <p>Rc is the cutoff.</p>
 <p>Style <em>lj/cut/coul/cut</em> adds a Coulombic pairwise interaction given by</p>
-<img alt="_images/pair_coulomb.jpg" class="align-center" src="_images/pair_coulomb.jpg" />
+<img alt="images/pair_coulomb.jpg" class="align-center" src="images/pair_coulomb.jpg" />
 <p>where C is an energy-conversion constant, Qi and Qj are the charges on
 the 2 atoms, and epsilon is the dielectric constant which can be set
 by the <a class="reference internal" href="dielectric.html"><span class="doc">dielectric</span></a> command.  If one cutoff is
@@ -657,12 +657,12 @@ Coulombic terms.  If two cutoffs are specified, they are used as
 cutoffs for the LJ and Coulombic terms respectively.</p>
 <p>Style <em>lj/cut/coul/debye</em> adds an additional exp() damping factor
 to the Coulombic term, given by</p>
-<img alt="_images/pair_debye.jpg" class="align-center" src="_images/pair_debye.jpg" />
+<img alt="images/pair_debye.jpg" class="align-center" src="images/pair_debye.jpg" />
 <p>where kappa is the inverse of the Debye length.  This potential is
 another way to mimic the screening effect of a polar solvent.</p>
 <p>Style <em>lj/cut/coul/dsf</em> computes the Coulombic term via the damped
 shifted force model described in <a class="reference internal" href="#fennell"><span class="std std-ref">Fennell</span></a>, given by:</p>
-<img alt="_images/pair_coul_dsf.jpg" class="align-center" src="_images/pair_coul_dsf.jpg" />
+<img alt="images/pair_coul_dsf.jpg" class="align-center" src="images/pair_coul_dsf.jpg" />
 <p>where <em>alpha</em> is the damping parameter and erfc() is the complementary
 error-function. This potential is essentially a short-range,
 spherically-truncated, charge-neutralized, shifted, pairwise <em>1/r</em>
@@ -844,19 +844,19 @@ Phys, 79, 926 (1983).</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="_static/documentation_options.js"></script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
-      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+      <script type="text/javascript" src="static/documentation_options.js"></script>
+      <script type="text/javascript" src="static/jquery.js"></script>
+      <script type="text/javascript" src="static/underscore.js"></script>
+      <script type="text/javascript" src="static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="static/doctools.js"></script>
+      <script type="text/javascript" src="static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+      <script type="text/javascript" src="static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 
   
 
   
   
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <script type="text/javascript" src="static/js/theme.js"></script>
   
 
   

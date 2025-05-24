@@ -26,15 +26,15 @@
 
   
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
   
 
   
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
   
-    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+    <link rel="stylesheet" href="static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   
 
   
@@ -48,7 +48,7 @@
         <link rel="prev" title="LIGGGHTS 3.X vs. LIGGGHTS 2.X - syntax changes" href="liggghts_3.X_tutorial.html"/> 
 
   
-  <script src="_static/js/modernizr.min.js"></script>
+  <script src="static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -204,15 +204,15 @@
 <section id="motivation">
 <h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this heading">¶</a></h2>
 <p>The MPI/OpenMP hybrid parallelization in LIGGGHTS is a new way to achieve better load-balancing within simulations. Traditional MPI simulations can only be load-balanced using <a class="reference internal" href="fix_balance.html"><span class="doc">fix/balance</span></a>. The following figure illustrates how static 8x1 decomposition might look like. In this example colors are used to show areas which require high amount of computational work (red) in contract to other areas which leave processors idle (blue). Using a static decomposition processes the boundaries of the domain can become idle quickly. To avoid this, MPI dynamic load balancing was introduced with <a class="reference internal" href="fix_balance.html"><span class="doc">fix/balance</span></a>. It adjusts the boundaries making sure each subdomain has an equal amount of particles in them.</p>
-<img alt="_images/1Ddecomposition.png" class="align-center" src="https://kskoon.github.io/cfdem-docs/LIGGGHTS-PFM/_images/1Ddecomposition.png" />
+<img alt="images/1Ddecomposition.png" class="align-center" src="https://kskoon.github.io/cfdem-docs/LIGGGHTS-PFM/images/1Ddecomposition.png" />
 <p>MPI load-balancing works very well with simple decompositions. However load-imbalance remains a dominant issue if higher number of cores used. At some point decomposing along one dimension alone will no longer add any benefit. Adding a cut to additional dimensions will only work well if the load is symmetric. The following figure shows how the symmetric testcase can easily be computed using 16 processes in stead of 8 by adding another decomposition along the y-Axis.</p>
-<img alt="_images/2Ddecomposition.png" class="align-center" src="_images/2Ddecomposition.png" />
+<img alt="images/2Ddecomposition.png" class="align-center" src="images/2Ddecomposition.png" />
 <p>Unsymmetrical loads are very difficult to decompose. The margin of error is significant. Simulations can take 2x-4x more time if decompositions are chosen poorly and MPI load-balancing used improperly. The following illustrates a simulation which is harder to decompose because the cuts in space span the entire domain.</p>
-<img alt="_images/2Ddecomposition_unsymmetric.png" class="align-center" src="_images/2Ddecomposition_unsymmetric.png" />
+<img alt="images/2Ddecomposition_unsymmetric.png" class="align-center" src="images/2Ddecomposition_unsymmetric.png" />
 <p>A hybrid parallelization which uses MPI and OpenMP allows us to reduce the amount of MPI processes and let automatic partitioning figure out a good decomposition inside our subdomains. In our next Figure we show how the hybrid can use only two MPI processes to cut the domain in half along the y-Axis and then partitions the subdomains among 8 threads. In other words, our hybrid parallelization adds a second layer of parallelization to LIGGGHTS which is more flexible and does automatic load-balancing.</p>
-<img alt="_images/2Ddecomposition_hybrid.png" class="align-center" src="_images/2Ddecomposition_hybrid.png" />
+<img alt="images/2Ddecomposition_hybrid.png" class="align-center" src="images/2Ddecomposition_hybrid.png" />
 <p>The main idea behind using a hybrid parallelization therefore is to first split the domain into large, potentially MPI-load-balanced portions. Each MPI subdomain is then further partitioned for a given number of threads.</p>
-<img alt="_images/Hybrid_Overview.png" class="align-center" src="_images/Hybrid_Overview.png" />
+<img alt="images/Hybrid_Overview.png" class="align-center" src="images/Hybrid_Overview.png" />
 </section>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h2>
@@ -422,19 +422,19 @@ was built with the USER-OMP and USER-ZOLTAN package. See the
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="_static/documentation_options.js"></script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
-      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+      <script type="text/javascript" src="static/documentation_options.js"></script>
+      <script type="text/javascript" src="static/jquery.js"></script>
+      <script type="text/javascript" src="static/underscore.js"></script>
+      <script type="text/javascript" src="static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="static/doctools.js"></script>
+      <script type="text/javascript" src="static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+      <script type="text/javascript" src="static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 
   
 
   
   
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <script type="text/javascript" src="static/js/theme.js"></script>
   
 
   

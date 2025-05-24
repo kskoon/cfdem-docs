@@ -26,15 +26,15 @@
 
   
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
   
 
   
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
   
-    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+    <link rel="stylesheet" href="static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   
 
   
@@ -48,7 +48,7 @@
         <link rel="prev" title="fix langevin/eff command" href="fix_langevin_eff.html"/> 
 
   
-  <script src="_static/js/modernizr.min.js"></script>
+  <script src="static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -457,19 +457,19 @@ simulation domain.  The MD particles described by <em>group-ID</em> apply a velo
 dependent force to the fluid.</p>
 <p>The lattice-Boltzmann algorithm solves for the fluid motion governed by
 the Navier Stokes equations,</p>
-<img alt="_images/fix_lb_fluid_navierstokes.jpg" class="align-center" src="_images/fix_lb_fluid_navierstokes.jpg" />
+<img alt="images/fix_lb_fluid_navierstokes.jpg" class="align-center" src="images/fix_lb_fluid_navierstokes.jpg" />
 <p>with,</p>
-<img alt="_images/fix_lb_fluid_viscosity.jpg" class="align-center" src="_images/fix_lb_fluid_viscosity.jpg" />
+<img alt="images/fix_lb_fluid_viscosity.jpg" class="align-center" src="images/fix_lb_fluid_viscosity.jpg" />
 <p>where rho is the fluid density, u is the local fluid velocity, sigma
 is the stress tensor, F is a local external force, and eta and Lambda
 are the shear and bulk viscosities respectively.  Here, we have
 implemented</p>
-<img alt="_images/fix_lb_fluid_stress.jpg" class="align-center" src="_images/fix_lb_fluid_stress.jpg" />
+<img alt="images/fix_lb_fluid_stress.jpg" class="align-center" src="images/fix_lb_fluid_stress.jpg" />
 <p>with a_0 set to 1/3 (dx/dt)^2 by default.</p>
 <p>The algorithm involves tracking the time evolution of a set of partial
 distribution functions which evolve according to a velocity
 discretized version of the Boltzmann equation,</p>
-<img alt="_images/fix_lb_fluid_boltzmann.jpg" class="align-center" src="_images/fix_lb_fluid_boltzmann.jpg" />
+<img alt="images/fix_lb_fluid_boltzmann.jpg" class="align-center" src="images/fix_lb_fluid_boltzmann.jpg" />
 <p>where the first term on the right hand side represents a single time
 relaxation towards the equilibrium distribution function, and tau is a
 parameter physically related to the viscosity.  On a technical note,
@@ -482,14 +482,14 @@ finite difference LB integrator is used.  If <em>LBtype</em> is set equal to
 2, the algorithm of <a class="reference internal" href="#ollila"><span class="std std-ref">Ollila et al.</span></a> is used.</p>
 <p>Physical variables are then defined in terms of moments of the distribution
 functions,</p>
-<img alt="_images/fix_lb_fluid_properties.jpg" class="align-center" src="_images/fix_lb_fluid_properties.jpg" />
+<img alt="images/fix_lb_fluid_properties.jpg" class="align-center" src="images/fix_lb_fluid_properties.jpg" />
 <p>Full details of the lattice-Boltzmann algorithm used can be found in
 <a class="reference internal" href="fix_lb_viscous.html#mackay"><span class="std std-ref">Mackay et al.</span></a>.</p>
 <p>The fluid is coupled to the MD particles described by <em>group-ID</em>
 through a velocity dependent force.  The contribution to the fluid
 force on a given lattice mesh site j due to MD particle alpha is
 calculated as:</p>
-<img alt="_images/fix_lb_fluid_fluidforce.jpg" class="align-center" src="_images/fix_lb_fluid_fluidforce.jpg" />
+<img alt="images/fix_lb_fluid_fluidforce.jpg" class="align-center" src="images/fix_lb_fluid_fluidforce.jpg" />
 <p>where v_n is the velocity of the MD particle, u_f is the fluid
 velocity interpolated to the particle location, and gamma is the force
 coupling constant.  Zeta is a weight assigned to the grid point,
@@ -503,7 +503,7 @@ to walls, due to its smaller support.  Therefore, by default, the
 Peskin stencil is used; however the user may switch to the trilinear
 stencil by specifying the keyword, <em>trilinear</em>.</p>
 <p>By default, the force coupling constant, gamma, is calculated according to</p>
-<img alt="_images/fix_lb_fluid_gammadefault.jpg" class="align-center" src="_images/fix_lb_fluid_gammadefault.jpg" />
+<img alt="images/fix_lb_fluid_gammadefault.jpg" class="align-center" src="images/fix_lb_fluid_gammadefault.jpg" />
 <p>Here, m_v is the mass of the MD particle, m_u is a representative
 fluid mass at the particle location, and dt_collision is a collision
 time, chosen such that tau/dt_collision = 1 (see <a class="reference internal" href="#mackay2"><span class="std std-ref">Mackay and Denniston</span></a> for full details).  In order to calculate m_u, the
@@ -687,7 +687,7 @@ their own value for the force coupling constant.</p>
 <section id="default">
 <h2>Default<a class="headerlink" href="#default" title="Permalink to this heading">¶</a></h2>
 <p>By default, the force coupling constant is set according to</p>
-<img alt="_images/fix_lb_fluid_gammadefault.jpg" class="align-center" src="_images/fix_lb_fluid_gammadefault.jpg" />
+<img alt="images/fix_lb_fluid_gammadefault.jpg" class="align-center" src="images/fix_lb_fluid_gammadefault.jpg" />
 <p>and an area of dx_lb^2 per node, used to calculate the fluid mass at
 the particle node location, is assumed.</p>
 <p>dx is chosen such that tau/(delta t_LB) =
@@ -751,19 +751,19 @@ If walls are present, they are assumed to be stationary.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="_static/documentation_options.js"></script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
-      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+      <script type="text/javascript" src="static/documentation_options.js"></script>
+      <script type="text/javascript" src="static/jquery.js"></script>
+      <script type="text/javascript" src="static/underscore.js"></script>
+      <script type="text/javascript" src="static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="static/doctools.js"></script>
+      <script type="text/javascript" src="static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+      <script type="text/javascript" src="static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 
   
 
   
   
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <script type="text/javascript" src="static/js/theme.js"></script>
   
 
   

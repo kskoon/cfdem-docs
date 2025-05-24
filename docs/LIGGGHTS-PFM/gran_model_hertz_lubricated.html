@@ -26,15 +26,15 @@
 
   
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
   
 
   
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
   
-    <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+    <link rel="stylesheet" href="static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   
 
   
@@ -48,7 +48,7 @@
         <link rel="prev" title="gran model hertz/stiffness" href="gran_model_hertz_stiffness.html"/> 
 
   
-  <script src="_static/js/modernizr.min.js"></script>
+  <script src="static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -232,14 +232,14 @@ By using the correctYoungsModulus keyword, the minimum approach distance calcula
 original Youngs modulus, while the contact force calculation is performed using a lower Youngs modulus.
 The viscosity of the interstial liquid is set by <a class="reference internal" href="fix_property.html"><span class="doc">fix property/atom</span></a> <em>fluidViscosity</em>. In a coupled
 simulations, this can be performed through <a class="reference internal" href="fix_cfd_coupling_fluidproperties.html"><span class="doc">fix cfd/coupling/fluidproperties</span></a>.</p>
-<img alt="_images/gran_model_hertz_lubricated_1.png" class="align-center" src="_images/gran_model_hertz_lubricated_1.png" />
+<img alt="images/gran_model_hertz_lubricated_1.png" class="align-center" src="images/gran_model_hertz_lubricated_1.png" />
 <p>The total normal force is a combination of the lubrication force and the contact force. For calculation of the
 contact force, see <a class="reference internal" href="gran_model_hertz.html"><span class="doc">normal model hertz</span></a>. The lubrication force is calculated untill the cut-off
 distance h_co, which is set by property/global lubricationCutoff. Please note that lubricationCutoff is expressed as a multiple
 of the reduced radius R*. A value of lubricationCutoff = 1.0 (i.e. h_co = R*) is recommended. The neighbourlist skin distance must
 be set large enough to include this cut-off distance, see <a class="reference internal" href="neighbor.html"><span class="doc">neighbor</span></a>.</p>
-<img alt="_images/gran_model_hertz_lubricated_2.png" class="align-center" src="_images/gran_model_hertz_lubricated_2.png" />
-<img alt="_images/gran_model_hertz_lubricated_3.png" class="align-center" src="_images/gran_model_hertz_lubricated_3.png" />
+<img alt="images/gran_model_hertz_lubricated_2.png" class="align-center" src="images/gran_model_hertz_lubricated_2.png" />
+<img alt="images/gran_model_hertz_lubricated_3.png" class="align-center" src="images/gran_model_hertz_lubricated_3.png" />
 <p>The quantities in the equations are as follows:</p>
 <ul class="simple">
 <li><p>h^min_sigma = minimum approach distance due to surface roughness</p></li>
@@ -353,19 +353,19 @@ When using the limitForce, the specified coefficient of restitution is only appr
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="_static/documentation_options.js"></script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
-      <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+      <script type="text/javascript" src="static/documentation_options.js"></script>
+      <script type="text/javascript" src="static/jquery.js"></script>
+      <script type="text/javascript" src="static/underscore.js"></script>
+      <script type="text/javascript" src="static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="static/doctools.js"></script>
+      <script type="text/javascript" src="static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+      <script type="text/javascript" src="static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 
   
 
   
   
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <script type="text/javascript" src="static/js/theme.js"></script>
   
 
   
